@@ -1,0 +1,21 @@
+# Claude
+.claude/
+
+# LiteLLM config (contains API keys)
+litellm_config.yaml
+
+# Environment (contains API keys)
+.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+docker-compose.override.yml

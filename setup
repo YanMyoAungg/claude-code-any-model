@@ -1,0 +1,273 @@
+#!/usr/bin/env bash
+# ┌─────────────────────────────────────────────────────────────────┐
+# │ Claude Code Custom Model Setup                                  │
+# │ Interactive setup for using any LLM with Claude Code            │
+# │                                                                 │
+# │ Usage: bash setup                                               │
+# │   or:  curl -fsSL <url>/setup | bash                            │
+# └─────────────────────────────────────────────────────────────────┘
+
+set -euo pipefail
+
+# ── Colors ──────────────────────────────────────────────────────────
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+BOLD='\033[1m'
+NC='\033[0m' # No Color
+
+# ── Banner ──────────────────────────────────────────────────────────
+echo ""
+echo -e "${BOLD}╔══════════════════════════════════════════════╗${NC}"
+echo -e "${BOLD}║   Claude Code Custom Model Setup             ║${NC}"
+echo -e "${BOLD}║   Use any LLM with Claude Code               ║${NC}"
+echo -e "${BOLD}╚══════════════════════════════════════════════╝${NC}"
+echo ""
+
+# ── Check Prerequisites ────────────────────────────────────────────
+echo -e "${BLUE}[1/5]${NC} Checking prerequisites..."
+
+# Check Python
+if command -v python3 &>/dev/null; then
+    PYTHON=python3
+elif command -v python &>/dev/null; then
+    PYTHON=python
+else
+    echo -e "${RED}✗ Python 3 not found. Install it: https://python.org${NC}"
+    exit 1
+fi
+
+PY_VERSION=$($PYTHON --version 2>&1 | grep -oE '[0-9]+\.[0-9]+' | head -1)
+echo -e "  ${GREEN}✓${NC} Python $PY_VERSION"
+
+# Check pip or uv
+if command -v uv &>/dev/null; then
+    INSTALL_CMD="uv pip install"
+    echo -e "  ${GREEN}✓${NC} uv (fast Python package manager)"
+elif command -v pip3 &>/dev/null; then
+    INSTALL_CMD="pip3 install"
+    echo -e "  ${GREEN}✓${NC} pip3"
+elif command -v pip &>/dev/null; then
+    INSTALL_CMD="pip install"
+    echo -e "  ${GREEN}✓${NC} pip"
+else
+    echo -e "${RED}✗ Neither uv nor pip found. Install pip: https://pip.pypa.io${NC}"
+    exit 1
+fi
+
+# Check Claude Code
+if command -v claude &>/dev/null; then
+    echo -e "  ${GREEN}✓${NC} Claude Code"
+else
+    echo -e "  ${YELLOW}!${NC} Claude Code not found in PATH. You'll need it:"
+    echo "    brew install claude-code"
+    echo "    # or: npm install -g @anthropic-ai/claude-code"
+fi
+
+echo ""
+
+# ── Choose Provider ────────────────────────────────────────────────
+echo -e "${BLUE}[2/5]${NC} Which provider do you want to use?"
+echo ""
+echo "  1) DeepSeek      (deepseek-v4-pro, deepseek-chat)"
+echo "  2) OpenAI        (gpt-4o, gpt-4.1, o4-mini)"
+echo "  3) Groq          (llama-4-maverick, mixtral)"
+echo "  4) Google Gemini (gemini-2.5-pro, gemini-2.5-flash)"
+echo "  5) Ollama        (local models — llama3, mistral, etc.)"
+echo "  6) OpenRouter    (200+ models via one API)"
+echo "  7) Other         (any LiteLLM-supported provider)"
+echo ""
+
+read -p "  Enter choice [1-7]: " PROVIDER_CHOICE
+
+case "$PROVIDER_CHOICE" in
+    1)
+        PROVIDER_NAME="DeepSeek"
+        PROMPT_MODEL="deepseek/deepseek-v4-pro"
+        PROMPT_MODEL_NAME="deepseek-v4-pro"
+        PROMPT_API_KEY_LABEL="DeepSeek API key (sk-...)"
+        PROMPT_API_KEY_URL="https://platform.deepseek.com/api_keys"
+        ;;
+    2)
+        PROVIDER_NAME="OpenAI"
+        PROMPT_MODEL="openai/gpt-4o"
+        PROMPT_MODEL_NAME="gpt-4o"
+        PROMPT_API_KEY_LABEL="OpenAI API key (sk-...)"
+        PROMPT_API_KEY_URL="https://platform.openai.com/api-keys"
+        ;;
+    3)
+        PROVIDER_NAME="Groq"
+        PROMPT_MODEL="groq/meta-llama/llama-4-maverick-17b-128e-instruct"
+        PROMPT_MODEL_NAME="llama-4-maverick"
+        PROMPT_API_KEY_LABEL="Groq API key (gsk_...)"
+        PROMPT_API_KEY_URL="https://console.groq.com/keys"
+        ;;
+    4)
+        PROVIDER_NAME="Google Gemini"
+        PROMPT_MODEL="gemini/gemini-2.5-pro-exp-03-25"
+        PROMPT_MODEL_NAME="gemini-2.5-pro"
+        PROMPT_API_KEY_LABEL="Gemini API key"
+        PROMPT_API_KEY_URL="https://aistudio.google.com/apikey"
+        ;;
+    5)
+        PROVIDER_NAME="Ollama"
+        read -p "  Ollama model name [llama3]: " OLLAMA_MODEL
+        OLLAMA_MODEL=${OLLAMA_MODEL:-llama3}
+        PROMPT_MODEL="ollama/$OLLAMA_MODEL"
+        PROMPT_MODEL_NAME="ollama-$OLLAMA_MODEL"
+        PROMPT_API_KEY_LABEL=""
+        PROMPT_API_KEY_URL=""
+        ;;
+    6)
+        PROVIDER_NAME="OpenRouter"
+        PROMPT_MODEL="openrouter/anthropic/claude-sonnet-4-6"
+        PROMPT_MODEL_NAME="claude-sonnet-4-6"
+        PROMPT_API_KEY_LABEL="OpenRouter API key (sk-or-...)"
+        PROMPT_API_KEY_URL="https://openrouter.ai/keys"
+        ;;
+    7)
+        PROVIDER_NAME="Other"
+        read -p "  Provider/model string (e.g. 'deepseek/deepseek-chat'): " PROMPT_MODEL
+        read -p "  Model name for Claude Code (e.g. 'my-model'): " PROMPT_MODEL_NAME
+        PROMPT_API_KEY_LABEL="API key"
+        PROMPT_API_KEY_URL=""
+        ;;
+    *)
+        echo -e "${RED}Invalid choice.${NC}"
+        exit 1
+        ;;
+esac
+
+echo ""
+echo -e "  Provider: ${GREEN}$PROVIDER_NAME${NC}"
+echo ""
+
+# ── Get API Key (skip for Ollama) ──────────────────────────────────
+if [ "$PROVIDER_CHOICE" != "5" ]; then
+    echo -e "${BLUE}[3/5]${NC} API Key"
+    [ -n "$PROMPT_API_KEY_URL" ] && echo "  Get one at: $PROMPT_API_KEY_URL"
+    echo ""
+
+    read -sp "  $PROMPT_API_KEY_LABEL: " API_KEY
+    echo ""
+
+    if [ -z "$API_KEY" ]; then
+        echo -e "${RED}✗ API key is required.${NC}"
+        exit 1
+    fi
+fi
+
+# ── Install LiteLLM ────────────────────────────────────────────────
+echo ""
+echo -e "${BLUE}[4/5]${NC} Installing LiteLLM..."
+$INSTALL_CMD litellm 2>&1 | tail -3
+echo -e "  ${GREEN}✓${NC} LiteLLM installed"
+
+# ── Generate Config ────────────────────────────────────────────────
+echo ""
+echo -e "${BLUE}[5/5]${NC} Generating configuration..."
+
+CONFIG_FILE="litellm_config.yaml"
+
+if [ "$PROVIDER_CHOICE" = "5" ]; then
+    # Ollama — no API key needed
+    cat > "$CONFIG_FILE" << EOF
+model_list:
+  - model_name: $PROMPT_MODEL_NAME
+    litellm_params:
+      model: $PROMPT_MODEL
+      api_base: http://localhost:11434
+
+litellm_settings:
+  drop_params: true
+EOF
+else
+    cat > "$CONFIG_FILE" << EOF
+model_list:
+  - model_name: $PROMPT_MODEL_NAME
+    litellm_params:
+      model: $PROMPT_MODEL
+      api_key: $API_KEY
+
+litellm_settings:
+  drop_params: true
+EOF
+fi
+
+echo -e "  ${GREEN}✓${NC} Configuration written to $CONFIG_FILE"
+
+# ── Configure Claude Code ──────────────────────────────────────────
+SETTINGS_FILE="$HOME/.claude/settings.json"
+
+if [ -f "$SETTINGS_FILE" ]; then
+    echo ""
+    echo -e "  ${YELLOW}!${NC} $SETTINGS_FILE already exists."
+    read -p "  Overwrite with proxy settings? [y/N]: " OVERWRITE
+    if [[ "$OVERWRITE" =~ ^[Yy]$ ]]; then
+        cat > "$SETTINGS_FILE" << EOF
+{
+  "env": {
+    "ANTHROPIC_BASE_URL": "http://localhost:4000",
+    "ANTHROPIC_API_KEY": "sk-anything"
+  },
+  "model": "$PROMPT_MODEL_NAME"
+}
+EOF
+        echo -e "  ${GREEN}✓${NC} Claude Code configured"
+    else
+        echo -e "  ${YELLOW}!${NC} Skipped. Add this to your settings.json manually:"
+        echo ""
+        echo '  {'
+        echo '    "env": {'
+        echo '      "ANTHROPIC_BASE_URL": "http://localhost:4000",'
+        echo '      "ANTHROPIC_API_KEY": "sk-anything"'
+        echo '    },'
+        echo "    \"model\": \"$PROMPT_MODEL_NAME\""
+        echo '  }'
+    fi
+else
+    mkdir -p "$HOME/.claude"
+    cat > "$SETTINGS_FILE" << EOF
+{
+  "env": {
+    "ANTHROPIC_BASE_URL": "http://localhost:4000",
+    "ANTHROPIC_API_KEY": "sk-anything"
+  },
+  "model": "$PROMPT_MODEL_NAME"
+}
+EOF
+    echo -e "  ${GREEN}✓${NC} Claude Code configured ($SETTINGS_FILE)"
+fi
+
+# ── Start Proxy ────────────────────────────────────────────────────
+echo ""
+echo -e "${BOLD}╔══════════════════════════════════════════════╗${NC}"
+echo -e "${BOLD}║   Setup Complete!                             ║${NC}"
+echo -e "${BOLD}╚══════════════════════════════════════════════╝${NC}"
+echo ""
+echo -e "  Provider:     ${GREEN}$PROVIDER_NAME${NC}"
+echo -e "  Model:        ${GREEN}$PROMPT_MODEL_NAME${NC}"
+echo -e "  Config:       ${GREEN}$CONFIG_FILE${NC}"
+echo ""
+
+read -p "  Start LiteLLM proxy now? [Y/n]: " START_PROXY
+START_PROXY=${START_PROXY:-y}
+
+if [[ "$START_PROXY" =~ ^[Yy]$ ]]; then
+    echo ""
+    echo -e "  ${GREEN}▶${NC} Starting proxy on http://localhost:4000"
+    echo -e "  ${YELLOW}  Keep this terminal open. Ctrl+C to stop.${NC}"
+    echo ""
+    litellm --config "$CONFIG_FILE" --port 4000
+else
+    echo ""
+    echo "  To start the proxy later:"
+    echo ""
+    echo "    litellm --config litellm_config.yaml --port 4000"
+    echo ""
+    echo "  Then launch Claude Code:"
+    echo ""
+    echo "    claude"
+    echo ""
+fi

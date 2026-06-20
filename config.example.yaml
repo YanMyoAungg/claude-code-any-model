@@ -1,0 +1,99 @@
+# ┌─────────────────────────────────────────────────────────────────┐
+# │ LiteLLM Proxy Config for Claude Code                            │
+# │                                                                  │
+# │ LOCAL USERS:                                                     │
+# │   Copy this to litellm_config.yaml and edit your API key.        │
+# │                                                                  │
+# │ DOCKER / CLOUD USERS:                                            │
+# │   Skip this file. Edit .env instead. Config is auto-generated    │
+# │   from environment variables at startup.                         │
+# └─────────────────────────────────────────────────────────────────┘
+
+# ── Single Model (choose one) ──────────────────────────────────────
+
+model_list:
+  - model_name: deepseek-v4-pro       # name you'll use in Claude Code
+    litellm_params:
+      model: deepseek/deepseek-v4-pro # provider/model format
+      api_key: sk-your-key-here       # your DeepSeek API key
+
+# ── Or Multiple Models ─────────────────────────────────────────────
+# Uncomment this block and comment out the single model above:
+#
+# model_list:
+#   - model_name: deepseek-v4-pro
+#     litellm_params:
+#       model: deepseek/deepseek-v4-pro
+#       api_key: sk-deepseek-key
+#
+#   - model_name: gpt-4o
+#     litellm_params:
+#       model: openai/gpt-4o
+#       api_key: sk-openai-key
+#
+#   - model_name: llama-4-maverick
+#     litellm_params:
+#       model: groq/meta-llama/llama-4-maverick-17b-128e-instruct
+#       api_key: gsk_groq-key
+
+# ── All Providers ──────────────────────────────────────────────────
+# Replace api_key and uncomment:
+#
+# DeepSeek:
+#   model_name: deepseek-v4-pro
+#   litellm_params:
+#     model: deepseek/deepseek-v4-pro
+#     api_key: sk-...
+#
+# OpenAI:
+#   model_name: gpt-4o
+#   litellm_params:
+#     model: openai/gpt-4o
+#     api_key: sk-...
+#
+# Groq:
+#   model_name: llama-4-maverick
+#   litellm_params:
+#     model: groq/meta-llama/llama-4-maverick-17b-128e-instruct
+#     api_key: gsk_...
+#
+# Gemini:
+#   model_name: gemini-2.5-pro
+#   litellm_params:
+#     model: gemini/gemini-2.5-pro-exp-03-25
+#     api_key: ...
+#
+# Ollama (local):
+#   model_name: llama3
+#   litellm_params:
+#     model: ollama/llama3
+#     api_base: http://localhost:11434
+#
+# OpenRouter:
+#   model_name: claude-sonnet-4-6
+#   litellm_params:
+#     model: openrouter/anthropic/claude-sonnet-4-6
+#     api_key: sk-or-...
+
+# ── Settings ───────────────────────────────────────────────────────
+
+litellm_settings:
+  drop_params: true
+  # ^ IMPORTANT: drops Anthropic-specific params (like context_management,
+  #   thinking, etc.) that other providers don't support. Without this,
+  #   you'll get UnsupportedParamsError.
+
+# ── Optional: Router Settings ──────────────────────────────────────
+# router_settings:
+#   num_retries: 2
+#   timeout: 600          # seconds
+#   fallbacks: [{deepseek-v4-pro: ["deepseek/deepseek-chat"]}]
+
+# ── Optional: Rate Limits ─────────────────────────────────────────
+# general_settings:
+#   master_key: sk-your-master-key    # needed for rate limiting below
+#   database_url: "postgresql://..."  # needed for persistent rate limits
+#
+# litellm_settings:
+#   success_callback: ["prometheus"]   # monitoring
+#   failure_callback: ["prometheus"]

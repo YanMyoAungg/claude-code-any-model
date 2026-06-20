@@ -43,7 +43,7 @@
 ### One command
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/YOUR_USER/claude-code-custom-model/main/setup | bash
+curl -fsSL https://raw.githubusercontent.com/YanMyoAungg/claude-code-any-model/main/setup | bash
 ```
 
 The script asks which provider you want, takes your API key, installs LiteLLM, configures everything, and starts the proxy. Done in under a minute.
@@ -206,7 +206,7 @@ MIT — see [LICENSE](LICENSE).
 ### တစ်ကြောင်းတည်းနဲ့
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/YOUR_USER/claude-code-custom-model/main/setup | bash
+curl -fsSL https://raw.githubusercontent.com/YanMyoAungg/claude-code-any-model/main/setup | bash
 ```
 
 ဒီ script က ဘယ် provider သုံးမလဲ မေးပါမယ်၊ API ကီး တောင်းပါမယ်၊ LiteLLM ထည့်ပေးပါမယ်၊ အားလုံး configure လုပ်ပေးပြီး proxy စဖွင့်ပေးပါမယ်။ တစ်မိနစ်အတွင်း ပြီးပါတယ်။

@@ -12,7 +12,7 @@ PRs welcome! Here's how to help:
 ## Setup for Development
 
 ```bash
-git clone https://github.com/YOUR_USER/claude-code-custom-model
+git clone https://github.com/YanMyoAungg/claude-code-any-model
 cd claude-code-custom-model
 pip install litellm
 cp config.example.yaml litellm_config.yaml

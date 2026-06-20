@@ -147,4 +147,4 @@ router_settings:
 
 1. Check LiteLLM logs — they're usually quite detailed
 2. [LiteLLM Discord](https://discord.gg/berriai) — active community
-3. [File an issue](https://github.com/YOUR_USER/claude-code-custom-model/issues) on this repo
+3. [File an issue](https://github.com/YanMyoAungg/claude-code-any-model/issues) on this repo

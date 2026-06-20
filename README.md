@@ -5,8 +5,12 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
+<img width="2940" height="1910" alt="image" src="https://github.com/user-attachments/assets/a2ce4836-d839-4770-b6c7-4e04eba00983" />
+
 > 📖 **မြန်မာဘာသာပြန်** — ဤ README ၏ မြန်မာဘာသာပြန်ကို [အောက်တွင်](#မြန်မာဘာသာပြန်) ကြည့်ရှုနိုင်ပါသည်။  
 > 📖 **Burmese translation** available [below](#မြန်မာဘာသာပြန်).
+
+
 
 ```
 ┌──────────────┐     Anthropic API      ┌──────────────┐     Native API      ┌──────────────┐

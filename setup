@@ -190,24 +190,21 @@ while [ -z "${PROVIDER_NAME:-}" ]; do
             PROMPT_API_KEY_URL="https://platform.deepseek.com/api_keys"
             echo ""
             echo "  Which DeepSeek model?"
-            echo "    1) V4 Pro    (latest flagship)"
-            echo "    2) V3        (faster, cheaper)"
-            echo "    3) R1        (reasoning)"
-            echo "    4) Custom model ID"
+            echo "    1) Chat (latest)  (equivalent to V3/V4)"
+            echo "    2) Reasoner (R1)  (reasoning)"
+            echo "    3) Custom model ID"
             DS_MODEL=""
             while [ -z "${DS_MODEL:-}" ]; do
-                read -p "  Choose [1-4]: " CHOICE < /dev/tty
+                read -p "  Choose [1-3]: " CHOICE < /dev/tty
                 case "$CHOICE" in
-                    1) DS_MODEL="deepseek/deepseek-v4-pro"
-                       PROMPT_MODEL_NAME="deepseek-v4-pro" ;;
-                    2) DS_MODEL="deepseek/deepseek-chat"
+                    1) DS_MODEL="deepseek/deepseek-chat"
                        PROMPT_MODEL_NAME="deepseek-chat" ;;
-                    3) DS_MODEL="deepseek/deepseek-reasoner"
+                    2) DS_MODEL="deepseek/deepseek-reasoner"
                        PROMPT_MODEL_NAME="deepseek-reasoner" ;;
-                    4) read -p "  Model ID (e.g. 'deepseek-chat'): " DS_MODEL < /dev/tty
+                    3) read -p "  Model ID (e.g. 'deepseek-chat'): " DS_MODEL < /dev/tty
                        read -p "  Short name for Claude Code: " PROMPT_MODEL_NAME < /dev/tty
                        DS_MODEL="deepseek/$DS_MODEL" ;;
-                    *) echo -e "  ${RED}Invalid. Enter 1-4.${NC}" ;;
+                    *) echo -e "  ${RED}Invalid. Enter 1-3.${NC}" ;;
                 esac
             done
             PROMPT_MODEL="$DS_MODEL"
@@ -218,27 +215,24 @@ while [ -z "${PROVIDER_NAME:-}" ]; do
             PROMPT_API_KEY_URL="https://platform.openai.com/api-keys"
             echo ""
             echo "  Which OpenAI model?"
-            echo "    1) GPT-4o     (best all-around)"
-            echo "    2) GPT-4.1    (latest)"
-            echo "    3) o4-mini     (fast reasoning)"
-            echo "    4) o3-mini     (budget reasoning)"
-            echo "    5) Custom model ID"
+            echo "    1) GPT-4o      (best all-around)"
+            echo "    2) GPT-4.1     (latest)"
+            echo "    3) GPT-4o-mini  (budget, fast)"
+            echo "    4) Custom model ID"
             OA_MODEL=""
             while [ -z "${OA_MODEL:-}" ]; do
-                read -p "  Choose [1-5]: " CHOICE < /dev/tty
+                read -p "  Choose [1-4]: " CHOICE < /dev/tty
                 case "$CHOICE" in
                     1) OA_MODEL="openai/gpt-4o"
                        PROMPT_MODEL_NAME="gpt-4o" ;;
                     2) OA_MODEL="openai/gpt-4.1"
                        PROMPT_MODEL_NAME="gpt-4.1" ;;
-                    3) OA_MODEL="openai/o4-mini"
-                       PROMPT_MODEL_NAME="o4-mini" ;;
-                    4) OA_MODEL="openai/o3-mini"
-                       PROMPT_MODEL_NAME="o3-mini" ;;
-                    5) read -p "  Model ID (e.g. 'gpt-4o'): " OA_MODEL < /dev/tty
+                    3) OA_MODEL="openai/gpt-4o-mini"
+                       PROMPT_MODEL_NAME="gpt-4o-mini" ;;
+                    4) read -p "  Model ID (e.g. 'gpt-4o'): " OA_MODEL < /dev/tty
                        read -p "  Short name for Claude Code: " PROMPT_MODEL_NAME < /dev/tty
                        OA_MODEL="openai/$OA_MODEL" ;;
-                    *) echo -e "  ${RED}Invalid. Enter 1-5.${NC}" ;;
+                    *) echo -e "  ${RED}Invalid. Enter 1-4.${NC}" ;;
                 esac
             done
             PROMPT_MODEL="$OA_MODEL"
@@ -251,7 +245,7 @@ while [ -z "${PROVIDER_NAME:-}" ]; do
             echo "  Which Groq model?"
             echo "    1) Llama 4 Maverick  (latest, fast)"
             echo "    2) Llama 4 Scout     (faster)"
-            echo "    3) Mixtral 8x7B      (proven)"
+            echo "    3) Llama 3.3 70B     (proven)"
             echo "    4) Custom model ID"
             GQ_MODEL=""
             while [ -z "${GQ_MODEL:-}" ]; do
@@ -261,8 +255,8 @@ while [ -z "${PROVIDER_NAME:-}" ]; do
                        PROMPT_MODEL_NAME="llama-4-maverick" ;;
                     2) GQ_MODEL="groq/meta-llama/llama-4-scout-17b-16e-instruct"
                        PROMPT_MODEL_NAME="llama-4-scout" ;;
-                    3) GQ_MODEL="groq/mixtral-8x7b-32768"
-                       PROMPT_MODEL_NAME="mixtral-8x7b" ;;
+                    3) GQ_MODEL="groq/llama-3.3-70b-versatile"
+                       PROMPT_MODEL_NAME="llama-3.3-70b" ;;
                     4) read -p "  Model ID (e.g. 'llama-3.3-70b-versatile'): " GQ_MODEL < /dev/tty
                        read -p "  Short name for Claude Code: " PROMPT_MODEL_NAME < /dev/tty
                        GQ_MODEL="groq/$GQ_MODEL" ;;
@@ -285,13 +279,13 @@ while [ -z "${PROVIDER_NAME:-}" ]; do
             while [ -z "${GM_MODEL:-}" ]; do
                 read -p "  Choose [1-4]: " CHOICE < /dev/tty
                 case "$CHOICE" in
-                    1) GM_MODEL="gemini/gemini-2.5-pro-exp-03-25"
+                    1) GM_MODEL="gemini/gemini-2.5-pro"
                        PROMPT_MODEL_NAME="gemini-2.5-pro" ;;
-                    2) GM_MODEL="gemini/gemini-2.5-flash"
+                    2) GM_MODEL="gemini/gemini-2.5-flash-preview-04-17"
                        PROMPT_MODEL_NAME="gemini-2.5-flash" ;;
                     3) GM_MODEL="gemini/gemini-2.0-flash"
                        PROMPT_MODEL_NAME="gemini-2.0-flash" ;;
-                    4) read -p "  Model ID (e.g. 'gemini-2.5-pro-exp-03-25'): " GM_MODEL < /dev/tty
+                    4) read -p "  Model ID (e.g. 'gemini-2.5-pro'): " GM_MODEL < /dev/tty
                        read -p "  Short name for Claude Code: " PROMPT_MODEL_NAME < /dev/tty
                        GM_MODEL="gemini/$GM_MODEL" ;;
                     *) echo -e "  ${RED}Invalid. Enter 1-4.${NC}" ;;

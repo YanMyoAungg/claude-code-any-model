@@ -10,9 +10,9 @@ Detailed setup for each supported provider. All configs go in `litellm_config.ya
 
 ```yaml
 model_list:
-  - model_name: deepseek-v4-pro
+  - model_name: deepseek-chat
     litellm_params:
-      model: deepseek/deepseek-v4-pro
+      model: deepseek/deepseek-chat
       api_key: sk-your-deepseek-key
 
 litellm_settings:
@@ -20,12 +20,12 @@ litellm_settings:
 ```
 
 **Available models:**
-- `deepseek/deepseek-v4-pro` — Latest flagship
-- `deepseek/deepseek-chat` — V3 (faster, cheaper)
+- `deepseek/deepseek-chat` — Latest (V3/V4 capabilities)
 - `deepseek/deepseek-reasoner` — R1 (reasoning)
 
 **Notes:**
 - DeepSeek platform provides $0.50 free credit for new accounts
+- `deepseek-chat` points to DeepSeek's latest model — no need for version-specific IDs
 - Reasoning models (R1) may have different response formats — test thoroughly
 
 ---
@@ -48,12 +48,12 @@ litellm_settings:
 **Available models:**
 - `openai/gpt-4o` — Best all-around
 - `openai/gpt-4.1` — Latest
-- `openai/o4-mini` — Fast reasoning
-- `openai/o3-mini` — Budget reasoning
+- `openai/gpt-4o-mini` — Budget, fast
 
 **Notes:**
 - GPT-4o works well as a Claude Code driver. Responses are similar quality.
 - Tool use (the ability to call functions) works correctly through the proxy.
+- o-series models (o3, o4) may require the Responses API — not suitable for Claude Code
 
 ---
 
@@ -75,7 +75,7 @@ litellm_settings:
 **Available models:**
 - `groq/meta-llama/llama-4-maverick-17b-128e-instruct` — Latest Llama
 - `groq/meta-llama/llama-4-scout-17b-16e-instruct` — Faster variant
-- `groq/mixtral-8x7b-32768` — Mixtral
+- `groq/llama-3.3-70b-versatile` — Proven, reliable
 
 **Notes:**
 - Groq offers very fast inference — great for latency-sensitive use
@@ -92,7 +92,7 @@ litellm_settings:
 model_list:
   - model_name: gemini-2.5-pro
     litellm_params:
-      model: gemini/gemini-2.5-pro-exp-03-25
+      model: gemini/gemini-2.5-pro
       api_key: your-gemini-api-key
 
 litellm_settings:
@@ -100,14 +100,14 @@ litellm_settings:
 ```
 
 **Available models:**
-- `gemini/gemini-2.5-pro-exp-03-25` — Most capable
-- `gemini/gemini-2.5-flash` — Fast
+- `gemini/gemini-2.5-pro` — Most capable (stable)
+- `gemini/gemini-2.5-flash-preview-04-17` — Fast, latest
 - `gemini/gemini-2.0-flash` — Budget
 
 **Notes:**
 - Google AI Studio is free for development use
 - Gemini models handle tool use well
-- The model strings change frequently — check [LiteLLM docs](https://docs.litellm.ai/docs/providers/gemini) for latest
+- Model strings use specific versioned IDs — check [LiteLLM Gemini docs](https://docs.litellm.ai/docs/providers/gemini) for the latest
 
 ---
 

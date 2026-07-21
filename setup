@@ -94,6 +94,12 @@ else
     fi
 fi
 
+# PEP 668: Debian/Ubuntu block pip installs into system Python.
+# PIP_BREAK_SYSTEM_PACKAGES=1 overrides this safely (env var, ignored on old pip).
+if [ "$INSTALL_TOOL" = "pip" ]; then
+    export PIP_BREAK_SYSTEM_PACKAGES=1
+fi
+
 # Check Claude Code
 if command -v claude &>/dev/null; then
     echo -e "  ${GREEN}✓${NC} Claude Code"

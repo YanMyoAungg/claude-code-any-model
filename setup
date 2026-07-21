@@ -155,65 +155,69 @@ echo "  6) OpenRouter    (200+ models via one API)"
 echo "  7) Other         (any LiteLLM-supported provider)"
 echo ""
 
-read -p "  Enter choice [1-7]: " PROVIDER_CHOICE < /dev/tty
+# Loop until user gives valid input
+PROVIDER_CHOICE=""
+while [ -z "${PROVIDER_NAME:-}" ]; do
+    read -p "  Enter choice [1-7]: " PROVIDER_CHOICE < /dev/tty
 
-case "$PROVIDER_CHOICE" in
-    1)
-        PROVIDER_NAME="DeepSeek"
-        PROMPT_MODEL="deepseek/deepseek-v4-pro"
-        PROMPT_MODEL_NAME="deepseek-v4-pro"
-        PROMPT_API_KEY_LABEL="DeepSeek API key (sk-...)"
-        PROMPT_API_KEY_URL="https://platform.deepseek.com/api_keys"
-        ;;
-    2)
-        PROVIDER_NAME="OpenAI"
-        PROMPT_MODEL="openai/gpt-4o"
-        PROMPT_MODEL_NAME="gpt-4o"
-        PROMPT_API_KEY_LABEL="OpenAI API key (sk-...)"
-        PROMPT_API_KEY_URL="https://platform.openai.com/api-keys"
-        ;;
-    3)
-        PROVIDER_NAME="Groq"
-        PROMPT_MODEL="groq/meta-llama/llama-4-maverick-17b-128e-instruct"
-        PROMPT_MODEL_NAME="llama-4-maverick"
-        PROMPT_API_KEY_LABEL="Groq API key (gsk_...)"
-        PROMPT_API_KEY_URL="https://console.groq.com/keys"
-        ;;
-    4)
-        PROVIDER_NAME="Google Gemini"
-        PROMPT_MODEL="gemini/gemini-2.5-pro-exp-03-25"
-        PROMPT_MODEL_NAME="gemini-2.5-pro"
-        PROMPT_API_KEY_LABEL="Gemini API key"
-        PROMPT_API_KEY_URL="https://aistudio.google.com/apikey"
-        ;;
-    5)
-        PROVIDER_NAME="Ollama"
-        read -p "  Ollama model name [llama3]: " OLLAMA_MODEL < /dev/tty
-        OLLAMA_MODEL=${OLLAMA_MODEL:-llama3}
-        PROMPT_MODEL="ollama/$OLLAMA_MODEL"
-        PROMPT_MODEL_NAME="ollama-$OLLAMA_MODEL"
-        PROMPT_API_KEY_LABEL=""
-        PROMPT_API_KEY_URL=""
-        ;;
-    6)
-        PROVIDER_NAME="OpenRouter"
-        PROMPT_MODEL="openrouter/anthropic/claude-sonnet-4-6"
-        PROMPT_MODEL_NAME="claude-sonnet-4-6"
-        PROMPT_API_KEY_LABEL="OpenRouter API key (sk-or-...)"
-        PROMPT_API_KEY_URL="https://openrouter.ai/keys"
-        ;;
-    7)
-        PROVIDER_NAME="Other"
-        read -p "  Provider/model string (e.g. 'deepseek/deepseek-chat'): " PROMPT_MODEL < /dev/tty
-        read -p "  Model name for Claude Code (e.g. 'my-model'): " PROMPT_MODEL_NAME < /dev/tty
-        PROMPT_API_KEY_LABEL="API key"
-        PROMPT_API_KEY_URL=""
-        ;;
-    *)
-        echo -e "${RED}Invalid choice.${NC}"
-        exit 1
-        ;;
-esac
+    case "$PROVIDER_CHOICE" in
+        1)
+            PROVIDER_NAME="DeepSeek"
+            PROMPT_MODEL="deepseek/deepseek-v4-pro"
+            PROMPT_MODEL_NAME="deepseek-v4-pro"
+            PROMPT_API_KEY_LABEL="DeepSeek API key (sk-...)"
+            PROMPT_API_KEY_URL="https://platform.deepseek.com/api_keys"
+            ;;
+        2)
+            PROVIDER_NAME="OpenAI"
+            PROMPT_MODEL="openai/gpt-4o"
+            PROMPT_MODEL_NAME="gpt-4o"
+            PROMPT_API_KEY_LABEL="OpenAI API key (sk-...)"
+            PROMPT_API_KEY_URL="https://platform.openai.com/api-keys"
+            ;;
+        3)
+            PROVIDER_NAME="Groq"
+            PROMPT_MODEL="groq/meta-llama/llama-4-maverick-17b-128e-instruct"
+            PROMPT_MODEL_NAME="llama-4-maverick"
+            PROMPT_API_KEY_LABEL="Groq API key (gsk_...)"
+            PROMPT_API_KEY_URL="https://console.groq.com/keys"
+            ;;
+        4)
+            PROVIDER_NAME="Google Gemini"
+            PROMPT_MODEL="gemini/gemini-2.5-pro-exp-03-25"
+            PROMPT_MODEL_NAME="gemini-2.5-pro"
+            PROMPT_API_KEY_LABEL="Gemini API key"
+            PROMPT_API_KEY_URL="https://aistudio.google.com/apikey"
+            ;;
+        5)
+            PROVIDER_NAME="Ollama"
+            read -p "  Ollama model name [llama3]: " OLLAMA_MODEL < /dev/tty
+            OLLAMA_MODEL=${OLLAMA_MODEL:-llama3}
+            PROMPT_MODEL="ollama/$OLLAMA_MODEL"
+            PROMPT_MODEL_NAME="ollama-$OLLAMA_MODEL"
+            PROMPT_API_KEY_LABEL=""
+            PROMPT_API_KEY_URL=""
+            ;;
+        6)
+            PROVIDER_NAME="OpenRouter"
+            PROMPT_MODEL="openrouter/anthropic/claude-sonnet-4-6"
+            PROMPT_MODEL_NAME="claude-sonnet-4-6"
+            PROMPT_API_KEY_LABEL="OpenRouter API key (sk-or-...)"
+            PROMPT_API_KEY_URL="https://openrouter.ai/keys"
+            ;;
+        7)
+            PROVIDER_NAME="Other"
+            read -p "  Provider/model string (e.g. 'deepseek/deepseek-chat'): " PROMPT_MODEL < /dev/tty
+            read -p "  Model name for Claude Code (e.g. 'my-model'): " PROMPT_MODEL_NAME < /dev/tty
+            PROMPT_API_KEY_LABEL="API key"
+            PROMPT_API_KEY_URL=""
+            ;;
+        *)
+            echo -e "  ${RED}\"$PROVIDER_CHOICE\" is not a valid choice. Enter a number 1-7.${NC}"
+            echo ""
+            ;;
+    esac
+done
 
 echo ""
 echo -e "  Provider: ${GREEN}$PROVIDER_NAME${NC}"
@@ -225,13 +229,14 @@ if [ "$PROVIDER_CHOICE" != "5" ]; then
     [ -n "$PROMPT_API_KEY_URL" ] && echo "  Get one at: $PROMPT_API_KEY_URL"
     echo ""
 
-    read -sp "  $PROMPT_API_KEY_LABEL: " API_KEY < /dev/tty
-    echo ""
-
-    if [ -z "$API_KEY" ]; then
-        echo -e "${RED}✗ API key is required.${NC}"
-        exit 1
-    fi
+    API_KEY=""
+    while [ -z "$API_KEY" ]; do
+        read -sp "  $PROMPT_API_KEY_LABEL: " API_KEY < /dev/tty
+        echo ""
+        if [ -z "$API_KEY" ]; then
+            echo -e "  ${RED}API key cannot be empty.${NC}"
+        fi
+    done
 fi
 
 # ── Install LiteLLM ────────────────────────────────────────────────

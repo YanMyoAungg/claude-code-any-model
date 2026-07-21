@@ -65,8 +65,8 @@ if command -v claude &>/dev/null; then
     echo -e "  ${GREEN}✓${NC} Claude Code"
 else
     echo -e "  ${YELLOW}!${NC} Claude Code not found in PATH."
+    echo "  (The proxy is useless without it, but we'll set up the proxy first.)"
     echo ""
-    echo "  Claude Code is required — it's the whole point of this setup."
 
     # Try brew first (macOS), then npm (Linux/any)
     if command -v brew &>/dev/null; then
@@ -74,29 +74,28 @@ else
     elif command -v npm &>/dev/null; then
         INSTALL_VIA="npm install -g @anthropic-ai/claude-code"
     elif command -v node &>/dev/null; then
-        # node but no npm? unlikely but handle it
         INSTALL_VIA="npm install -g @anthropic-ai/claude-code"
     else
-        echo ""
-        echo -e "  ${RED}✗${NC} Cannot auto-install Claude Code."
-        echo "  Install it manually, then re-run this script:"
-        echo "    brew install claude-code              # macOS"
-        echo "    npm install -g @anthropic-ai/claude-code  # Linux"
-        echo ""
-        exit 1
+        INSTALL_VIA=""
     fi
 
-    echo "  Will run: $INSTALL_VIA"
-    read -p "  Install now? [Y/n]: " INSTALL_CC < /dev/tty
-    INSTALL_CC=${INSTALL_CC:-y}
-    if [[ "$INSTALL_CC" =~ ^[Yy]$ ]]; then
-        echo ""
-        echo -e "  ${BLUE}▶${NC} Installing Claude Code..."
-        $INSTALL_VIA
-        echo -e "  ${GREEN}✓${NC} Claude Code installed"
+    if [ -n "$INSTALL_VIA" ]; then
+        echo "  We can install it: $INSTALL_VIA"
+        read -p "  Install now? [Y/n]: " INSTALL_CC < /dev/tty
+        INSTALL_CC=${INSTALL_CC:-y}
+        if [[ "$INSTALL_CC" =~ ^[Yy]$ ]]; then
+            echo ""
+            echo -e "  ${BLUE}▶${NC} Installing Claude Code..."
+            $INSTALL_VIA
+            echo -e "  ${GREEN}✓${NC} Claude Code installed"
+        else
+            echo -e "  ${YELLOW}!${NC} Skipped. You'll need Claude Code to use the proxy."
+            echo "    Install later: $INSTALL_VIA"
+        fi
     else
-        echo -e "  ${YELLOW}!${NC} Install it manually, then re-run this script."
-        exit 1
+        echo -e "  ${YELLOW}!${NC} Cannot auto-install Claude Code (no brew or npm found)."
+        echo "    Install later: brew install claude-code       # macOS"
+        echo "                  npm install -g @anthropic-ai/claude-code  # Linux"
     fi
 fi
 

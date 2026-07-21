@@ -382,6 +382,14 @@ if ! $PYTHON -c "import websockets" 2>/dev/null; then
     install_pkg websockets
 fi
 
+# Provider-specific extra deps (not included in litellm[proxy])
+# Gemini: needs google-auth and google-generativeai for Google AI Studio
+if [ "$PROVIDER_CHOICE" = "4" ]; then
+    echo ""
+    echo -e "  ${BLUE}▶${NC} Installing Gemini extra dependencies..."
+    install_pkg google-auth google-generativeai
+fi
+
 # Resolve litellm command — pip user installs go to ~/.local/bin which
 # many distros (and WSL) don't add to PATH by default.
 echo ""

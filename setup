@@ -56,8 +56,37 @@ elif command -v pip &>/dev/null; then
     INSTALL_CMD="pip install"
     echo -e "  ${GREEN}✓${NC} pip"
 else
-    echo -e "${RED}✗ Neither uv nor pip found. Install pip: https://pip.pypa.io${NC}"
-    exit 1
+    echo -e "  ${YELLOW}!${NC} No pip or uv found."
+    echo ""
+    echo "  pip is required to install LiteLLM. We can try to install it:"
+    echo ""
+
+    # Try ensurepip first (bundled with Python)
+    PIP_INSTALLED=false
+    if $PYTHON -m ensurepip --default-pip 2>/dev/null; then
+        PIP_INSTALLED=true
+    elif curl -fsSL https://bootstrap.pypa.io/get-pip.py | $PYTHON 2>/dev/null; then
+        PIP_INSTALLED=true
+    elif command -v apt-get &>/dev/null; then
+        echo "  Attempting: sudo apt-get install python3-pip"
+        sudo apt-get install -y python3-pip && PIP_INSTALLED=true
+    fi
+
+    if $PIP_INSTALLED; then
+        # Prefer python -m pip (most reliable after ensurepip)
+        if $PYTHON -m pip --version &>/dev/null; then
+            INSTALL_CMD="$PYTHON -m pip install"
+        elif command -v pip3 &>/dev/null; then
+            INSTALL_CMD="pip3 install"
+        elif command -v pip &>/dev/null; then
+            INSTALL_CMD="pip install"
+        fi
+        echo -e "  ${GREEN}✓${NC} pip installed"
+    else
+        echo -e "  ${RED}✗${NC} Could not install pip automatically."
+        echo "    Install it manually: https://pip.pypa.io/en/stable/installation/"
+        exit 1
+    fi
 fi
 
 # Check Claude Code

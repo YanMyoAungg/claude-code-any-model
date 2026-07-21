@@ -186,6 +186,14 @@ fi
 echo ""
 echo -e "${BLUE}[4/5]${NC} Installing LiteLLM..."
 $INSTALL_CMD "litellm[proxy]" 2>&1 | tail -3
+
+# Verify proxy dependencies are actually installed (pip sometimes skips
+# extras if bare litellm was already installed from a previous run)
+if ! $PYTHON -c "import websockets" 2>/dev/null; then
+    echo -e "  ${YELLOW}!${NC} Missing proxy dependencies, installing..."
+    $INSTALL_CMD websockets 2>&1 | tail -1
+fi
+
 echo -e "  ${GREEN}✓${NC} LiteLLM installed"
 
 # ── Generate Config ────────────────────────────────────────────────

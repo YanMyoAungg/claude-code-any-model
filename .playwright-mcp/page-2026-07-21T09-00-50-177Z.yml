@@ -1,0 +1,2227 @@
+- generic [ref=f2e2]:
+  - region "Skip to main content":
+    - link "Skip to main content" [ref=f2e3] [cursor=pointer]:
+      - /url: "#__docusaurus_skipToContent_fallback"
+  - navigation "Main" [ref=f2e4]:
+    - generic [ref=f2e5]:
+      - link "🚅 LiteLLM" [ref=f2e7] [cursor=pointer]:
+        - /url: /
+      - generic [ref=f2e9]:
+        - link "Docs" [ref=f2e10] [cursor=pointer]:
+          - /url: /docs/
+        - link "Learn" [ref=f2e11] [cursor=pointer]:
+          - /url: /docs/learn
+        - link "Integrations" [ref=f2e12] [cursor=pointer]:
+          - /url: /docs/integrations/
+        - link "Enterprise" [ref=f2e13] [cursor=pointer]:
+          - /url: /docs/enterprise
+        - link "Changelog" [ref=f2e14] [cursor=pointer]:
+          - /url: /release_notes
+        - link "Blog" [ref=f2e15] [cursor=pointer]:
+          - /url: /blog
+        - link "Autorouter CLI" [ref=f2e16] [cursor=pointer]:
+          - /url: /docs/learn/autorouter_cli
+      - generic [ref=f2e17]:
+        - link "Trust Center" [ref=f2e18] [cursor=pointer]:
+          - /url: https://trust.litellm.ai/
+        - link "GitHub repository" [ref=f2e21] [cursor=pointer]:
+          - /url: https://github.com/BerriAI/litellm
+        - link "Discord / Slack community" [ref=f2e22] [cursor=pointer]:
+          - /url: https://www.litellm.ai/support
+        - button "Switch between dark and light mode (currently system mode)" [disabled] [ref=f2e24]
+  - generic [ref=f2e29]:
+    - complementary [ref=f2e30]:
+      - navigation "Docs sidebar" [ref=f2e37]:
+        - list [ref=f2e38]:
+          - listitem [ref=f2e39]:
+            - generic [ref=f2e40]: Get Started
+            - list [ref=f2e42]:
+              - listitem [ref=f2e43]:
+                - link "Quickstart" [ref=f2e44] [cursor=pointer]:
+                  - /url: /docs/
+              - listitem [ref=f2e45]:
+                - link "Models & Pricing" [ref=f2e46] [cursor=pointer]:
+                  - /url: https://models.litellm.ai
+              - listitem [ref=f2e49]:
+                - link "Changelog" [ref=f2e50] [cursor=pointer]:
+                  - /url: /release_notes
+          - listitem [ref=f2e51]:
+            - button "LiteLLM Python SDK" [ref=f2e53] [cursor=pointer]
+          - listitem [ref=f2e54]:
+            - generic [ref=f2e55]:
+              - link "LiteLLM AI Gateway (Proxy)" [ref=f2e56] [cursor=pointer]:
+                - /url: /docs/simple_proxy
+              - button "Expand sidebar category 'LiteLLM AI Gateway (Proxy)'" [ref=f2e57] [cursor=pointer]
+          - listitem [ref=f2e58]:
+            - generic [ref=f2e59]:
+              - link "Supported Endpoints" [ref=f2e60] [cursor=pointer]:
+                - /url: /docs/supported_endpoints
+              - button "Expand sidebar category 'Supported Endpoints'" [ref=f2e61] [cursor=pointer]
+          - listitem [ref=f2e62]:
+            - generic [ref=f2e63]:
+              - link "Supported Models & Providers" [ref=f2e64] [cursor=pointer]:
+                - /url: /docs/providers
+              - button "Collapse sidebar category 'Supported Models & Providers'" [expanded] [ref=f2e65] [cursor=pointer]
+            - list [ref=f2e66]:
+              - listitem [ref=f2e67]:
+                - link "Integrate as a Model Provider" [ref=f2e68] [cursor=pointer]:
+                  - /url: /docs/provider_registration/
+              - listitem [ref=f2e69]:
+                - link "Add OpenAI-Compatible Provider (JSON)" [ref=f2e70] [cursor=pointer]:
+                  - /url: /docs/contributing/adding_openai_compatible_providers
+              - listitem [ref=f2e71]:
+                - link "Add Model Pricing & Context Window" [ref=f2e72] [cursor=pointer]:
+                  - /url: /docs/provider_registration/add_model_pricing
+              - listitem [ref=f2e73]:
+                - button "OpenAI" [expanded] [ref=f2e75] [cursor=pointer]
+                - list [ref=f2e76]:
+                  - listitem [ref=f2e77]:
+                    - link "OpenAI" [ref=f2e78] [cursor=pointer]:
+                      - /url: /docs/providers/openai
+                  - listitem [ref=f2e79]:
+                    - link "OpenAI - Response API" [ref=f2e80] [cursor=pointer]:
+                      - /url: /docs/providers/openai/responses_api
+                  - listitem [ref=f2e81]:
+                    - link "OpenAI - Text-to-speech" [ref=f2e82] [cursor=pointer]:
+                      - /url: /docs/providers/openai/text_to_speech
+                  - listitem [ref=f2e83]:
+                    - link "OpenAI Video Generation" [ref=f2e84] [cursor=pointer]:
+                      - /url: /docs/providers/openai/videos
+              - listitem [ref=f2e85]:
+                - link "OpenAI (Text Completion)" [ref=f2e86] [cursor=pointer]:
+                  - /url: /docs/providers/text_completion_openai
+              - listitem [ref=f2e87]:
+                - link "OpenAI-Compatible Endpoints" [ref=f2e88] [cursor=pointer]:
+                  - /url: /docs/providers/openai_compatible
+              - listitem [ref=f2e89]:
+                - button "Azure OpenAI" [ref=f2e91] [cursor=pointer]
+              - listitem [ref=f2e92]:
+                - button "Azure AI" [ref=f2e94] [cursor=pointer]
+              - listitem [ref=f2e95]:
+                - button "Vertex AI" [ref=f2e97] [cursor=pointer]
+              - listitem [ref=f2e98]:
+                - button "Google AI Studio" [ref=f2e100] [cursor=pointer]
+              - listitem [ref=f2e101]:
+                - link "Anthropic" [ref=f2e102] [cursor=pointer]:
+                  - /url: /docs/providers/anthropic
+              - listitem [ref=f2e103]:
+                - link "Tool Search" [ref=f2e104] [cursor=pointer]:
+                  - /url: /docs/providers/anthropic_tool_search
+              - listitem [ref=f2e105]:
+                - link "AWS Sagemaker" [ref=f2e106] [cursor=pointer]:
+                  - /url: /docs/providers/aws_sagemaker
+              - listitem [ref=f2e107]:
+                - button "Bedrock" [ref=f2e109] [cursor=pointer]
+              - listitem [ref=f2e110]:
+                - link "LiteLLM Proxy (LLM Gateway)" [ref=f2e111] [cursor=pointer]:
+                  - /url: /docs/providers/litellm_proxy
+              - listitem [ref=f2e112]:
+                - link "Abliteration" [ref=f2e113] [cursor=pointer]:
+                  - /url: /docs/providers/abliteration
+              - listitem [ref=f2e114]:
+                - link "AI21" [ref=f2e115] [cursor=pointer]:
+                  - /url: /docs/providers/ai21
+              - listitem [ref=f2e116]:
+                - link "AI/ML API" [ref=f2e117] [cursor=pointer]:
+                  - /url: /docs/providers/aiml
+              - listitem [ref=f2e118]:
+                - link "Aleph Alpha" [ref=f2e119] [cursor=pointer]:
+                  - /url: /docs/providers/aleph_alpha
+              - listitem [ref=f2e120]:
+                - link "Amazon Nova" [ref=f2e121] [cursor=pointer]:
+                  - /url: /docs/providers/amazon_nova
+              - listitem [ref=f2e122]:
+                - link "Anyscale" [ref=f2e123] [cursor=pointer]:
+                  - /url: /docs/providers/anyscale
+              - listitem [ref=f2e124]:
+                - link "Apertis AI (Stima API)" [ref=f2e125] [cursor=pointer]:
+                  - /url: /docs/providers/apertis
+              - listitem [ref=f2e126]:
+                - link "Baseten" [ref=f2e127] [cursor=pointer]:
+                  - /url: /docs/providers/baseten
+              - listitem [ref=f2e128]:
+                - link "Black Forest Labs Image Generation" [ref=f2e129] [cursor=pointer]:
+                  - /url: /docs/providers/black_forest_labs
+              - listitem [ref=f2e130]:
+                - link "Black Forest Labs Image Editing" [ref=f2e131] [cursor=pointer]:
+                  - /url: /docs/providers/black_forest_labs_img_edit
+              - listitem [ref=f2e132]:
+                - link "Bytez" [ref=f2e133] [cursor=pointer]:
+                  - /url: /docs/providers/bytez
+              - listitem [ref=f2e134]:
+                - link "Cerebras" [ref=f2e135] [cursor=pointer]:
+                  - /url: /docs/providers/cerebras
+              - listitem [ref=f2e136]:
+                - link "Chutes" [ref=f2e137] [cursor=pointer]:
+                  - /url: /docs/providers/chutes
+              - listitem [ref=f2e138]:
+                - link "Clarifai" [ref=f2e139] [cursor=pointer]:
+                  - /url: /docs/providers/clarifai
+              - listitem [ref=f2e140]:
+                - link "Cloudflare Workers AI" [ref=f2e141] [cursor=pointer]:
+                  - /url: /docs/providers/cloudflare_workers
+              - listitem [ref=f2e142]:
+                - link "Codestral API [Mistral AI]" [ref=f2e143] [cursor=pointer]:
+                  - /url: /docs/providers/codestral
+              - listitem [ref=f2e144]:
+                - link "Cohere" [ref=f2e145] [cursor=pointer]:
+                  - /url: /docs/providers/cohere
+              - listitem [ref=f2e146]:
+                - link "CometAPI" [ref=f2e147] [cursor=pointer]:
+                  - /url: /docs/providers/cometapi
+              - listitem [ref=f2e148]:
+                - link "CompactifAI" [ref=f2e149] [cursor=pointer]:
+                  - /url: /docs/providers/compactifai
+              - listitem [ref=f2e150]:
+                - link "Crusoe" [ref=f2e151] [cursor=pointer]:
+                  - /url: /docs/providers/crusoe
+              - listitem [ref=f2e152]:
+                - link "Custom API Server (Custom Format)" [ref=f2e153] [cursor=pointer]:
+                  - /url: /docs/providers/custom_llm_server
+              - listitem [ref=f2e154]:
+                - link "Dashscope API (Qwen models)" [ref=f2e155] [cursor=pointer]:
+                  - /url: /docs/providers/dashscope
+              - listitem [ref=f2e156]:
+                - link "Databricks" [ref=f2e157] [cursor=pointer]:
+                  - /url: /docs/providers/databricks
+              - listitem [ref=f2e158]:
+                - link "DataRobot" [ref=f2e159] [cursor=pointer]:
+                  - /url: /docs/providers/datarobot
+              - listitem [ref=f2e160]:
+                - link "Deepgram" [ref=f2e161] [cursor=pointer]:
+                  - /url: /docs/providers/deepgram
+              - listitem [ref=f2e162]:
+                - link "DeepInfra" [ref=f2e163] [cursor=pointer]:
+                  - /url: /docs/providers/deepinfra
+              - listitem [ref=f2e164]:
+                - link "Deepseek" [ref=f2e165] [cursor=pointer]:
+                  - /url: /docs/providers/deepseek
+              - listitem [ref=f2e166]:
+                - link "Docker Model Runner" [ref=f2e167] [cursor=pointer]:
+                  - /url: /docs/providers/docker_model_runner
+              - listitem [ref=f2e168]:
+                - link "ElevenLabs" [ref=f2e169] [cursor=pointer]:
+                  - /url: /docs/providers/elevenlabs
+              - listitem [ref=f2e170]:
+                - link "EmpirioLabs AI" [ref=f2e171] [cursor=pointer]:
+                  - /url: /docs/providers/empiriolabs
+              - listitem [ref=f2e172]:
+                - link "Fal AI" [ref=f2e173] [cursor=pointer]:
+                  - /url: /docs/providers/fal_ai
+              - listitem [ref=f2e174]:
+                - link "Featherless AI" [ref=f2e175] [cursor=pointer]:
+                  - /url: /docs/providers/featherless_ai
+              - listitem [ref=f2e176]:
+                - link "Fireworks AI" [ref=f2e177] [cursor=pointer]:
+                  - /url: /docs/providers/fireworks_ai
+              - listitem [ref=f2e178]:
+                - link "FriendliAI" [ref=f2e179] [cursor=pointer]:
+                  - /url: /docs/providers/friendliai
+              - listitem [ref=f2e180]:
+                - link "Galadriel" [ref=f2e181] [cursor=pointer]:
+                  - /url: /docs/providers/galadriel
+              - listitem [ref=f2e182]:
+                - link "Github" [ref=f2e183] [cursor=pointer]:
+                  - /url: /docs/providers/github
+              - listitem [ref=f2e184]:
+                - link "GitHub Copilot" [ref=f2e185] [cursor=pointer]:
+                  - /url: /docs/providers/github_copilot
+              - listitem [ref=f2e186]:
+                - link "GMI Cloud" [ref=f2e187] [cursor=pointer]:
+                  - /url: /docs/providers/gmi
+              - listitem [ref=f2e188]:
+                - link "ChatGPT Subscription" [ref=f2e189] [cursor=pointer]:
+                  - /url: /docs/providers/chatgpt
+              - listitem [ref=f2e190]:
+                - link "GradientAI" [ref=f2e191] [cursor=pointer]:
+                  - /url: /docs/providers/gradient_ai
+              - listitem [ref=f2e192]:
+                - link "Groq" [ref=f2e193] [cursor=pointer]:
+                  - /url: /docs/providers/groq
+              - listitem [ref=f2e194]:
+                - link "Helicone" [ref=f2e195] [cursor=pointer]:
+                  - /url: /docs/providers/helicone
+              - listitem [ref=f2e196]:
+                - link "Heroku" [ref=f2e197] [cursor=pointer]:
+                  - /url: /docs/providers/heroku
+              - listitem [ref=f2e198]:
+                - button "HuggingFace" [ref=f2e200] [cursor=pointer]
+              - listitem [ref=f2e201]:
+                - link "Hyperbolic" [ref=f2e202] [cursor=pointer]:
+                  - /url: /docs/providers/hyperbolic
+              - listitem [ref=f2e203]:
+                - link "Inception" [ref=f2e204] [cursor=pointer]:
+                  - /url: /docs/providers/inception
+              - listitem [ref=f2e205]:
+                - link "Infinity" [ref=f2e206] [cursor=pointer]:
+                  - /url: /docs/providers/infinity
+              - listitem [ref=f2e207]:
+                - link "Jina AI" [ref=f2e208] [cursor=pointer]:
+                  - /url: /docs/providers/jina_ai
+              - listitem [ref=f2e209]:
+                - link "Lambda AI" [ref=f2e210] [cursor=pointer]:
+                  - /url: /docs/providers/lambda_ai
+              - listitem [ref=f2e211]:
+                - link "LangGraph" [ref=f2e212] [cursor=pointer]:
+                  - /url: /docs/providers/langgraph
+              - listitem [ref=f2e213]:
+                - link "Lemonade" [ref=f2e214] [cursor=pointer]:
+                  - /url: /docs/providers/lemonade
+              - listitem [ref=f2e215]:
+                - link "Llamafile" [ref=f2e216] [cursor=pointer]:
+                  - /url: /docs/providers/llamafile
+              - listitem [ref=f2e217]:
+                - link "LlamaGate" [ref=f2e218] [cursor=pointer]:
+                  - /url: /docs/providers/llamagate
+              - listitem [ref=f2e219]:
+                - link "LM Studio" [ref=f2e220] [cursor=pointer]:
+                  - /url: /docs/providers/lm_studio
+              - listitem [ref=f2e221]:
+                - link "Manus" [ref=f2e222] [cursor=pointer]:
+                  - /url: /docs/providers/manus
+              - listitem [ref=f2e223]:
+                - link "Meta Model API" [ref=f2e224] [cursor=pointer]:
+                  - /url: /docs/providers/meta
+              - listitem [ref=f2e225]:
+                - link "Meta Llama" [ref=f2e226] [cursor=pointer]:
+                  - /url: /docs/providers/meta_llama
+              - listitem [ref=f2e227]:
+                - link "Milvus - Vector Store" [ref=f2e228] [cursor=pointer]:
+                  - /url: /docs/providers/milvus_vector_stores
+              - listitem [ref=f2e229]:
+                - link "Mistral AI API" [ref=f2e230] [cursor=pointer]:
+                  - /url: /docs/providers/mistral
+              - listitem [ref=f2e231]:
+                - link "MiniMax" [ref=f2e232] [cursor=pointer]:
+                  - /url: /docs/providers/minimax
+              - listitem [ref=f2e233]:
+                - link "Moonshot AI" [ref=f2e234] [cursor=pointer]:
+                  - /url: /docs/providers/moonshot
+              - listitem [ref=f2e235]:
+                - link "Morph" [ref=f2e236] [cursor=pointer]:
+                  - /url: /docs/providers/morph
+              - listitem [ref=f2e237]:
+                - link "Nebius AI Studio" [ref=f2e238] [cursor=pointer]:
+                  - /url: /docs/providers/nebius
+              - listitem [ref=f2e239]:
+                - link "NLP Cloud" [ref=f2e240] [cursor=pointer]:
+                  - /url: /docs/providers/nlp_cloud
+              - listitem [ref=f2e241]:
+                - link "NanoGPT" [ref=f2e242] [cursor=pointer]:
+                  - /url: /docs/providers/nano-gpt
+              - listitem [ref=f2e243]:
+                - link "Novita AI" [ref=f2e244] [cursor=pointer]:
+                  - /url: /docs/providers/novita
+              - listitem [ref=f2e245]:
+                - link "Nscale (EU Sovereign)" [ref=f2e246] [cursor=pointer]:
+                  - /url: /docs/providers/nscale
+              - listitem [ref=f2e247]:
+                - button "Nvidia NIM" [ref=f2e249] [cursor=pointer]
+              - listitem [ref=f2e250]:
+                - link "Nvidia Riva (Speech-to-Text)" [ref=f2e251] [cursor=pointer]:
+                  - /url: /docs/providers/nvidia_riva
+              - listitem [ref=f2e252]:
+                - link "Oracle Cloud Infrastructure (OCI)" [ref=f2e253] [cursor=pointer]:
+                  - /url: /docs/providers/oci
+              - listitem [ref=f2e254]:
+                - link "Ollama" [ref=f2e255] [cursor=pointer]:
+                  - /url: /docs/providers/ollama
+              - listitem [ref=f2e256]:
+                - link "OpenRouter" [ref=f2e257] [cursor=pointer]:
+                  - /url: /docs/providers/openrouter
+              - listitem [ref=f2e258]:
+                - link "Sarvam.ai" [ref=f2e259] [cursor=pointer]:
+                  - /url: /docs/providers/sarvam
+              - listitem [ref=f2e260]:
+                - link "🆕 OVHCloud AI Endpoints" [ref=f2e261] [cursor=pointer]:
+                  - /url: /docs/providers/ovhcloud
+              - listitem [ref=f2e262]:
+                - button "Perplexity AI" [ref=f2e264] [cursor=pointer]
+              - listitem [ref=f2e265]:
+                - link "Petals" [ref=f2e266] [cursor=pointer]:
+                  - /url: /docs/providers/petals
+              - listitem [ref=f2e267]:
+                - link "Poe" [ref=f2e268] [cursor=pointer]:
+                  - /url: /docs/providers/poe
+              - listitem [ref=f2e269]:
+                - link "PublicAI" [ref=f2e270] [cursor=pointer]:
+                  - /url: /docs/providers/publicai
+              - listitem [ref=f2e271]:
+                - link "Predibase" [ref=f2e272] [cursor=pointer]:
+                  - /url: /docs/providers/predibase
+              - listitem [ref=f2e273]:
+                - link "Pydantic AI Agents" [ref=f2e274] [cursor=pointer]:
+                  - /url: /docs/providers/pydantic_ai_agent
+              - listitem [ref=f2e275]:
+                - link "RAGFlow" [ref=f2e276] [cursor=pointer]:
+                  - /url: /docs/providers/ragflow
+              - listitem [ref=f2e277]:
+                - link "Recraft" [ref=f2e278] [cursor=pointer]:
+                  - /url: /docs/providers/recraft
+              - listitem [ref=f2e279]:
+                - link "Replicate" [ref=f2e280] [cursor=pointer]:
+                  - /url: /docs/providers/replicate
+              - listitem [ref=f2e281]:
+                - button "RunwayML" [ref=f2e283] [cursor=pointer]
+              - listitem [ref=f2e284]:
+                - link "SambaNova" [ref=f2e285] [cursor=pointer]:
+                  - /url: /docs/providers/sambanova
+              - listitem [ref=f2e286]:
+                - link "SAP Generative AI Hub" [ref=f2e287] [cursor=pointer]:
+                  - /url: /docs/providers/sap
+              - listitem [ref=f2e288]:
+                - link "Scaleway" [ref=f2e289] [cursor=pointer]:
+                  - /url: /docs/providers/scaleway
+              - listitem [ref=f2e290]:
+                - link "Stability AI" [ref=f2e291] [cursor=pointer]:
+                  - /url: /docs/providers/stability
+              - listitem [ref=f2e292]:
+                - link "Synthetic" [ref=f2e293] [cursor=pointer]:
+                  - /url: /docs/providers/synthetic
+              - listitem [ref=f2e294]:
+                - link "Snowflake Cortex" [ref=f2e295] [cursor=pointer]:
+                  - /url: /docs/providers/snowflake
+              - listitem [ref=f2e296]:
+                - link "Tencent TokenHub" [ref=f2e297] [cursor=pointer]:
+                  - /url: /docs/providers/tencent
+              - listitem [ref=f2e298]:
+                - link "Tensormesh" [ref=f2e299] [cursor=pointer]:
+                  - /url: /docs/providers/tensormesh
+              - listitem [ref=f2e300]:
+                - link "Together AI" [ref=f2e301] [cursor=pointer]:
+                  - /url: /docs/providers/togetherai
+              - listitem [ref=f2e302]:
+                - link "Topaz" [ref=f2e303] [cursor=pointer]:
+                  - /url: /docs/providers/topaz
+              - listitem [ref=f2e304]:
+                - link "Triton Inference Server" [ref=f2e305] [cursor=pointer]:
+                  - /url: /docs/providers/triton-inference-server
+              - listitem [ref=f2e306]:
+                - link "v0" [ref=f2e307] [cursor=pointer]:
+                  - /url: /docs/providers/v0
+              - listitem [ref=f2e308]:
+                - link "Vercel AI Gateway" [ref=f2e309] [cursor=pointer]:
+                  - /url: /docs/providers/vercel_ai_gateway
+              - listitem [ref=f2e310]:
+                - button "vLLM" [ref=f2e312] [cursor=pointer]
+              - listitem [ref=f2e313]:
+                - link "Volcano Engine (Volcengine)" [ref=f2e314] [cursor=pointer]:
+                  - /url: /docs/providers/volcano
+              - listitem [ref=f2e315]:
+                - link "Voyage AI" [ref=f2e316] [cursor=pointer]:
+                  - /url: /docs/providers/voyage
+              - listitem [ref=f2e317]:
+                - link "Weights & Biases Inference" [ref=f2e318] [cursor=pointer]:
+                  - /url: /docs/providers/wandb_inference
+              - listitem [ref=f2e319]:
+                - button "WatsonX" [ref=f2e321] [cursor=pointer]
+              - listitem [ref=f2e322]:
+                - button "xAI" [ref=f2e324] [cursor=pointer]
+              - listitem [ref=f2e325]:
+                - link "Xiaomi MiMo" [ref=f2e326] [cursor=pointer]:
+                  - /url: /docs/providers/xiaomi_mimo
+              - listitem [ref=f2e327]:
+                - link "Xinference [Xorbits Inference]" [ref=f2e328] [cursor=pointer]:
+                  - /url: /docs/providers/xinference
+              - listitem [ref=f2e329]:
+                - link "Z.AI (Zhipu AI)" [ref=f2e330] [cursor=pointer]:
+                  - /url: /docs/providers/zai
+          - listitem [ref=f2e331]:
+            - generic [ref=f2e332]:
+              - link "Routing & Load Balancing" [ref=f2e333] [cursor=pointer]:
+                - /url: /docs/routing-load-balancing
+              - button "Expand sidebar category 'Routing & Load Balancing'" [ref=f2e334] [cursor=pointer]
+          - listitem [ref=f2e335]:
+            - link "Benchmarks" [ref=f2e336] [cursor=pointer]:
+              - /url: /docs/benchmarks
+          - listitem [ref=f2e337]:
+            - button "Contributing" [ref=f2e339] [cursor=pointer]
+          - listitem [ref=f2e340]:
+            - button "Extras" [ref=f2e342] [cursor=pointer]
+          - listitem [ref=f2e343]:
+            - button "Troubleshooting" [ref=f2e345] [cursor=pointer]
+    - main [ref=f2e346]:
+      - generic [ref=f2e348]:
+        - generic [ref=f2e350]:
+          - article [ref=f2e351]:
+            - navigation "Breadcrumbs" [ref=f2e352]:
+              - list [ref=f2e353]:
+                - listitem [ref=f2e354]:
+                  - link "Home page" [ref=f2e355] [cursor=pointer]:
+                    - /url: /
+                - listitem [ref=f2e358]:
+                  - link "Supported Models & Providers" [ref=f2e359] [cursor=pointer]:
+                    - /url: /docs/providers
+                - listitem [ref=f2e360]:
+                  - generic [ref=f2e361]: OpenAI
+                - listitem [ref=f2e362]:
+                  - generic [ref=f2e363]: OpenAI
+            - generic [ref=f2e364]:
+              - button "Copy as Markdown" [ref=f2e366] [cursor=pointer]
+              - heading "OpenAI" [level=1] [ref=f2e373]
+              - paragraph [ref=f2e374]: LiteLLM supports OpenAI Chat + Embedding calls.
+              - generic [ref=f2e375]:
+                - generic [ref=f2e376]: tip
+                - paragraph [ref=f2e381]:
+                  - strong [ref=f2e382]:
+                    - text: We recommend using
+                    - code [ref=f2e383]: litellm.responses()
+                    - text: / Responses API
+                  - text: for the latest OpenAI models (GPT-5, gpt-5-codex, o3-mini, etc.)
+              - heading [level=3] [ref=f2e384]:
+                - text: Required API Keys
+                - link "Direct link to Required API Keys" [ref=f2e385] [cursor=pointer]:
+                  - /url: "#required-api-keys"
+                  - text: "#"
+              - code [ref=f2e389]:
+                - generic [ref=f2e390]: import os
+                - generic [ref=f2e391]: os.environ["OPENAI_API_KEY"] = "your-api-key"
+              - heading [level=3] [ref=f2e392]:
+                - text: Usage
+                - link "Direct link to Usage" [ref=f2e393] [cursor=pointer]:
+                  - /url: "#usage"
+                  - text: "#"
+              - code [ref=f2e397]:
+                - generic [ref=f2e398]: import os
+                - generic [ref=f2e399]: from litellm import completion
+                - generic [ref=f2e400]: os.environ["OPENAI_API_KEY"] = "your-api-key"
+                - generic [ref=f2e401]: "# openai call"
+                - generic [ref=f2e402]: response = completion(
+                - generic [ref=f2e403]: model = "gpt-4o",
+                - generic [ref=f2e404]: "messages=[{ \"content\": \"Hello, how are you?\",\"role\": \"user\"}]"
+                - generic [ref=f2e405]: )
+              - generic [ref=f2e406]:
+                - generic [ref=f2e407]: Metadata passthrough (preview)
+                - generic [ref=f2e411]:
+                  - paragraph [ref=f2e412]:
+                    - text: When
+                    - code [ref=f2e413]: litellm.enable_preview_features = True
+                    - text: ", LiteLLM forwards only the values inside"
+                    - code [ref=f2e414]: metadata
+                    - text: to OpenAI.
+                  - code [ref=f2e418]:
+                    - generic [ref=f2e419]: completion(
+                    - generic [ref=f2e420]: model="gpt-4o",
+                    - generic [ref=f2e421]: "messages=[{\"role\": \"user\", \"content\": \"hi\"}],"
+                    - generic [ref=f2e422]: "metadata= {\"custom_meta_key\": \"value\"},"
+                    - generic [ref=f2e423]: )
+              - heading [level=3] [ref=f2e424]:
+                - text: Usage - LiteLLM Proxy Server
+                - link "Direct link to Usage - LiteLLM Proxy Server" [ref=f2e425] [cursor=pointer]:
+                  - /url: "#usage---litellm-proxy-server"
+                  - text: "#"
+              - paragraph [ref=f2e426]: Here's how to call OpenAI models with the LiteLLM Proxy Server
+              - heading [level=3] [ref=f2e427]:
+                - text: 1. Save key in your environment
+                - link "Direct link to 1. Save key in your environment" [ref=f2e428] [cursor=pointer]:
+                  - /url: "#1-save-key-in-your-environment"
+                  - text: "#"
+              - code [ref=f2e432]:
+                - generic [ref=f2e433]: export OPENAI_API_KEY=""
+              - heading [level=3] [ref=f2e434]:
+                - text: 2. Start the proxy
+                - link "Direct link to 2. Start the proxy" [ref=f2e435] [cursor=pointer]:
+                  - /url: "#2-start-the-proxy"
+                  - text: "#"
+              - generic [ref=f2e436]:
+                - tablist [ref=f2e437]:
+                  - tab "config.yaml" [selected] [ref=f2e438] [cursor=pointer]
+                  - tab "config.yaml - proxy all OpenAI models" [ref=f2e439] [cursor=pointer]
+                  - tab "CLI" [ref=f2e440] [cursor=pointer]
+                - tabpanel [ref=f2e442]:
+                  - code [ref=f2e446]:
+                    - generic [ref=f2e447]: "model_list:"
+                    - generic [ref=f2e448]: "- model_name: gpt-3.5-turbo"
+                    - generic [ref=f2e449]: "litellm_params:"
+                    - generic [ref=f2e450]: "model: openai/gpt-3.5-turbo # The `openai/` prefix will call openai.chat.completions.create"
+                    - generic [ref=f2e451]: "api_key: os.environ/OPENAI_API_KEY"
+                    - generic [ref=f2e452]: "- model_name: gpt-3.5-turbo-instruct"
+                    - generic [ref=f2e453]: "litellm_params:"
+                    - generic [ref=f2e454]: "model: text-completion-openai/gpt-3.5-turbo-instruct # The `text-completion-openai/` prefix will call openai.completions.create"
+                    - generic [ref=f2e455]: "api_key: os.environ/OPENAI_API_KEY"
+              - heading [level=3] [ref=f2e456]:
+                - text: 3. Test it
+                - link "Direct link to 3. Test it" [ref=f2e457] [cursor=pointer]:
+                  - /url: "#3-test-it"
+                  - text: "#"
+              - generic [ref=f2e458]:
+                - tablist [ref=f2e459]:
+                  - tab "Curl Request" [selected] [ref=f2e460] [cursor=pointer]
+                  - tab "OpenAI v1.0.0+" [ref=f2e461] [cursor=pointer]
+                  - tab "Langchain" [ref=f2e462] [cursor=pointer]
+                - tabpanel [ref=f2e464]:
+                  - code [ref=f2e468]:
+                    - generic [ref=f2e469]: curl --location 'http://0.0.0.0:4000/chat/completions' \
+                    - generic [ref=f2e470]: "--header 'Content-Type: application/json' \\"
+                    - generic [ref=f2e471]: "--data ' {"
+                    - generic [ref=f2e472]: "\"model\": \"gpt-3.5-turbo\","
+                    - generic [ref=f2e473]: "\"messages\": ["
+                    - generic [ref=f2e474]: "{"
+                    - generic [ref=f2e475]: "\"role\": \"user\","
+                    - generic [ref=f2e476]: "\"content\": \"what llm are you\""
+                    - generic [ref=f2e477]: "}"
+                    - generic [ref=f2e478]: "]"
+                    - generic [ref=f2e479]: "}"
+                    - generic [ref=f2e480]: "'"
+              - heading [level=3] [ref=f2e481]:
+                - text: Optional Keys - OpenAI Organization, OpenAI API Base
+                - link "Direct link to Optional Keys - OpenAI Organization, OpenAI API Base" [ref=f2e482] [cursor=pointer]:
+                  - /url: "#optional-keys---openai-organization-openai-api-base"
+                  - text: "#"
+              - code [ref=f2e486]:
+                - generic [ref=f2e487]: import os
+                - generic [ref=f2e488]: "os.environ[\"OPENAI_ORGANIZATION\"] = \"your-org-id\" # OPTIONAL"
+                - generic [ref=f2e489]: "os.environ[\"OPENAI_BASE_URL\"] = \"https://your_host/v1\" # OPTIONAL"
+              - heading [level=3] [ref=f2e490]:
+                - text: OpenAI Chat Completion Models
+                - link "Direct link to OpenAI Chat Completion Models" [ref=f2e491] [cursor=pointer]:
+                  - /url: "#openai-chat-completion-models"
+                  - text: "#"
+              - table [ref=f2e492]:
+                - rowgroup [ref=f2e493]:
+                  - row [ref=f2e494]:
+                    - columnheader "Model Name" [ref=f2e495]
+                    - columnheader "Function Call" [ref=f2e496]
+                - rowgroup [ref=f2e497]:
+                  - row [ref=f2e498]:
+                    - cell "gpt-5" [ref=f2e499]
+                    - cell [ref=f2e500]:
+                      - code [ref=f2e501]: response = completion(model="gpt-5", messages=messages)
+                  - row [ref=f2e502]:
+                    - cell "gpt-5-mini" [ref=f2e503]
+                    - cell [ref=f2e504]:
+                      - code [ref=f2e505]: response = completion(model="gpt-5-mini", messages=messages)
+                  - row [ref=f2e506]:
+                    - cell "gpt-5-nano" [ref=f2e507]
+                    - cell [ref=f2e508]:
+                      - code [ref=f2e509]: response = completion(model="gpt-5-nano", messages=messages)
+                  - row [ref=f2e510]:
+                    - cell "gpt-5-chat" [ref=f2e511]
+                    - cell [ref=f2e512]:
+                      - code [ref=f2e513]: response = completion(model="gpt-5-chat", messages=messages)
+                  - row [ref=f2e514]:
+                    - cell "gpt-5-chat-latest" [ref=f2e515]
+                    - cell [ref=f2e516]:
+                      - code [ref=f2e517]: response = completion(model="gpt-5-chat-latest", messages=messages)
+                  - row [ref=f2e518]:
+                    - cell "gpt-5-2025-08-07" [ref=f2e519]
+                    - cell [ref=f2e520]:
+                      - code [ref=f2e521]: response = completion(model="gpt-5-2025-08-07", messages=messages)
+                  - row [ref=f2e522]:
+                    - cell "gpt-5-mini-2025-08-07" [ref=f2e523]
+                    - cell [ref=f2e524]:
+                      - code [ref=f2e525]: response = completion(model="gpt-5-mini-2025-08-07", messages=messages)
+                  - row [ref=f2e526]:
+                    - cell "gpt-5-nano-2025-08-07" [ref=f2e527]
+                    - cell [ref=f2e528]:
+                      - code [ref=f2e529]: response = completion(model="gpt-5-nano-2025-08-07", messages=messages)
+                  - row [ref=f2e530]:
+                    - cell "gpt-5-pro" [ref=f2e531]
+                    - cell [ref=f2e532]:
+                      - code [ref=f2e533]: response = completion(model="gpt-5-pro", messages=messages)
+                  - row [ref=f2e534]:
+                    - cell "gpt-5.2" [ref=f2e535]
+                    - cell [ref=f2e536]:
+                      - code [ref=f2e537]: response = completion(model="gpt-5.2", messages=messages)
+                  - row [ref=f2e538]:
+                    - cell "gpt-5.2-2025-12-11" [ref=f2e539]
+                    - cell [ref=f2e540]:
+                      - code [ref=f2e541]: response = completion(model="gpt-5.2-2025-12-11", messages=messages)
+                  - row [ref=f2e542]:
+                    - cell "gpt-5.2-chat-latest" [ref=f2e543]
+                    - cell [ref=f2e544]:
+                      - code [ref=f2e545]: response = completion(model="gpt-5.2-chat-latest", messages=messages)
+                  - row [ref=f2e546]:
+                    - cell "gpt-5.3-chat-latest" [ref=f2e547]
+                    - cell [ref=f2e548]:
+                      - code [ref=f2e549]: response = completion(model="gpt-5.3-chat-latest", messages=messages)
+                  - row [ref=f2e550]:
+                    - cell "gpt-5.4" [ref=f2e551]
+                    - cell [ref=f2e552]:
+                      - code [ref=f2e553]: response = completion(model="gpt-5.4", messages=messages)
+                  - row [ref=f2e554]:
+                    - cell "gpt-5.4-2026-03-05" [ref=f2e555]
+                    - cell [ref=f2e556]:
+                      - code [ref=f2e557]: response = completion(model="gpt-5.4-2026-03-05", messages=messages)
+                  - row [ref=f2e558]:
+                    - cell "gpt-5.5" [ref=f2e559]
+                    - cell [ref=f2e560]:
+                      - code [ref=f2e561]: response = completion(model="gpt-5.5", messages=messages)
+                  - row [ref=f2e562]:
+                    - cell "gpt-5.5-2026-04-23" [ref=f2e563]
+                    - cell [ref=f2e564]:
+                      - code [ref=f2e565]: response = completion(model="gpt-5.5-2026-04-23", messages=messages)
+                  - row [ref=f2e566]:
+                    - cell "gpt-5.2-pro" [ref=f2e567]
+                    - cell [ref=f2e568]:
+                      - code [ref=f2e569]: response = completion(model="gpt-5.2-pro", messages=messages)
+                  - row [ref=f2e570]:
+                    - cell "gpt-5.2-pro-2025-12-11" [ref=f2e571]
+                    - cell [ref=f2e572]:
+                      - code [ref=f2e573]: response = completion(model="gpt-5.2-pro-2025-12-11", messages=messages)
+                  - row [ref=f2e574]:
+                    - cell "gpt-5.4-pro" [ref=f2e575]
+                    - cell [ref=f2e576]:
+                      - code [ref=f2e577]: response = completion(model="gpt-5.4-pro", messages=messages)
+                  - row [ref=f2e578]:
+                    - cell "gpt-5.4-pro-2026-03-05" [ref=f2e579]
+                    - cell [ref=f2e580]:
+                      - code [ref=f2e581]: response = completion(model="gpt-5.4-pro-2026-03-05", messages=messages)
+                  - row [ref=f2e582]:
+                    - cell "gpt-5.5-pro" [ref=f2e583]
+                    - cell [ref=f2e584]:
+                      - code [ref=f2e585]: response = completion(model="gpt-5.5-pro", messages=messages)
+                  - row [ref=f2e586]:
+                    - cell "gpt-5.5-pro-2026-04-23" [ref=f2e587]
+                    - cell [ref=f2e588]:
+                      - code [ref=f2e589]: response = completion(model="gpt-5.5-pro-2026-04-23", messages=messages)
+                  - row [ref=f2e590]:
+                    - cell "gpt-5.1" [ref=f2e591]
+                    - cell [ref=f2e592]:
+                      - code [ref=f2e593]: response = completion(model="gpt-5.1", messages=messages)
+                  - row [ref=f2e594]:
+                    - cell "gpt-5.1-codex" [ref=f2e595]
+                    - cell [ref=f2e596]:
+                      - code [ref=f2e597]: response = completion(model="gpt-5.1-codex", messages=messages)
+                  - row [ref=f2e598]:
+                    - cell "gpt-5.1-codex-mini" [ref=f2e599]
+                    - cell [ref=f2e600]:
+                      - code [ref=f2e601]: response = completion(model="gpt-5.1-codex-mini", messages=messages)
+                  - row [ref=f2e602]:
+                    - cell "gpt-5.1-codex-max" [ref=f2e603]
+                    - cell [ref=f2e604]:
+                      - code [ref=f2e605]: response = completion(model="gpt-5.1-codex-max", messages=messages)
+                  - row [ref=f2e606]:
+                    - cell "gpt-4.1" [ref=f2e607]
+                    - cell [ref=f2e608]:
+                      - code [ref=f2e609]: response = completion(model="gpt-4.1", messages=messages)
+                  - row [ref=f2e610]:
+                    - cell "gpt-4.1-mini" [ref=f2e611]
+                    - cell [ref=f2e612]:
+                      - code [ref=f2e613]: response = completion(model="gpt-4.1-mini", messages=messages)
+                  - row [ref=f2e614]:
+                    - cell "gpt-4.1-nano" [ref=f2e615]
+                    - cell [ref=f2e616]:
+                      - code [ref=f2e617]: response = completion(model="gpt-4.1-nano", messages=messages)
+                  - row [ref=f2e618]:
+                    - cell "o4-mini" [ref=f2e619]
+                    - cell [ref=f2e620]:
+                      - code [ref=f2e621]: response = completion(model="o4-mini", messages=messages)
+                  - row [ref=f2e622]:
+                    - cell "o3-mini" [ref=f2e623]
+                    - cell [ref=f2e624]:
+                      - code [ref=f2e625]: response = completion(model="o3-mini", messages=messages)
+                  - row [ref=f2e626]:
+                    - cell "o3" [ref=f2e627]
+                    - cell [ref=f2e628]:
+                      - code [ref=f2e629]: response = completion(model="o3", messages=messages)
+                  - row [ref=f2e630]:
+                    - cell "o1-mini" [ref=f2e631]
+                    - cell [ref=f2e632]:
+                      - code [ref=f2e633]: response = completion(model="o1-mini", messages=messages)
+                  - row [ref=f2e634]:
+                    - cell "o1-preview" [ref=f2e635]
+                    - cell [ref=f2e636]:
+                      - code [ref=f2e637]: response = completion(model="o1-preview", messages=messages)
+                  - row [ref=f2e638]:
+                    - cell "gpt-4o-mini" [ref=f2e639]
+                    - cell [ref=f2e640]:
+                      - code [ref=f2e641]: response = completion(model="gpt-4o-mini", messages=messages)
+                  - row [ref=f2e642]:
+                    - cell "gpt-4o-mini-2024-07-18" [ref=f2e643]
+                    - cell [ref=f2e644]:
+                      - code [ref=f2e645]: response = completion(model="gpt-4o-mini-2024-07-18", messages=messages)
+                  - row [ref=f2e646]:
+                    - cell "gpt-4o" [ref=f2e647]
+                    - cell [ref=f2e648]:
+                      - code [ref=f2e649]: response = completion(model="gpt-4o", messages=messages)
+                  - row [ref=f2e650]:
+                    - cell "gpt-4o-2024-08-06" [ref=f2e651]
+                    - cell [ref=f2e652]:
+                      - code [ref=f2e653]: response = completion(model="gpt-4o-2024-08-06", messages=messages)
+                  - row [ref=f2e654]:
+                    - cell "gpt-4o-2024-05-13" [ref=f2e655]
+                    - cell [ref=f2e656]:
+                      - code [ref=f2e657]: response = completion(model="gpt-4o-2024-05-13", messages=messages)
+                  - row [ref=f2e658]:
+                    - cell "gpt-4-turbo" [ref=f2e659]
+                    - cell [ref=f2e660]:
+                      - code [ref=f2e661]: response = completion(model="gpt-4-turbo", messages=messages)
+                  - row [ref=f2e662]:
+                    - cell "gpt-4-turbo-preview" [ref=f2e663]
+                    - cell [ref=f2e664]:
+                      - code [ref=f2e665]: response = completion(model="gpt-4-0125-preview", messages=messages)
+                  - row [ref=f2e666]:
+                    - cell "gpt-4-0125-preview" [ref=f2e667]
+                    - cell [ref=f2e668]:
+                      - code [ref=f2e669]: response = completion(model="gpt-4-0125-preview", messages=messages)
+                  - row [ref=f2e670]:
+                    - cell "gpt-4-1106-preview" [ref=f2e671]
+                    - cell [ref=f2e672]:
+                      - code [ref=f2e673]: response = completion(model="gpt-4-1106-preview", messages=messages)
+                  - row [ref=f2e674]:
+                    - cell "gpt-3.5-turbo-1106" [ref=f2e675]
+                    - cell [ref=f2e676]:
+                      - code [ref=f2e677]: response = completion(model="gpt-3.5-turbo-1106", messages=messages)
+                  - row [ref=f2e678]:
+                    - cell "gpt-3.5-turbo" [ref=f2e679]
+                    - cell [ref=f2e680]:
+                      - code [ref=f2e681]: response = completion(model="gpt-3.5-turbo", messages=messages)
+                  - row [ref=f2e682]:
+                    - cell "gpt-3.5-turbo-0301" [ref=f2e683]
+                    - cell [ref=f2e684]:
+                      - code [ref=f2e685]: response = completion(model="gpt-3.5-turbo-0301", messages=messages)
+                  - row [ref=f2e686]:
+                    - cell "gpt-3.5-turbo-0613" [ref=f2e687]
+                    - cell [ref=f2e688]:
+                      - code [ref=f2e689]: response = completion(model="gpt-3.5-turbo-0613", messages=messages)
+                  - row [ref=f2e690]:
+                    - cell "gpt-3.5-turbo-16k" [ref=f2e691]
+                    - cell [ref=f2e692]:
+                      - code [ref=f2e693]: response = completion(model="gpt-3.5-turbo-16k", messages=messages)
+                  - row [ref=f2e694]:
+                    - cell "gpt-3.5-turbo-16k-0613" [ref=f2e695]
+                    - cell [ref=f2e696]:
+                      - code [ref=f2e697]: response = completion(model="gpt-3.5-turbo-16k-0613", messages=messages)
+                  - row [ref=f2e698]:
+                    - cell "gpt-4" [ref=f2e699]
+                    - cell [ref=f2e700]:
+                      - code [ref=f2e701]: response = completion(model="gpt-4", messages=messages)
+                  - row [ref=f2e702]:
+                    - cell "gpt-4-0314" [ref=f2e703]
+                    - cell [ref=f2e704]:
+                      - code [ref=f2e705]: response = completion(model="gpt-4-0314", messages=messages)
+                  - row [ref=f2e706]:
+                    - cell "gpt-4-0613" [ref=f2e707]
+                    - cell [ref=f2e708]:
+                      - code [ref=f2e709]: response = completion(model="gpt-4-0613", messages=messages)
+                  - row [ref=f2e710]:
+                    - cell "gpt-4-32k" [ref=f2e711]
+                    - cell [ref=f2e712]:
+                      - code [ref=f2e713]: response = completion(model="gpt-4-32k", messages=messages)
+                  - row [ref=f2e714]:
+                    - cell "gpt-4-32k-0314" [ref=f2e715]
+                    - cell [ref=f2e716]:
+                      - code [ref=f2e717]: response = completion(model="gpt-4-32k-0314", messages=messages)
+                  - row [ref=f2e718]:
+                    - cell "gpt-4-32k-0613" [ref=f2e719]
+                    - cell [ref=f2e720]:
+                      - code [ref=f2e721]: response = completion(model="gpt-4-32k-0613", messages=messages)
+              - paragraph [ref=f2e722]:
+                - text: These also support the
+                - code [ref=f2e723]: OPENAI_BASE_URL
+                - text: environment variable, which can be used to specify a custom API endpoint.
+              - heading [level=3] [ref=f2e724]:
+                - text: OpenAI Web Search Models
+                - link "Direct link to OpenAI Web Search Models" [ref=f2e725] [cursor=pointer]:
+                  - /url: "#openai-web-search-models"
+                  - text: "#"
+              - paragraph [ref=f2e726]: "OpenAI has two ways to use web search, depending on the endpoint:"
+              - table [ref=f2e727]:
+                - rowgroup [ref=f2e728]:
+                  - row [ref=f2e729]:
+                    - columnheader "Approach" [ref=f2e730]
+                    - columnheader "Endpoint" [ref=f2e731]
+                    - columnheader "Models" [ref=f2e732]
+                    - columnheader "How to enable" [ref=f2e733]
+                - rowgroup [ref=f2e734]:
+                  - row [ref=f2e735]:
+                    - cell [ref=f2e736]:
+                      - strong [ref=f2e737]: Search Models
+                    - cell [ref=f2e738]:
+                      - code [ref=f2e739]: /chat/completions
+                    - cell [ref=f2e740]:
+                      - code [ref=f2e741]: gpt-5-search-api
+                      - text: ","
+                      - code [ref=f2e742]: gpt-4o-search-preview
+                      - text: ","
+                      - code [ref=f2e743]: gpt-4o-mini-search-preview
+                    - cell [ref=f2e744]:
+                      - text: Pass
+                      - code [ref=f2e745]: web_search_options
+                      - text: parameter
+                  - row [ref=f2e746]:
+                    - cell [ref=f2e747]:
+                      - strong [ref=f2e748]: Web Search Tool
+                    - cell [ref=f2e749]:
+                      - code [ref=f2e750]: /responses
+                    - cell [ref=f2e751]:
+                      - code [ref=f2e752]: gpt-5
+                      - text: ","
+                      - code [ref=f2e753]: gpt-4.1
+                      - text: ","
+                      - code [ref=f2e754]: gpt-4o
+                      - text: ", and other regular models"
+                    - cell [ref=f2e755]:
+                      - text: Pass
+                      - code [ref=f2e756]: web_search_preview
+                      - text: tool
+              - generic [ref=f2e757]:
+                - tablist [ref=f2e758]:
+                  - tab "SDK - /chat/completions" [selected] [ref=f2e759] [cursor=pointer]
+                  - tab "SDK - /responses" [ref=f2e760] [cursor=pointer]
+                  - tab "PROXY" [ref=f2e761] [cursor=pointer]
+                - tabpanel [ref=f2e763]:
+                  - code [ref=f2e767]:
+                    - generic [ref=f2e768]: from litellm import completion
+                    - generic [ref=f2e774]: response = completion(
+                    - generic [ref=f2e777]: model="openai/gpt-5-search-api",
+                    - generic [ref=f2e780]: "messages=[{\"role\": \"user\", \"content\": \"What is the capital of France?\"}],"
+                    - generic [ref=f2e783]: "web_search_options={"
+                    - generic [ref=f2e786]: "\"search_context_size\": \"medium\" # Options: \"low\", \"medium\", \"high\""
+                    - generic [ref=f2e789]: "}"
+                    - generic [ref=f2e792]: )
+              - paragraph [ref=f2e795]:
+                - text: For full details, see the
+                - link "Web Search guide" [ref=f2e796] [cursor=pointer]:
+                  - /url: /docs/completion/web_search
+                - text: .
+              - heading [level=2] [ref=f2e797]:
+                - text: OpenAI Vision Models
+                - link "Direct link to OpenAI Vision Models" [ref=f2e798] [cursor=pointer]:
+                  - /url: "#openai-vision-models"
+                  - text: "#"
+              - table [ref=f2e799]:
+                - rowgroup [ref=f2e800]:
+                  - row [ref=f2e801]:
+                    - columnheader "Model Name" [ref=f2e802]
+                    - columnheader "Function Call" [ref=f2e803]
+                - rowgroup [ref=f2e804]:
+                  - row [ref=f2e805]:
+                    - cell "gpt-4o" [ref=f2e806]
+                    - cell [ref=f2e807]:
+                      - code [ref=f2e808]: response = completion(model="gpt-4o", messages=messages)
+                  - row [ref=f2e809]:
+                    - cell "gpt-4-turbo" [ref=f2e810]
+                    - cell [ref=f2e811]:
+                      - code [ref=f2e812]: response = completion(model="gpt-4-turbo", messages=messages)
+                  - row [ref=f2e813]:
+                    - cell "gpt-4-vision-preview" [ref=f2e814]
+                    - cell [ref=f2e815]:
+                      - code [ref=f2e816]: response = completion(model="gpt-4-vision-preview", messages=messages)
+              - heading [level=4] [ref=f2e817]:
+                - text: Usage
+                - link "Direct link to Usage" [ref=f2e818] [cursor=pointer]:
+                  - /url: "#usage-1"
+                  - text: "#"
+              - code [ref=f2e822]:
+                - generic [ref=f2e823]: import os
+                - generic [ref=f2e824]: from litellm import completion
+                - generic [ref=f2e825]: os.environ["OPENAI_API_KEY"] = "your-api-key"
+                - generic [ref=f2e826]: "# openai call"
+                - generic [ref=f2e827]: response = completion(
+                - generic [ref=f2e828]: model = "gpt-4-vision-preview",
+                - generic [ref=f2e829]: messages=[
+                - generic [ref=f2e830]: "{"
+                - generic [ref=f2e831]: "\"role\": \"user\","
+                - generic [ref=f2e832]: "\"content\": ["
+                - generic [ref=f2e833]: "{"
+                - generic [ref=f2e834]: "\"type\": \"text\","
+                - generic [ref=f2e835]: "\"text\": \"What’s in this image?\""
+                - generic [ref=f2e836]: "},"
+                - generic [ref=f2e837]: "{"
+                - generic [ref=f2e838]: "\"type\": \"image_url\","
+                - generic [ref=f2e839]: "\"image_url\": {"
+                - generic [ref=f2e840]: "\"url\": \"https://awsmp-logos.s3.amazonaws.com/seller-xw5kijmvmzasy/c233c9ade2ccb5491072ae232c814942.png\""
+                - generic [ref=f2e841]: "}"
+                - generic [ref=f2e842]: "}"
+                - generic [ref=f2e843]: "]"
+                - generic [ref=f2e844]: "}"
+                - generic [ref=f2e845]: "],"
+                - generic [ref=f2e846]: )
+              - heading [level=2] [ref=f2e847]:
+                - text: PDF File Parsing
+                - link "Direct link to PDF File Parsing" [ref=f2e848] [cursor=pointer]:
+                  - /url: "#pdf-file-parsing"
+                  - text: "#"
+              - paragraph [ref=f2e849]:
+                - text: OpenAI has a new
+                - code [ref=f2e850]: file
+                - text: message type that allows you to pass in a PDF file and have it parsed into a structured output.
+                - link "Read more" [ref=f2e851] [cursor=pointer]:
+                  - /url: https://platform.openai.com/docs/guides/pdf-files?api-mode=chat&lang=python
+              - generic [ref=f2e852]:
+                - tablist [ref=f2e853]:
+                  - tab "SDK" [selected] [ref=f2e854] [cursor=pointer]
+                  - tab "PROXY" [ref=f2e855] [cursor=pointer]
+                - tabpanel [ref=f2e857]:
+                  - code [ref=f2e861]:
+                    - generic [ref=f2e862]: import base64
+                    - generic [ref=f2e863]: from litellm import completion
+                    - generic [ref=f2e864]: "with open(\"draconomicon.pdf\", \"rb\") as f:"
+                    - generic [ref=f2e865]: data = f.read()
+                    - generic [ref=f2e866]: base64_string = base64.b64encode(data).decode("utf-8")
+                    - generic [ref=f2e867]: completion = completion(
+                    - generic [ref=f2e868]: model="gpt-4o",
+                    - generic [ref=f2e869]: messages=[
+                    - generic [ref=f2e870]: "{"
+                    - generic [ref=f2e871]: "\"role\": \"user\","
+                    - generic [ref=f2e872]: "\"content\": ["
+                    - generic [ref=f2e873]: "{"
+                    - generic [ref=f2e874]: "\"type\": \"file\","
+                    - generic [ref=f2e875]: "\"file\": {"
+                    - generic [ref=f2e876]: "\"filename\": \"draconomicon.pdf\","
+                    - generic [ref=f2e877]: "\"file_data\": f\"data:application/pdf;base64,{base64_string}\","
+                    - generic [ref=f2e878]: "}"
+                    - generic [ref=f2e879]: "},"
+                    - generic [ref=f2e880]: "{"
+                    - generic [ref=f2e881]: "\"type\": \"text\","
+                    - generic [ref=f2e882]: "\"text\": \"What is the first dragon in the book?\","
+                    - generic [ref=f2e883]: "}"
+                    - generic [ref=f2e884]: "],"
+                    - generic [ref=f2e885]: "},"
+                    - generic [ref=f2e886]: "],"
+                    - generic [ref=f2e887]: )
+                    - generic [ref=f2e888]: print(completion.choices[0].message.content)
+              - heading [level=2] [ref=f2e889]:
+                - text: OpenAI Fine Tuned Models
+                - link "Direct link to OpenAI Fine Tuned Models" [ref=f2e890] [cursor=pointer]:
+                  - /url: "#openai-fine-tuned-models"
+                  - text: "#"
+              - table [ref=f2e891]:
+                - rowgroup [ref=f2e892]:
+                  - row [ref=f2e893]:
+                    - columnheader "Model Name" [ref=f2e894]
+                    - columnheader "Function Call" [ref=f2e895]
+                - rowgroup [ref=f2e896]:
+                  - row [ref=f2e897]:
+                    - cell [ref=f2e898]:
+                      - text: fine tuned
+                      - code [ref=f2e899]: gpt-4-0613
+                    - cell [ref=f2e900]:
+                      - code [ref=f2e901]: response = completion(model="ft:gpt-4-0613", messages=messages)
+                  - row [ref=f2e902]:
+                    - cell [ref=f2e903]:
+                      - text: fine tuned
+                      - code [ref=f2e904]: gpt-4o-2024-05-13
+                    - cell [ref=f2e905]:
+                      - code [ref=f2e906]: response = completion(model="ft:gpt-4o-2024-05-13", messages=messages)
+                  - row [ref=f2e907]:
+                    - cell [ref=f2e908]:
+                      - text: fine tuned
+                      - code [ref=f2e909]: gpt-3.5-turbo-0125
+                    - cell [ref=f2e910]:
+                      - code [ref=f2e911]: response = completion(model="ft:gpt-3.5-turbo-0125", messages=messages)
+                  - row [ref=f2e912]:
+                    - cell [ref=f2e913]:
+                      - text: fine tuned
+                      - code [ref=f2e914]: gpt-3.5-turbo-1106
+                    - cell [ref=f2e915]:
+                      - code [ref=f2e916]: response = completion(model="ft:gpt-3.5-turbo-1106", messages=messages)
+                  - row [ref=f2e917]:
+                    - cell [ref=f2e918]:
+                      - text: fine tuned
+                      - code [ref=f2e919]: gpt-3.5-turbo-0613
+                    - cell [ref=f2e920]:
+                      - code [ref=f2e921]: response = completion(model="ft:gpt-3.5-turbo-0613", messages=messages)
+              - heading [level=2] [ref=f2e922]:
+                - text: "[BETA] Route all .completions requests to Responses API (better quality)"
+                - link "Direct link to [BETA] Route all .completions requests to Responses API (better quality)" [ref=f2e923] [cursor=pointer]:
+                  - /url: "#beta-route-all-completions-requests-to-responses-api-better-quality"
+                  - text: "#"
+              - paragraph [ref=f2e924]:
+                - text: When enabled, LiteLLM sends OpenAI traffic from
+                - code [ref=f2e925]: litellm.completion()
+                - text: and the proxy
+                - code [ref=f2e926]: /chat/completions
+                - text: endpoint through the
+                - link "Responses API" [ref=f2e927] [cursor=pointer]:
+                  - /url: https://platform.openai.com/docs/api-reference/responses
+                - text: instead of Chat Completions. That path generally matches OpenAI’s latest model behavior and quality (for example, reasoning output on GPT‑5 class models).
+              - paragraph [ref=f2e928]: "You can opt in globally or per request:"
+              - paragraph [ref=f2e929]:
+                - strong [ref=f2e930]: "Option A — per-request prefix:"
+                - text: Use the
+                - code [ref=f2e931]: openai/responses/
+                - text: model prefix.
+              - paragraph [ref=f2e932]:
+                - strong [ref=f2e933]: "Option B — global flag (recommended):"
+                - text: Set
+                - code [ref=f2e934]: route_all_chat_openai_to_responses = True
+                - text: to automatically route all OpenAI
+                - code [ref=f2e935]: /chat/completions
+                - text: requests through the Responses API, no model prefix needed.
+              - generic [ref=f2e936]:
+                - tablist [ref=f2e937]:
+                  - tab "SDK - Global Flag" [selected] [ref=f2e938] [cursor=pointer]
+                  - tab "PROXY - Global Flag" [ref=f2e939] [cursor=pointer]
+                - tabpanel [ref=f2e941]:
+                  - code [ref=f2e945]:
+                    - generic [ref=f2e946]: import litellm
+                    - generic [ref=f2e947]: litellm.route_all_chat_openai_to_responses = True
+                    - generic [ref=f2e948]: response = litellm.completion(
+                    - generic [ref=f2e949]: model="gpt-5.4",
+                    - generic [ref=f2e950]: "messages=[{\"role\": \"user\", \"content\": \"What is the capital of France?\"}],"
+                    - generic [ref=f2e951]: reasoning_effort="low",
+                    - generic [ref=f2e952]: )
+              - generic [ref=f2e953]:
+                - generic [ref=f2e954]: note
+                - paragraph [ref=f2e959]:
+                  - code [ref=f2e960]: route_all_chat_openai_to_responses
+                  - text: only applies to the
+                  - code [ref=f2e961]: openai
+                  - text: "provider. Azure OpenAI is unaffected. You can also set it via env var:"
+                  - code [ref=f2e962]: LITELLM_ROUTE_ALL_CHAT_OPENAI_TO_RESPONSES=true
+                  - text: .
+              - paragraph [ref=f2e963]:
+                - strong [ref=f2e964]: "Option A — per-request prefix:"
+                - text: You can also prefix individual model names with
+                - code [ref=f2e965]: openai/responses/
+                - text: to route just that call through the Responses API.
+              - generic [ref=f2e966]:
+                - tablist [ref=f2e967]:
+                  - tab "SDK" [selected] [ref=f2e968] [cursor=pointer]
+                  - tab "PROXY" [ref=f2e969] [cursor=pointer]
+                - tabpanel [ref=f2e971]:
+                  - code [ref=f2e975]:
+                    - generic [ref=f2e976]: response = litellm.completion(
+                    - generic [ref=f2e977]: "model=\"openai/responses/gpt-5-mini\", # tells litellm to call the model via the Responses API"
+                    - generic [ref=f2e978]: "messages=[{\"role\": \"user\", \"content\": \"What is the capital of France?\"}],"
+                    - generic [ref=f2e979]: reasoning_effort="low",
+                    - generic [ref=f2e980]: )
+              - paragraph [ref=f2e981]: "Expected Response:"
+              - code [ref=f2e985]:
+                - generic [ref=f2e986]: "{"
+                - generic [ref=f2e987]: "\"id\": \"chatcmpl-6382a222-43c9-40c4-856b-22e105d88075\","
+                - generic [ref=f2e988]: "\"created\": 1760146746,"
+                - generic [ref=f2e989]: "\"model\": \"gpt-5-mini\","
+                - generic [ref=f2e990]: "\"object\": \"chat.completion\","
+                - generic [ref=f2e991]: "\"system_fingerprint\": null,"
+                - generic [ref=f2e992]: "\"choices\": ["
+                - generic [ref=f2e993]: "{"
+                - generic [ref=f2e994]: "\"finish_reason\": \"stop\","
+                - generic [ref=f2e995]: "\"index\": 0,"
+                - generic [ref=f2e996]: "\"message\": {"
+                - generic [ref=f2e997]: "\"content\": \"Paris\","
+                - generic [ref=f2e998]: "\"role\": \"assistant\","
+                - generic [ref=f2e999]: "\"tool_calls\": null,"
+                - generic [ref=f2e1000]: "\"function_call\": null,"
+                - generic [ref=f2e1001]: "\"reasoning_content\": \"**Identifying the capital**\\n\\nThe user wants me to think of the capital of France and write it down. That's pretty straightforward: it's Paris. There aren't any safety issues to consider here. I think it would be best to keep it concise, so maybe just \\\"Paris\\\" would suffice. I feel confident that I should just stick to that without adding anything else. So, let's write it down!\","
+                - generic [ref=f2e1002]: "\"provider_specific_fields\": null"
+                - generic [ref=f2e1003]: "}"
+                - generic [ref=f2e1004]: "}"
+                - generic [ref=f2e1005]: "],"
+                - generic [ref=f2e1006]: "\"usage\": {"
+                - generic [ref=f2e1007]: "\"completion_tokens\": 7,"
+                - generic [ref=f2e1008]: "\"prompt_tokens\": 18,"
+                - generic [ref=f2e1009]: "\"total_tokens\": 25,"
+                - generic [ref=f2e1010]: "\"completion_tokens_details\": null,"
+                - generic [ref=f2e1011]: "\"prompt_tokens_details\": {"
+                - generic [ref=f2e1012]: "\"audio_tokens\": null,"
+                - generic [ref=f2e1013]: "\"cached_tokens\": 0,"
+                - generic [ref=f2e1014]: "\"text_tokens\": null,"
+                - generic [ref=f2e1015]: "\"image_tokens\": null"
+                - generic [ref=f2e1016]: "}"
+                - generic [ref=f2e1017]: "}"
+                - generic [ref=f2e1018]: "}"
+              - heading [level=3] [ref=f2e1019]:
+                - text: "Advanced: Using"
+                - code [ref=f2e1020]: reasoning_effort
+                - text: with
+                - code [ref=f2e1021]: summary
+                - text: field
+                - link "Direct link to advanced-using-reasoning_effort-with-summary-field" [ref=f2e1022] [cursor=pointer]:
+                  - /url: "#advanced-using-reasoning_effort-with-summary-field"
+                  - text: "#"
+              - paragraph [ref=f2e1023]:
+                - text: By default,
+                - code [ref=f2e1024]: reasoning_effort
+                - text: accepts a string value (
+                - code [ref=f2e1025]: "\"none\""
+                - text: ","
+                - code [ref=f2e1026]: "\"minimal\""
+                - text: ","
+                - code [ref=f2e1027]: "\"low\""
+                - text: ","
+                - code [ref=f2e1028]: "\"medium\""
+                - text: ","
+                - code [ref=f2e1029]: "\"high\""
+                - text: ","
+                - code [ref=f2e1030]: "\"xhigh\""
+                - text: —
+                - code [ref=f2e1031]: "\"xhigh\""
+                - text: is only supported on
+                - code [ref=f2e1032]: gpt-5.1-codex-max
+                - text: and
+                - code [ref=f2e1033]: gpt-5.2
+                - text: models) and only sets the effort level without including a reasoning summary.
+              - paragraph [ref=f2e1034]:
+                - text: To opt-in to the
+                - code [ref=f2e1035]: summary
+                - text: feature, you can pass
+                - code [ref=f2e1036]: reasoning_effort
+                - text: as a dictionary.
+                - strong [ref=f2e1037]: "Note:"
+                - text: The
+                - code [ref=f2e1038]: summary
+                - text: field requires your OpenAI organization to have verification status. Using
+                - code [ref=f2e1039]: summary
+                - text: without verification will result in a 400 error from OpenAI.
+              - generic [ref=f2e1040]:
+                - tablist [ref=f2e1041]:
+                  - tab "SDK" [selected] [ref=f2e1042] [cursor=pointer]
+                  - tab "PROXY" [ref=f2e1043] [cursor=pointer]
+                - tabpanel [ref=f2e1045]:
+                  - code [ref=f2e1049]:
+                    - generic [ref=f2e1050]: "# Option 1: String format (default - no summary)"
+                    - generic [ref=f2e1051]: response = litellm.completion(
+                    - generic [ref=f2e1052]: model="openai/responses/gpt-5-mini",
+                    - generic [ref=f2e1053]: "messages=[{\"role\": \"user\", \"content\": \"What is the capital of France?\"}],"
+                    - generic [ref=f2e1054]: "reasoning_effort=\"high\" # Only sets effort level"
+                    - generic [ref=f2e1055]: )
+                    - generic [ref=f2e1056]: "# Option 2: Dict format (with optional summary - requires org verification)"
+                    - generic [ref=f2e1057]: response = litellm.completion(
+                    - generic [ref=f2e1058]: model="openai/responses/gpt-5-mini",
+                    - generic [ref=f2e1059]: "messages=[{\"role\": \"user\", \"content\": \"What is the capital of France?\"}],"
+                    - generic [ref=f2e1060]: "reasoning_effort={\"effort\": \"high\", \"summary\": \"auto\"} # \"auto\", \"detailed\", or \"concise\" (not all supported by all models)"
+                    - generic [ref=f2e1061]: )
+              - paragraph [ref=f2e1062]:
+                - strong [ref=f2e1063]: "Summary field options:"
+              - list [ref=f2e1064]:
+                - listitem [ref=f2e1065]:
+                  - code [ref=f2e1066]: "\"auto\""
+                  - text: ": System automatically determines the appropriate summary level based on the model"
+                - listitem [ref=f2e1067]:
+                  - code [ref=f2e1068]: "\"concise\""
+                  - text: ": Provides a shorter summary (not supported by GPT-5 series models)"
+                - listitem [ref=f2e1069]:
+                  - code [ref=f2e1070]: "\"detailed\""
+                  - text: ": Offers a comprehensive reasoning summary"
+              - paragraph [ref=f2e1071]:
+                - strong [ref=f2e1072]: "Note:"
+                - text: GPT-5 series models support
+                - code [ref=f2e1073]: "\"auto\""
+                - text: and
+                - code [ref=f2e1074]: "\"detailed\""
+                - text: ", but do not support"
+                - code [ref=f2e1075]: "\"concise\""
+                - text: . O-series models (o3-pro, o4-mini, o3) support all three options. Some models like o3-mini and o1 do not support reasoning summaries at all.
+              - paragraph [ref=f2e1076]:
+                - strong [ref=f2e1077]:
+                  - text: Supported
+                  - code [ref=f2e1078]: reasoning_effort
+                  - text: "values by model:"
+              - table [ref=f2e1079]:
+                - rowgroup [ref=f2e1080]:
+                  - row [ref=f2e1081]:
+                    - columnheader "Model" [ref=f2e1082]
+                    - columnheader "Default (when not set)" [ref=f2e1083]
+                    - columnheader "Supported Values" [ref=f2e1084]
+                - rowgroup [ref=f2e1085]:
+                  - row [ref=f2e1086]:
+                    - cell [ref=f2e1087]:
+                      - code [ref=f2e1088]: gpt-5.1
+                    - cell [ref=f2e1089]:
+                      - code [ref=f2e1090]: none
+                    - cell [ref=f2e1091]:
+                      - code [ref=f2e1092]: none
+                      - text: ","
+                      - code [ref=f2e1093]: low
+                      - text: ","
+                      - code [ref=f2e1094]: medium
+                      - text: ","
+                      - code [ref=f2e1095]: high
+                  - row [ref=f2e1096]:
+                    - cell [ref=f2e1097]:
+                      - code [ref=f2e1098]: gpt-5
+                    - cell [ref=f2e1099]:
+                      - code [ref=f2e1100]: medium
+                    - cell [ref=f2e1101]:
+                      - code [ref=f2e1102]: minimal
+                      - text: ","
+                      - code [ref=f2e1103]: low
+                      - text: ","
+                      - code [ref=f2e1104]: medium
+                      - text: ","
+                      - code [ref=f2e1105]: high
+                  - row [ref=f2e1106]:
+                    - cell [ref=f2e1107]:
+                      - code [ref=f2e1108]: gpt-5-mini
+                    - cell [ref=f2e1109]:
+                      - code [ref=f2e1110]: medium
+                    - cell [ref=f2e1111]:
+                      - code [ref=f2e1112]: minimal
+                      - text: ","
+                      - code [ref=f2e1113]: low
+                      - text: ","
+                      - code [ref=f2e1114]: medium
+                      - text: ","
+                      - code [ref=f2e1115]: high
+                  - row [ref=f2e1116]:
+                    - cell [ref=f2e1117]:
+                      - code [ref=f2e1118]: gpt-5-nano
+                    - cell [ref=f2e1119]:
+                      - code [ref=f2e1120]: none
+                    - cell [ref=f2e1121]:
+                      - code [ref=f2e1122]: none
+                      - text: ","
+                      - code [ref=f2e1123]: low
+                      - text: ","
+                      - code [ref=f2e1124]: medium
+                      - text: ","
+                      - code [ref=f2e1125]: high
+                  - row [ref=f2e1126]:
+                    - cell [ref=f2e1127]:
+                      - code [ref=f2e1128]: gpt-5-codex
+                    - cell [ref=f2e1129]:
+                      - code [ref=f2e1130]: adaptive
+                    - cell [ref=f2e1131]:
+                      - code [ref=f2e1132]: low
+                      - text: ","
+                      - code [ref=f2e1133]: medium
+                      - text: ","
+                      - code [ref=f2e1134]: high
+                      - text: (no
+                      - code [ref=f2e1135]: minimal
+                      - text: )
+                  - row [ref=f2e1136]:
+                    - cell [ref=f2e1137]:
+                      - code [ref=f2e1138]: gpt-5.1-codex
+                    - cell [ref=f2e1139]:
+                      - code [ref=f2e1140]: adaptive
+                    - cell [ref=f2e1141]:
+                      - code [ref=f2e1142]: low
+                      - text: ","
+                      - code [ref=f2e1143]: medium
+                      - text: ","
+                      - code [ref=f2e1144]: high
+                      - text: (no
+                      - code [ref=f2e1145]: minimal
+                      - text: )
+                  - row [ref=f2e1146]:
+                    - cell [ref=f2e1147]:
+                      - code [ref=f2e1148]: gpt-5.1-codex-mini
+                    - cell [ref=f2e1149]:
+                      - code [ref=f2e1150]: adaptive
+                    - cell [ref=f2e1151]:
+                      - code [ref=f2e1152]: low
+                      - text: ","
+                      - code [ref=f2e1153]: medium
+                      - text: ","
+                      - code [ref=f2e1154]: high
+                      - text: (no
+                      - code [ref=f2e1155]: minimal
+                      - text: )
+                  - row [ref=f2e1156]:
+                    - cell [ref=f2e1157]:
+                      - code [ref=f2e1158]: gpt-5.1-codex-max
+                    - cell [ref=f2e1159]:
+                      - code [ref=f2e1160]: adaptive
+                    - cell [ref=f2e1161]:
+                      - code [ref=f2e1162]: low
+                      - text: ","
+                      - code [ref=f2e1163]: medium
+                      - text: ","
+                      - code [ref=f2e1164]: high
+                      - text: ","
+                      - code [ref=f2e1165]: xhigh
+                      - text: (no
+                      - code [ref=f2e1166]: minimal
+                      - text: )
+                  - row [ref=f2e1167]:
+                    - cell [ref=f2e1168]:
+                      - code [ref=f2e1169]: gpt-5.2
+                    - cell [ref=f2e1170]:
+                      - code [ref=f2e1171]: medium
+                    - cell [ref=f2e1172]:
+                      - code [ref=f2e1173]: none
+                      - text: ","
+                      - code [ref=f2e1174]: low
+                      - text: ","
+                      - code [ref=f2e1175]: medium
+                      - text: ","
+                      - code [ref=f2e1176]: high
+                      - text: ","
+                      - code [ref=f2e1177]: xhigh
+                  - row [ref=f2e1178]:
+                    - cell [ref=f2e1179]:
+                      - code [ref=f2e1180]: gpt-5.2-pro
+                    - cell [ref=f2e1181]:
+                      - code [ref=f2e1182]: high
+                    - cell [ref=f2e1183]:
+                      - code [ref=f2e1184]: low
+                      - text: ","
+                      - code [ref=f2e1185]: medium
+                      - text: ","
+                      - code [ref=f2e1186]: high
+                      - text: ","
+                      - code [ref=f2e1187]: xhigh
+                  - row [ref=f2e1188]:
+                    - cell [ref=f2e1189]:
+                      - code [ref=f2e1190]: gpt-5.5
+                    - cell [ref=f2e1191]:
+                      - code [ref=f2e1192]: medium
+                    - cell [ref=f2e1193]:
+                      - code [ref=f2e1194]: none
+                      - text: ","
+                      - code [ref=f2e1195]: minimal
+                      - text: ","
+                      - code [ref=f2e1196]: low
+                      - text: ","
+                      - code [ref=f2e1197]: medium
+                      - text: ","
+                      - code [ref=f2e1198]: high
+                      - text: ","
+                      - code [ref=f2e1199]: xhigh
+                  - row [ref=f2e1200]:
+                    - cell [ref=f2e1201]:
+                      - code [ref=f2e1202]: gpt-5.5-pro
+                    - cell [ref=f2e1203]:
+                      - code [ref=f2e1204]: high
+                    - cell [ref=f2e1205]:
+                      - code [ref=f2e1206]: minimal
+                      - text: ","
+                      - code [ref=f2e1207]: low
+                      - text: ","
+                      - code [ref=f2e1208]: medium
+                      - text: ","
+                      - code [ref=f2e1209]: high
+                      - text: ","
+                      - code [ref=f2e1210]: xhigh
+                  - row [ref=f2e1211]:
+                    - cell [ref=f2e1212]:
+                      - code [ref=f2e1213]: gpt-5-pro
+                    - cell [ref=f2e1214]:
+                      - code [ref=f2e1215]: high
+                    - cell [ref=f2e1216]:
+                      - code [ref=f2e1217]: high
+                      - text: only
+              - paragraph [ref=f2e1218]:
+                - strong [ref=f2e1219]: "Note:"
+              - list [ref=f2e1220]:
+                - listitem [ref=f2e1221]:
+                  - text: GPT-5.1 introduced a new
+                  - code [ref=f2e1222]: reasoning_effort="none"
+                  - text: setting for faster, lower-latency responses. This replaces the
+                  - code [ref=f2e1223]: "\"minimal\""
+                  - text: setting from GPT-5.
+                - listitem [ref=f2e1224]:
+                  - code [ref=f2e1225]: gpt-5.1-codex-max
+                  - text: ","
+                  - code [ref=f2e1226]: gpt-5.2
+                  - text: ","
+                  - code [ref=f2e1227]: gpt-5.2-pro
+                  - text: ","
+                  - code [ref=f2e1228]: gpt-5.5
+                  - text: ", and"
+                  - code [ref=f2e1229]: gpt-5.5-pro
+                  - text: support
+                  - code [ref=f2e1230]: reasoning_effort="xhigh"
+                  - text: . Models outside this set will reject the value.
+                - listitem [ref=f2e1231]:
+                  - code [ref=f2e1232]: gpt-5-pro
+                  - text: only accepts
+                  - code [ref=f2e1233]: reasoning_effort="high"
+                  - text: . Other values will return an error.
+                - listitem [ref=f2e1234]:
+                  - text: When
+                  - code [ref=f2e1235]: reasoning_effort
+                  - text: is not set (None), OpenAI defaults to the value shown in the "Default" column.
+              - paragraph [ref=f2e1236]:
+                - text: See
+                - link "OpenAI Reasoning documentation" [ref=f2e1237] [cursor=pointer]:
+                  - /url: https://platform.openai.com/docs/guides/reasoning
+                - text: for more details on organization verification requirements.
+              - heading [level=3] [ref=f2e1238]:
+                - text: Multi-turn Conversations with
+                - code [ref=f2e1239]: reasoning_items
+                - link "Direct link to multi-turn-conversations-with-reasoning_items" [ref=f2e1240] [cursor=pointer]:
+                  - /url: "#multi-turn-conversations-with-reasoning_items"
+                  - text: "#"
+              - paragraph [ref=f2e1241]:
+                - text: For multi-turn conversations you need
+                - code [ref=f2e1242]: reasoning_items
+                - text: ": structured blocks that include the"
+                - code [ref=f2e1243]: encrypted_content
+                - text: token OpenAI uses to restore reasoning state on the next request. Pass
+                - code [ref=f2e1244]: include=["reasoning.encrypted_content"]
+                - text: on every call where you want that token returned.
+              - generic [ref=f2e1245]:
+                - tablist [ref=f2e1246]:
+                  - tab "Non-Streaming" [selected] [ref=f2e1247] [cursor=pointer]
+                  - tab "Streaming" [ref=f2e1248] [cursor=pointer]
+                - tabpanel [ref=f2e1250]:
+                  - generic [ref=f2e1251]:
+                    - generic [ref=f2e1252]: "Non-streaming: round-trip reasoning_items"
+                    - code [ref=f2e1255]:
+                      - generic [ref=f2e1256]: import litellm
+                      - generic [ref=f2e1262]: "messages = [{\"role\": \"user\", \"content\": \"Solve this step by step: 2 + 2\"}]"
+                      - generic [ref=f2e1268]: "# Turn 1 — get reasoning_items (encrypted_content);"
+                      - generic [ref=f2e1271]: response = litellm.completion(
+                      - generic [ref=f2e1274]: model="openai/responses/gpt-5-mini",
+                      - generic [ref=f2e1277]: messages=messages,
+                      - generic [ref=f2e1280]: reasoning_effort="low",
+                      - generic [ref=f2e1283]: include=["reasoning.encrypted_content"],
+                      - generic [ref=f2e1286]: )
+                      - generic [ref=f2e1292]: assistant_msg = response.choices[0].message
+                      - generic [ref=f2e1298]: "# Turn 2 — pass reasoning_items back; LiteLLM converts to the correct Responses API format"
+                      - generic [ref=f2e1301]: "messages.append({"
+                      - generic [ref=f2e1304]: "\"role\": \"assistant\","
+                      - generic [ref=f2e1307]: "\"content\": assistant_msg.content,"
+                      - generic [ref=f2e1310]: "\"reasoning_items\": assistant_msg.reasoning_items,"
+                      - generic [ref=f2e1313]: "})"
+                      - generic [ref=f2e1316]: "messages.append({\"role\": \"user\", \"content\": \"Now summarize your reasoning.\"})"
+                      - generic [ref=f2e1322]: response2 = litellm.completion(
+                      - generic [ref=f2e1325]: model="openai/responses/gpt-5-mini",
+                      - generic [ref=f2e1328]: messages=messages,
+                      - generic [ref=f2e1331]: reasoning_effort="low",
+                      - generic [ref=f2e1334]: include=["reasoning.encrypted_content"],
+                      - generic [ref=f2e1337]: )
+              - heading [level=3] [ref=f2e1340]:
+                - text: Verbosity Control for GPT-5 Models
+                - link "Direct link to Verbosity Control for GPT-5 Models" [ref=f2e1341] [cursor=pointer]:
+                  - /url: "#verbosity-control-for-gpt-5-models"
+                  - text: "#"
+              - paragraph [ref=f2e1342]:
+                - text: The
+                - code [ref=f2e1343]: verbosity
+                - text: "parameter controls the length and detail of responses from GPT-5 family models. It accepts three values:"
+                - code [ref=f2e1344]: "\"low\""
+                - text: ","
+                - code [ref=f2e1345]: "\"medium\""
+                - text: ", or"
+                - code [ref=f2e1346]: "\"high\""
+                - text: .
+              - paragraph [ref=f2e1347]:
+                - strong [ref=f2e1348]: "Supported models:"
+                - code [ref=f2e1349]: gpt-5
+                - text: ","
+                - code [ref=f2e1350]: gpt-5.1
+                - text: ","
+                - code [ref=f2e1351]: gpt-5-mini
+                - text: ","
+                - code [ref=f2e1352]: gpt-5-nano
+                - text: ","
+                - code [ref=f2e1353]: gpt-5-pro
+              - paragraph [ref=f2e1354]:
+                - strong [ref=f2e1355]: "Note:"
+                - text: GPT-5-Codex models (
+                - code [ref=f2e1356]: gpt-5-codex
+                - text: ","
+                - code [ref=f2e1357]: gpt-5.1-codex
+                - text: ","
+                - code [ref=f2e1358]: gpt-5.1-codex-mini
+                - text: ","
+                - code [ref=f2e1359]: gpt-5.1-codex-max
+                - text: ) do
+                - strong [ref=f2e1360]: not
+                - text: support the
+                - code [ref=f2e1361]: verbosity
+                - text: parameter.
+              - paragraph [ref=f2e1362]:
+                - strong [ref=f2e1363]: "Use cases:"
+              - list [ref=f2e1364]:
+                - listitem [ref=f2e1365]:
+                  - strong [ref=f2e1366]:
+                    - code [ref=f2e1367]: "\"low\""
+                  - text: ": Best for concise answers or simple code generation (e.g., SQL queries)"
+                - listitem [ref=f2e1368]:
+                  - strong [ref=f2e1369]:
+                    - code [ref=f2e1370]: "\"medium\""
+                  - text: ": Default - balanced output length"
+                - listitem [ref=f2e1371]:
+                  - strong [ref=f2e1372]:
+                    - code [ref=f2e1373]: "\"high\""
+                  - text: ": Use when you need thorough explanations or extensive code refactoring"
+              - generic [ref=f2e1374]:
+                - tablist [ref=f2e1375]:
+                  - tab "SDK" [selected] [ref=f2e1376] [cursor=pointer]
+                  - tab "PROXY" [ref=f2e1377] [cursor=pointer]
+                - tabpanel [ref=f2e1379]:
+                  - code [ref=f2e1383]:
+                    - generic [ref=f2e1384]: import litellm
+                    - generic [ref=f2e1385]: "# Low verbosity - concise responses"
+                    - generic [ref=f2e1386]: response = litellm.completion(
+                    - generic [ref=f2e1387]: model="gpt-5.1",
+                    - generic [ref=f2e1388]: "messages=[{\"role\": \"user\", \"content\": \"Write a function to reverse a string\"}],"
+                    - generic [ref=f2e1389]: verbosity="low"
+                    - generic [ref=f2e1390]: )
+                    - generic [ref=f2e1391]: "# High verbosity - detailed responses"
+                    - generic [ref=f2e1392]: response = litellm.completion(
+                    - generic [ref=f2e1393]: model="gpt-5.1",
+                    - generic [ref=f2e1394]: "messages=[{\"role\": \"user\", \"content\": \"Explain how neural networks work\"}],"
+                    - generic [ref=f2e1395]: verbosity="high"
+                    - generic [ref=f2e1396]: )
+              - heading [level=2] [ref=f2e1397]:
+                - text: OpenAI Chat Completion to Responses API Bridge
+                - link "Direct link to OpenAI Chat Completion to Responses API Bridge" [ref=f2e1398] [cursor=pointer]:
+                  - /url: "#openai-chat-completion-to-responses-api-bridge"
+                  - text: "#"
+              - paragraph [ref=f2e1399]: LiteLLM offers a chat completion to Responses API bridge. This lets you use the completion interface while calling the Responses API under the hood.
+              - paragraph [ref=f2e1400]:
+                - text: This is useful when you want to use
+                - link "Responses API" [ref=f2e1401] [cursor=pointer]:
+                  - /url: https://platform.openai.com/docs/api-reference/responses
+                - text: specific features (like built-in tools, web search preview, or code interpreter).
+              - generic [ref=f2e1402]:
+                - generic [ref=f2e1403]: gpt-5.4+ + reasoning_effort + function tools
+                - generic [ref=f2e1407]:
+                  - paragraph [ref=f2e1408]:
+                    - text: LiteLLM drops
+                    - code [ref=f2e1409]: reasoning_effort
+                    - text: from
+                    - code [ref=f2e1410]: gpt-5.4
+                    - text: and newer (
+                    - code [ref=f2e1411]: gpt-5.4
+                    - text: ","
+                    - code [ref=f2e1412]: gpt-5.5
+                    - text: ", future 5.x releases) requests to"
+                    - code [ref=f2e1413]: litellm.completion()
+                    - text: that include tools, since that combination is only supported in the Responses API.
+                  - paragraph [ref=f2e1414]:
+                    - text: If you need reasoning
+                    - strong [ref=f2e1415]: and
+                    - text: tools together, use the responses bridge instead (LiteLLM also auto-routes these requests to
+                    - code [ref=f2e1416]: /v1/responses
+                    - text: when both
+                    - code [ref=f2e1417]: tools
+                    - text: and
+                    - code [ref=f2e1418]: reasoning_effort
+                    - text: "are set):"
+                  - code [ref=f2e1422]:
+                    - generic [ref=f2e1423]: response = litellm.completion(
+                    - generic [ref=f2e1424]: "model=\"openai/responses/gpt-5.5\", # routes to /v1/responses"
+                    - generic [ref=f2e1425]: "messages=[{\"role\": \"user\", \"content\": \"What's the weather?\"}],"
+                    - generic [ref=f2e1426]: tools=[...],
+                    - generic [ref=f2e1427]: reasoning_effort="low",
+                    - generic [ref=f2e1428]: )
+              - heading [level=3] [ref=f2e1429]:
+                - text: When to use the
+                - code [ref=f2e1430]: openai/responses/
+                - text: prefix
+                - link "Direct link to when-to-use-the-openairesponses-prefix" [ref=f2e1431] [cursor=pointer]:
+                  - /url: "#when-to-use-the-openairesponses-prefix"
+                  - text: "#"
+              - paragraph [ref=f2e1432]:
+                - text: Each model has a
+                - code [ref=f2e1433]: mode
+                - text: property defined in
+                - link [ref=f2e1434] [cursor=pointer]:
+                  - /url: https://github.com/BerriAI/litellm/blob/main/model_prices_and_context_window.json
+                  - code [ref=f2e1435]: model_prices_and_context_window.json
+                - text: "that determines which API endpoint it uses by default:"
+              - list [ref=f2e1436]:
+                - listitem [ref=f2e1437]:
+                  - strong [ref=f2e1438]:
+                    - code [ref=f2e1439]: "mode: responses"
+                  - text: "- Model automatically uses the Responses API"
+                - listitem [ref=f2e1440]:
+                  - strong [ref=f2e1441]:
+                    - code [ref=f2e1442]: "mode: chat"
+                  - text: "- Model defaults to the Chat Completions API"
+              - paragraph [ref=f2e1443]:
+                - strong [ref=f2e1444]:
+                  - text: Models with
+                  - code [ref=f2e1445]: "mode: responses"
+                - text: "(automatic Responses API):"
+              - list [ref=f2e1446]:
+                - listitem [ref=f2e1447]:
+                  - code [ref=f2e1448]: o3-deep-research
+                  - text: ","
+                  - code [ref=f2e1449]: o4-mini-deep-research
+                - listitem [ref=f2e1450]:
+                  - code [ref=f2e1451]: o1-pro
+                  - text: ","
+                  - code [ref=f2e1452]: o3-pro
+                - listitem [ref=f2e1453]:
+                  - code [ref=f2e1454]: gpt-5.1-codex
+                  - text: ","
+                  - code [ref=f2e1455]: gpt-5.1-codex-mini
+                  - text: ","
+                  - code [ref=f2e1456]: gpt-5.1-codex-max
+                - listitem [ref=f2e1457]:
+                  - code [ref=f2e1458]: codex-mini-latest
+              - paragraph [ref=f2e1459]:
+                - strong [ref=f2e1460]:
+                  - text: Models with
+                  - code [ref=f2e1461]: "mode: chat"
+                - text: (require
+                - code [ref=f2e1462]: openai/responses/
+                - text: "prefix for built-in tools):"
+              - list [ref=f2e1463]:
+                - listitem [ref=f2e1464]:
+                  - code [ref=f2e1465]: gpt-4o
+                  - text: ","
+                  - code [ref=f2e1466]: gpt-4o-mini
+                  - text: ","
+                  - code [ref=f2e1467]: gpt-4.1
+                  - text: ","
+                  - code [ref=f2e1468]: gpt-4.1-mini
+                - listitem [ref=f2e1469]:
+                  - code [ref=f2e1470]: gpt-5
+                  - text: ","
+                  - code [ref=f2e1471]: gpt-5-mini
+                - listitem [ref=f2e1472]:
+                  - code [ref=f2e1473]: o3
+                  - text: ","
+                  - code [ref=f2e1474]: o4-mini
+              - paragraph [ref=f2e1475]:
+                - text: To use built-in tools like
+                - code [ref=f2e1476]: web_search_preview
+                - text: with
+                - code [ref=f2e1477]: "mode: chat"
+                - text: models, add the
+                - code [ref=f2e1478]: openai/responses/
+                - text: "prefix:"
+              - code [ref=f2e1482]:
+                - generic [ref=f2e1483]: "# This will FAIL - gpt-4o has mode: chat, uses Chat Completions API"
+                - generic [ref=f2e1484]: response = litellm.completion(
+                - generic [ref=f2e1485]: model="gpt-4o",
+                - generic [ref=f2e1486]: "messages=[{\"role\": \"user\", \"content\": \"What is the weather in Paris today?\"}],"
+                - generic [ref=f2e1487]: "tools=[{\"type\": \"web_search_preview\"}], # Not supported in Chat Completions"
+                - generic [ref=f2e1488]: "# ... other kwargs"
+                - generic [ref=f2e1489]: )
+                - generic [ref=f2e1490]: "# This will WORK - prefix forces Responses API"
+                - generic [ref=f2e1491]: response = litellm.completion(
+                - generic [ref=f2e1492]: model="openai/responses/gpt-4o",
+                - generic [ref=f2e1493]: "messages=[{\"role\": \"user\", \"content\": \"What is the weather in Paris today?\"}],"
+                - generic [ref=f2e1494]: "tools=[{\"type\": \"web_search_preview\"}], # Supported in Responses API"
+                - generic [ref=f2e1495]: "# ... other kwargs"
+                - generic [ref=f2e1496]: )
+              - heading [level=3] [ref=f2e1497]:
+                - text: Examples
+                - link "Direct link to Examples" [ref=f2e1498] [cursor=pointer]:
+                  - /url: "#examples"
+                  - text: "#"
+              - generic [ref=f2e1499]:
+                - tablist [ref=f2e1500]:
+                  - tab "SDK" [selected] [ref=f2e1501] [cursor=pointer]
+                  - tab "PROXY" [ref=f2e1502] [cursor=pointer]
+                - tabpanel [ref=f2e1504]:
+                  - paragraph [ref=f2e1505]:
+                    - strong [ref=f2e1506]:
+                      - text: Using a model with
+                      - code [ref=f2e1507]: "mode: responses"
+                      - text: "(automatic):"
+                  - code [ref=f2e1511]:
+                    - generic [ref=f2e1512]: import litellm
+                    - generic [ref=f2e1513]: import os
+                    - generic [ref=f2e1514]: os.environ["OPENAI_API_KEY"] = "sk-1234"
+                    - generic [ref=f2e1515]: response = litellm.completion(
+                    - generic [ref=f2e1516]: model="o3-deep-research-2025-06-26",
+                    - generic [ref=f2e1517]: "messages=[{\"role\": \"user\", \"content\": \"What is the capital of France?\"}],"
+                    - generic [ref=f2e1518]: tools=[
+                    - generic [ref=f2e1519]: "{\"type\": \"web_search_preview\"},"
+                    - generic [ref=f2e1520]: "{\"type\": \"code_interpreter\", \"container\": {\"type\": \"auto\"}},"
+                    - generic [ref=f2e1521]: "],"
+                    - generic [ref=f2e1522]: )
+                    - generic [ref=f2e1523]: print(response)
+                  - paragraph [ref=f2e1524]:
+                    - strong [ref=f2e1525]:
+                      - text: Using a model with
+                      - code [ref=f2e1526]: "mode: chat"
+                      - text: "(requires prefix):"
+                  - code [ref=f2e1530]:
+                    - generic [ref=f2e1531]: import litellm
+                    - generic [ref=f2e1532]: import os
+                    - generic [ref=f2e1533]: os.environ["OPENAI_API_KEY"] = "sk-1234"
+                    - generic [ref=f2e1534]: "# Use the openai/responses/ prefix to enable built-in tools"
+                    - generic [ref=f2e1535]: response = litellm.completion(
+                    - generic [ref=f2e1536]: model="openai/responses/gpt-4o",
+                    - generic [ref=f2e1537]: "messages=[{\"role\": \"user\", \"content\": \"What is the weather in Paris today?\"}],"
+                    - generic [ref=f2e1538]: tools=[
+                    - generic [ref=f2e1539]: "{\"type\": \"web_search_preview\"},"
+                    - generic [ref=f2e1540]: "],"
+                    - generic [ref=f2e1541]: )
+                    - generic [ref=f2e1542]: print(response)
+              - heading [level=2] [ref=f2e1543]:
+                - text: OpenAI Audio Transcription
+                - link "Direct link to OpenAI Audio Transcription" [ref=f2e1544] [cursor=pointer]:
+                  - /url: "#openai-audio-transcription"
+                  - text: "#"
+              - paragraph [ref=f2e1545]: LiteLLM supports OpenAI Audio Transcription endpoint.
+              - paragraph [ref=f2e1546]: "Supported models:"
+              - table [ref=f2e1547]:
+                - rowgroup [ref=f2e1548]:
+                  - row [ref=f2e1549]:
+                    - columnheader "Model Name" [ref=f2e1550]
+                    - columnheader "Function Call" [ref=f2e1551]
+                - rowgroup [ref=f2e1552]:
+                  - row [ref=f2e1553]:
+                    - cell [ref=f2e1554]:
+                      - code [ref=f2e1555]: whisper-1
+                    - cell [ref=f2e1556]:
+                      - code [ref=f2e1557]: response = completion(model="whisper-1", file=audio_file)
+                  - row [ref=f2e1558]:
+                    - cell [ref=f2e1559]:
+                      - code [ref=f2e1560]: gpt-4o-transcribe
+                    - cell [ref=f2e1561]:
+                      - code [ref=f2e1562]: response = completion(model="gpt-4o-transcribe", file=audio_file)
+                  - row [ref=f2e1563]:
+                    - cell [ref=f2e1564]:
+                      - code [ref=f2e1565]: gpt-4o-mini-transcribe
+                    - cell [ref=f2e1566]:
+                      - code [ref=f2e1567]: response = completion(model="gpt-4o-mini-transcribe", file=audio_file)
+              - generic [ref=f2e1568]:
+                - tablist [ref=f2e1569]:
+                  - tab "SDK" [selected] [ref=f2e1570] [cursor=pointer]
+                  - tab "PROXY" [ref=f2e1571] [cursor=pointer]
+                - tabpanel [ref=f2e1573]:
+                  - code [ref=f2e1577]:
+                    - generic [ref=f2e1578]: from litellm import transcription
+                    - generic [ref=f2e1579]: import os
+                    - generic [ref=f2e1580]: "# set api keys"
+                    - generic [ref=f2e1581]: os.environ["OPENAI_API_KEY"] = ""
+                    - generic [ref=f2e1582]: audio_file = open("/path/to/audio.mp3", "rb")
+                    - generic [ref=f2e1583]: response = transcription(model="gpt-4o-transcribe", file=audio_file)
+                    - generic [ref=f2e1584]: "print(f\"response: {response}\")"
+              - heading [level=2] [ref=f2e1585]:
+                - text: Advanced
+                - link "Direct link to Advanced" [ref=f2e1586] [cursor=pointer]:
+                  - /url: "#advanced"
+                  - text: "#"
+              - heading [level=3] [ref=f2e1587]:
+                - text: Getting OpenAI API Response Headers
+                - link "Direct link to Getting OpenAI API Response Headers" [ref=f2e1588] [cursor=pointer]:
+                  - /url: "#getting-openai-api-response-headers"
+                  - text: "#"
+              - paragraph [ref=f2e1589]:
+                - text: Set
+                - code [ref=f2e1590]: litellm.return_response_headers = True
+                - text: to get raw response headers from OpenAI
+              - paragraph [ref=f2e1591]:
+                - text: You can expect to always get the
+                - code [ref=f2e1592]: _response_headers
+                - text: field from
+                - code [ref=f2e1593]: litellm.completion()
+                - text: ","
+                - code [ref=f2e1594]: litellm.embedding()
+                - text: functions
+              - generic [ref=f2e1595]:
+                - tablist [ref=f2e1596]:
+                  - tab "litellm.completion" [selected] [ref=f2e1597] [cursor=pointer]
+                  - tab "litellm.completion + stream" [ref=f2e1598] [cursor=pointer]
+                  - tab "litellm.embedding" [ref=f2e1599] [cursor=pointer]
+                - tabpanel [ref=f2e1601]:
+                  - code [ref=f2e1605]:
+                    - generic [ref=f2e1606]: litellm.return_response_headers = True
+                    - generic [ref=f2e1607]: "# /chat/completion"
+                    - generic [ref=f2e1608]: response = completion(
+                    - generic [ref=f2e1609]: model="gpt-4o-mini",
+                    - generic [ref=f2e1610]: messages=[
+                    - generic [ref=f2e1611]: "{"
+                    - generic [ref=f2e1612]: "\"role\": \"user\","
+                    - generic [ref=f2e1613]: "\"content\": \"hi\","
+                    - generic [ref=f2e1614]: "}"
+                    - generic [ref=f2e1615]: "],"
+                    - generic [ref=f2e1616]: )
+                    - generic [ref=f2e1617]: "print(f\"response: {response}\")"
+                    - generic [ref=f2e1618]: print("_response_headers=", response._response_headers)
+              - paragraph [ref=f2e1619]: Expected Response Headers from OpenAI
+              - code [ref=f2e1623]:
+                - generic [ref=f2e1624]: "{"
+                - generic [ref=f2e1625]: "\"date\": \"Sat, 20 Jul 2024 22:05:23 GMT\","
+                - generic [ref=f2e1626]: "\"content-type\": \"application/json\","
+                - generic [ref=f2e1627]: "\"transfer-encoding\": \"chunked\","
+                - generic [ref=f2e1628]: "\"connection\": \"keep-alive\","
+                - generic [ref=f2e1629]: "\"access-control-allow-origin\": \"*\","
+                - generic [ref=f2e1630]: "\"openai-model\": \"text-embedding-ada-002\","
+                - generic [ref=f2e1631]: "\"openai-organization\": \"*****\","
+                - generic [ref=f2e1632]: "\"openai-processing-ms\": \"20\","
+                - generic [ref=f2e1633]: "\"openai-version\": \"2020-10-01\","
+                - generic [ref=f2e1634]: "\"strict-transport-security\": \"max-age=15552000; includeSubDomains; preload\","
+                - generic [ref=f2e1635]: "\"x-ratelimit-limit-requests\": \"5000\","
+                - generic [ref=f2e1636]: "\"x-ratelimit-limit-tokens\": \"5000000\","
+                - generic [ref=f2e1637]: "\"x-ratelimit-remaining-requests\": \"4999\","
+                - generic [ref=f2e1638]: "\"x-ratelimit-remaining-tokens\": \"4999999\","
+                - generic [ref=f2e1639]: "\"x-ratelimit-reset-requests\": \"12ms\","
+                - generic [ref=f2e1640]: "\"x-ratelimit-reset-tokens\": \"0s\","
+                - generic [ref=f2e1641]: "\"x-request-id\": \"req_cc37487bfd336358231a17034bcfb4d9\","
+                - generic [ref=f2e1642]: "\"cf-cache-status\": \"DYNAMIC\","
+                - generic [ref=f2e1643]: "\"set-cookie\": \"__cf_bm=E_FJY8fdAIMBzBE2RZI2.OkMIO3lf8Hz.ydBQJ9m3q8-1721513123-1.0.1.1-6OK0zXvtd5s9Jgqfz66cU9gzQYpcuh_RLaUZ9dOgxR9Qeq4oJlu.04C09hOTCFn7Hg.k.2tiKLOX24szUE2shw; path=/; expires=Sat, 20-Jul-24 22:35:23 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, *cfuvid=SDndIImxiO3U0aBcVtoy1TBQqYeQtVDo1L6*Nlpp7EU-1721513123215-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None\","
+                - generic [ref=f2e1644]: "\"x-content-type-options\": \"nosniff\","
+                - generic [ref=f2e1645]: "\"server\": \"cloudflare\","
+                - generic [ref=f2e1646]: "\"cf-ray\": \"8a66409b4f8acee9-SJC\","
+                - generic [ref=f2e1647]: "\"content-encoding\": \"br\","
+                - generic [ref=f2e1648]: "\"alt-svc\": \"h3=\\\":443\\\"; ma=86400\""
+                - generic [ref=f2e1649]: "}"
+              - heading [level=3] [ref=f2e1650]:
+                - text: Parallel Function calling
+                - link "Direct link to Parallel Function calling" [ref=f2e1651] [cursor=pointer]:
+                  - /url: "#parallel-function-calling"
+                  - text: "#"
+              - paragraph [ref=f2e1652]:
+                - text: See a detailed walthrough of parallel function calling with litellm
+                - link "here" [ref=f2e1653] [cursor=pointer]:
+                  - /url: https://docs.litellm.ai/docs/completion/function_call
+              - code [ref=f2e1657]:
+                - generic [ref=f2e1658]: import litellm
+                - generic [ref=f2e1659]: import json
+                - generic [ref=f2e1660]: "# set openai api key"
+                - generic [ref=f2e1661]: import os
+                - generic [ref=f2e1662]: "os.environ['OPENAI_API_KEY'] = \"\" # litellm reads OPENAI_API_KEY from .env and sends the request"
+                - generic [ref=f2e1663]: "# Example dummy function hard coded to return the same weather"
+                - generic [ref=f2e1664]: "# In production, this could be your backend API or an external API"
+                - generic [ref=f2e1665]: "def get_current_weather(location, unit=\"fahrenheit\"):"
+                - generic [ref=f2e1666]: "\"\"\"Get the current weather in a given location\"\"\""
+                - generic [ref=f2e1667]: "if \"tokyo\" in location.lower():"
+                - generic [ref=f2e1668]: "return json.dumps({\"location\": \"Tokyo\", \"temperature\": \"10\", \"unit\": \"celsius\"})"
+                - generic [ref=f2e1669]: "elif \"san francisco\" in location.lower():"
+                - generic [ref=f2e1670]: "return json.dumps({\"location\": \"San Francisco\", \"temperature\": \"72\", \"unit\": \"fahrenheit\"})"
+                - generic [ref=f2e1671]: "elif \"paris\" in location.lower():"
+                - generic [ref=f2e1672]: "return json.dumps({\"location\": \"Paris\", \"temperature\": \"22\", \"unit\": \"celsius\"})"
+                - generic [ref=f2e1673]: "else:"
+                - generic [ref=f2e1674]: "return json.dumps({\"location\": location, \"temperature\": \"unknown\"})"
+                - generic [ref=f2e1675]: "messages = [{\"role\": \"user\", \"content\": \"What's the weather like in San Francisco, Tokyo, and Paris?\"}]"
+                - generic [ref=f2e1676]: tools = [
+                - generic [ref=f2e1677]: "{"
+                - generic [ref=f2e1678]: "\"type\": \"function\","
+                - generic [ref=f2e1679]: "\"function\": {"
+                - generic [ref=f2e1680]: "\"name\": \"get_current_weather\","
+                - generic [ref=f2e1681]: "\"description\": \"Get the current weather in a given location\","
+                - generic [ref=f2e1682]: "\"parameters\": {"
+                - generic [ref=f2e1683]: "\"type\": \"object\","
+                - generic [ref=f2e1684]: "\"properties\": {"
+                - generic [ref=f2e1685]: "\"location\": {"
+                - generic [ref=f2e1686]: "\"type\": \"string\","
+                - generic [ref=f2e1687]: "\"description\": \"The city and state, e.g. San Francisco, CA\","
+                - generic [ref=f2e1688]: "},"
+                - generic [ref=f2e1689]: "\"unit\": {\"type\": \"string\", \"enum\": [\"celsius\", \"fahrenheit\"]},"
+                - generic [ref=f2e1690]: "},"
+                - generic [ref=f2e1691]: "\"required\": [\"location\"],"
+                - generic [ref=f2e1692]: "},"
+                - generic [ref=f2e1693]: "},"
+                - generic [ref=f2e1694]: "}"
+                - generic [ref=f2e1695]: "]"
+                - generic [ref=f2e1696]: response = litellm.completion(
+                - generic [ref=f2e1697]: model="gpt-3.5-turbo-1106",
+                - generic [ref=f2e1698]: messages=messages,
+                - generic [ref=f2e1699]: tools=tools,
+                - generic [ref=f2e1700]: "tool_choice=\"auto\", # auto is default, but we'll be explicit"
+                - generic [ref=f2e1701]: )
+                - generic [ref=f2e1702]: print("\nLLM Response1:\n", response)
+                - generic [ref=f2e1703]: response_message = response.choices[0].message
+                - generic [ref=f2e1704]: tool_calls = response.choices[0].message.tool_calls
+              - heading [level=3] [ref=f2e1705]:
+                - text: Setting
+                - code [ref=f2e1706]: extra_headers
+                - text: for completion calls
+                - link "Direct link to setting-extra_headers-for-completion-calls" [ref=f2e1707] [cursor=pointer]:
+                  - /url: "#setting-extra_headers-for-completion-calls"
+                  - text: "#"
+              - code [ref=f2e1711]:
+                - generic [ref=f2e1712]: import os
+                - generic [ref=f2e1713]: from litellm import completion
+                - generic [ref=f2e1714]: os.environ["OPENAI_API_KEY"] = "your-api-key"
+                - generic [ref=f2e1715]: response = completion(
+                - generic [ref=f2e1716]: model = "gpt-3.5-turbo",
+                - generic [ref=f2e1717]: "messages=[{ \"content\": \"Hello, how are you?\",\"role\": \"user\"}],"
+                - generic [ref=f2e1718]: "extra_headers={\"AI-Resource Group\": \"ishaan-resource\"}"
+                - generic [ref=f2e1719]: )
+              - heading [level=3] [ref=f2e1720]:
+                - text: Setting Organization-ID for completion calls
+                - link "Direct link to Setting Organization-ID for completion calls" [ref=f2e1721] [cursor=pointer]:
+                  - /url: "#setting-organization-id-for-completion-calls"
+                  - text: "#"
+              - paragraph [ref=f2e1722]: "This can be set in one of the following ways:"
+              - list [ref=f2e1723]:
+                - listitem [ref=f2e1724]:
+                  - text: Environment Variable
+                  - code [ref=f2e1725]: OPENAI_ORGANIZATION
+                - listitem [ref=f2e1726]:
+                  - text: Params to
+                  - code [ref=f2e1727]: litellm.completion(model=model, organization="your-organization-id")
+                - listitem [ref=f2e1728]:
+                  - text: Set as
+                  - code [ref=f2e1729]: litellm.organization="your-organization-id"
+              - code [ref=f2e1733]:
+                - generic [ref=f2e1734]: import os
+                - generic [ref=f2e1735]: from litellm import completion
+                - generic [ref=f2e1736]: os.environ["OPENAI_API_KEY"] = "your-api-key"
+                - generic [ref=f2e1737]: "os.environ[\"OPENAI_ORGANIZATION\"] = \"your-org-id\" # OPTIONAL"
+                - generic [ref=f2e1738]: response = completion(
+                - generic [ref=f2e1739]: model = "gpt-3.5-turbo",
+                - generic [ref=f2e1740]: "messages=[{ \"content\": \"Hello, how are you?\",\"role\": \"user\"}]"
+                - generic [ref=f2e1741]: )
+              - heading [level=3] [ref=f2e1742]:
+                - text: Set
+                - code [ref=f2e1743]: ssl_verify=False
+                - link "Direct link to set-ssl_verifyfalse" [ref=f2e1744] [cursor=pointer]:
+                  - /url: "#set-ssl_verifyfalse"
+                  - text: "#"
+              - paragraph [ref=f2e1745]:
+                - text: This is done by setting your own
+                - code [ref=f2e1746]: httpx.Client
+              - list [ref=f2e1747]:
+                - listitem [ref=f2e1748]:
+                  - text: For
+                  - code [ref=f2e1749]: litellm.completion
+                  - text: set
+                  - code [ref=f2e1750]: litellm.client_session=httpx.Client(verify=False)
+                - listitem [ref=f2e1751]:
+                  - text: For
+                  - code [ref=f2e1752]: litellm.acompletion
+                  - text: set
+                  - code [ref=f2e1753]: litellm.aclient_session=AsyncClient.Client(verify=False)
+              - code [ref=f2e1757]:
+                - generic [ref=f2e1758]: import litellm, httpx
+                - generic [ref=f2e1759]: "# for completion"
+                - generic [ref=f2e1760]: litellm.client_session = httpx.Client(verify=False)
+                - generic [ref=f2e1761]: response = litellm.completion(
+                - generic [ref=f2e1762]: model="gpt-3.5-turbo",
+                - generic [ref=f2e1763]: messages=messages,
+                - generic [ref=f2e1764]: )
+                - generic [ref=f2e1765]: "# for acompletion"
+                - generic [ref=f2e1766]: litellm.aclient_session = httpx.AsyncClient(verify=False)
+                - generic [ref=f2e1767]: response = litellm.acompletion(
+                - generic [ref=f2e1768]: model="gpt-3.5-turbo",
+                - generic [ref=f2e1769]: messages=messages,
+                - generic [ref=f2e1770]: )
+              - heading [level=3] [ref=f2e1771]:
+                - text: Using OpenAI Proxy with LiteLLM
+                - link "Direct link to Using OpenAI Proxy with LiteLLM" [ref=f2e1772] [cursor=pointer]:
+                  - /url: "#using-openai-proxy-with-litellm"
+                  - text: "#"
+              - code [ref=f2e1776]:
+                - generic [ref=f2e1777]: import os
+                - generic [ref=f2e1778]: import litellm
+                - generic [ref=f2e1779]: from litellm import completion
+                - generic [ref=f2e1780]: os.environ["OPENAI_API_KEY"] = ""
+                - generic [ref=f2e1781]: "# set custom api base to your proxy"
+                - generic [ref=f2e1782]: "# either set .env or litellm.api_base"
+                - generic [ref=f2e1783]: "# os.environ[\"OPENAI_BASE_URL\"] = \"https://your_host/v1\""
+                - generic [ref=f2e1784]: litellm.api_base = "https://your_host/v1"
+                - generic [ref=f2e1785]: "messages = [{ \"content\": \"Hello, how are you?\",\"role\": \"user\"}]"
+                - generic [ref=f2e1786]: "# openai call"
+                - generic [ref=f2e1787]: response = completion("openai/your-model-name", messages)
+              - paragraph [ref=f2e1788]:
+                - text: If you need to set api_base dynamically, just pass it in completions instead -
+                - code [ref=f2e1789]: completions(...,api_base="your-proxy-api-base")
+              - paragraph [ref=f2e1790]:
+                - text: For more check out
+                - link "setting API Base/Keys" [ref=f2e1791] [cursor=pointer]:
+                  - /url: /docs/set_keys
+              - heading [level=3] [ref=f2e1792]:
+                - text: Forwarding Org ID for Proxy requests
+                - link "Direct link to Forwarding Org ID for Proxy requests" [ref=f2e1793] [cursor=pointer]:
+                  - /url: "#forwarding-org-id-for-proxy-requests"
+                  - text: "#"
+              - paragraph [ref=f2e1794]:
+                - text: Forward openai Org ID's from the client to OpenAI with
+                - code [ref=f2e1795]: forward_openai_org_id
+                - text: param.
+              - list [ref=f2e1796]:
+                - listitem [ref=f2e1797]: Setup config.yaml
+              - code [ref=f2e1801]:
+                - generic [ref=f2e1802]: "model_list:"
+                - generic [ref=f2e1803]: "- model_name: \"gpt-3.5-turbo\""
+                - generic [ref=f2e1804]: "litellm_params:"
+                - generic [ref=f2e1805]: "model: gpt-3.5-turbo"
+                - generic [ref=f2e1806]: "api_key: os.environ/OPENAI_API_KEY"
+                - generic [ref=f2e1807]: "general_settings:"
+                - generic [ref=f2e1808]: "forward_openai_org_id: true # 👈 KEY CHANGE"
+              - list [ref=f2e1809]:
+                - listitem [ref=f2e1810]: Start Proxy
+              - code [ref=f2e1814]:
+                - generic [ref=f2e1815]: litellm --config config.yaml --detailed_debug
+                - generic [ref=f2e1816]: "# RUNNING on http://0.0.0.0:4000"
+              - list [ref=f2e1817]:
+                - listitem [ref=f2e1818]: Make OpenAI call
+              - code [ref=f2e1822]:
+                - generic [ref=f2e1823]: from openai import OpenAI
+                - generic [ref=f2e1824]: client = OpenAI(
+                - generic [ref=f2e1825]: api_key="sk-1234",
+                - generic [ref=f2e1826]: organization="my-special-org",
+                - generic [ref=f2e1827]: base_url="http://0.0.0.0:4000"
+                - generic [ref=f2e1828]: )
+                - generic [ref=f2e1829]: "client.chat.completions.create(model=\"gpt-3.5-turbo\", messages=[{\"role\": \"user\", \"content\": \"Hello world\"}])"
+              - paragraph [ref=f2e1830]: In your logs you should see the forwarded org id
+              - code [ref=f2e1834]:
+                - generic [ref=f2e1835]: "LiteLLM:DEBUG: utils.py:255 - Request to litellm:"
+                - generic [ref=f2e1836]: "LiteLLM:DEBUG: utils.py:255 - litellm.acompletion(... organization='my-special-org',)"
+              - heading [level=2] [ref=f2e1837]:
+                - text: GPT-5 Pro Special Notes
+                - link "Direct link to GPT-5 Pro Special Notes" [ref=f2e1838] [cursor=pointer]:
+                  - /url: "#gpt-5-pro-special-notes"
+                  - text: "#"
+              - paragraph [ref=f2e1839]: "GPT-5 Pro is OpenAI's most advanced reasoning model with unique characteristics:"
+              - list [ref=f2e1840]:
+                - listitem [ref=f2e1841]:
+                  - strong [ref=f2e1842]: Responses API Only
+                  - text: ": GPT-5 Pro is only available through the"
+                  - code [ref=f2e1843]: /v1/responses
+                  - text: endpoint
+                - listitem [ref=f2e1844]:
+                  - strong [ref=f2e1845]: No Streaming
+                  - text: ": Does not support streaming responses"
+                - listitem [ref=f2e1846]:
+                  - strong [ref=f2e1847]: High Reasoning
+                  - text: ": Designed for complex reasoning tasks with highest effort reasoning"
+                - listitem [ref=f2e1848]:
+                  - strong [ref=f2e1849]: Context Window
+                  - text: ": 400,000 tokens input, 272,000 tokens output"
+                - listitem [ref=f2e1850]:
+                  - strong [ref=f2e1851]: Pricing
+                  - text: ": $15.00 input / $120.00 output per 1M tokens (Standard), $7.50 input / $60.00 output (Batch)"
+                - listitem [ref=f2e1852]:
+                  - strong [ref=f2e1853]: Tools
+                  - text: ": Supports Web Search, File Search, Image Generation, MCP (but not Code Interpreter or Computer Use)"
+                - listitem [ref=f2e1854]:
+                  - strong [ref=f2e1855]: Modalities
+                  - text: ": Text and Image input, Text output only"
+              - code [ref=f2e1859]:
+                - generic [ref=f2e1860]: "# GPT-5 Pro usage example"
+                - generic [ref=f2e1861]: response = completion(
+                - generic [ref=f2e1862]: model="gpt-5-pro",
+                - generic [ref=f2e1863]: "messages=[{\"role\": \"user\", \"content\": \"Solve this complex reasoning problem...\"}]"
+                - generic [ref=f2e1864]: )
+              - heading [level=2] [ref=f2e1865]:
+                - text: Video Generation
+                - link "Direct link to Video Generation" [ref=f2e1866] [cursor=pointer]:
+                  - /url: "#video-generation"
+                  - text: "#"
+              - paragraph [ref=f2e1867]: LiteLLM supports OpenAI's video generation models including Sora.
+              - paragraph [ref=f2e1868]:
+                - text: For detailed documentation on video generation, see
+                - link "OpenAI Video Generation →" [ref=f2e1869] [cursor=pointer]:
+                  - /url: /docs/providers/openai/videos
+          - navigation "Docs pages" [ref=f2e1870]:
+            - link "Previous « Add Model Pricing & Context Window" [ref=f2e1871] [cursor=pointer]:
+              - /url: /docs/provider_registration/add_model_pricing
+              - generic [ref=f2e1872]: Previous
+              - generic [ref=f2e1873]: « Add Model Pricing & Context Window
+            - link "Next OpenAI - Response API »" [ref=f2e1874] [cursor=pointer]:
+              - /url: /docs/providers/openai/responses_api
+              - generic [ref=f2e1875]: Next
+              - generic [ref=f2e1876]: OpenAI - Response API »
+        - generic [ref=f2e1878]:
+          - list [ref=f2e1880]:
+            - listitem [ref=f2e1881]:
+              - link "Required API Keys" [ref=f2e1882] [cursor=pointer]:
+                - /url: "#required-api-keys"
+            - listitem [ref=f2e1883]:
+              - link "Usage" [ref=f2e1884] [cursor=pointer]:
+                - /url: "#usage"
+            - listitem [ref=f2e1885]:
+              - link "Usage - LiteLLM Proxy Server" [ref=f2e1886] [cursor=pointer]:
+                - /url: "#usage---litellm-proxy-server"
+            - listitem [ref=f2e1887]:
+              - link "1. Save key in your environment" [ref=f2e1888] [cursor=pointer]:
+                - /url: "#1-save-key-in-your-environment"
+            - listitem [ref=f2e1889]:
+              - link "2. Start the proxy" [ref=f2e1890] [cursor=pointer]:
+                - /url: "#2-start-the-proxy"
+            - listitem [ref=f2e1891]:
+              - link "3. Test it" [ref=f2e1892] [cursor=pointer]:
+                - /url: "#3-test-it"
+            - listitem [ref=f2e1893]:
+              - link "Optional Keys - OpenAI Organization, OpenAI API Base" [ref=f2e1894] [cursor=pointer]:
+                - /url: "#optional-keys---openai-organization-openai-api-base"
+            - listitem [ref=f2e1895]:
+              - link "OpenAI Chat Completion Models" [ref=f2e1896] [cursor=pointer]:
+                - /url: "#openai-chat-completion-models"
+            - listitem [ref=f2e1897]:
+              - link "OpenAI Web Search Models" [ref=f2e1898] [cursor=pointer]:
+                - /url: "#openai-web-search-models"
+            - listitem [ref=f2e1899]:
+              - link "OpenAI Vision Models" [ref=f2e1900] [cursor=pointer]:
+                - /url: "#openai-vision-models"
+            - listitem [ref=f2e1901]:
+              - link "PDF File Parsing" [ref=f2e1902] [cursor=pointer]:
+                - /url: "#pdf-file-parsing"
+            - listitem [ref=f2e1903]:
+              - link "OpenAI Fine Tuned Models" [ref=f2e1904] [cursor=pointer]:
+                - /url: "#openai-fine-tuned-models"
+            - listitem [ref=f2e1905]:
+              - link "[BETA] Route all .completions requests to Responses API (better quality)" [ref=f2e1906] [cursor=pointer]:
+                - /url: "#beta-route-all-completions-requests-to-responses-api-better-quality"
+              - list [ref=f2e1907]:
+                - listitem [ref=f2e1908]:
+                  - link [ref=f2e1909] [cursor=pointer]:
+                    - /url: "#advanced-using-reasoning_effort-with-summary-field"
+                    - text: "Advanced: Using"
+                    - code [ref=f2e1910]: reasoning_effort
+                    - text: with
+                    - code [ref=f2e1911]: summary
+                    - text: field
+                - listitem [ref=f2e1912]:
+                  - link [ref=f2e1913] [cursor=pointer]:
+                    - /url: "#multi-turn-conversations-with-reasoning_items"
+                    - text: Multi-turn Conversations with
+                    - code [ref=f2e1914]: reasoning_items
+                - listitem [ref=f2e1915]:
+                  - link "Verbosity Control for GPT-5 Models" [ref=f2e1916] [cursor=pointer]:
+                    - /url: "#verbosity-control-for-gpt-5-models"
+            - listitem [ref=f2e1917]:
+              - link "OpenAI Chat Completion to Responses API Bridge" [ref=f2e1918] [cursor=pointer]:
+                - /url: "#openai-chat-completion-to-responses-api-bridge"
+              - list [ref=f2e1919]:
+                - listitem [ref=f2e1920]:
+                  - link [ref=f2e1921] [cursor=pointer]:
+                    - /url: "#when-to-use-the-openairesponses-prefix"
+                    - text: When to use the
+                    - code [ref=f2e1922]: openai/responses/
+                    - text: prefix
+                - listitem [ref=f2e1923]:
+                  - link "Examples" [ref=f2e1924] [cursor=pointer]:
+                    - /url: "#examples"
+            - listitem [ref=f2e1925]:
+              - link "OpenAI Audio Transcription" [ref=f2e1926] [cursor=pointer]:
+                - /url: "#openai-audio-transcription"
+            - listitem [ref=f2e1927]:
+              - link "Advanced" [ref=f2e1928] [cursor=pointer]:
+                - /url: "#advanced"
+              - list [ref=f2e1929]:
+                - listitem [ref=f2e1930]:
+                  - link "Getting OpenAI API Response Headers" [ref=f2e1931] [cursor=pointer]:
+                    - /url: "#getting-openai-api-response-headers"
+                - listitem [ref=f2e1932]:
+                  - link "Parallel Function calling" [ref=f2e1933] [cursor=pointer]:
+                    - /url: "#parallel-function-calling"
+                - listitem [ref=f2e1934]:
+                  - link [ref=f2e1935] [cursor=pointer]:
+                    - /url: "#setting-extra_headers-for-completion-calls"
+                    - text: Setting
+                    - code [ref=f2e1936]: extra_headers
+                    - text: for completion calls
+                - listitem [ref=f2e1937]:
+                  - link "Setting Organization-ID for completion calls" [ref=f2e1938] [cursor=pointer]:
+                    - /url: "#setting-organization-id-for-completion-calls"
+                - listitem [ref=f2e1939]:
+                  - link [ref=f2e1940] [cursor=pointer]:
+                    - /url: "#set-ssl_verifyfalse"
+                    - text: Set
+                    - code [ref=f2e1941]: ssl_verify=False
+                - listitem [ref=f2e1942]:
+                  - link "Using OpenAI Proxy with LiteLLM" [ref=f2e1943] [cursor=pointer]:
+                    - /url: "#using-openai-proxy-with-litellm"
+                - listitem [ref=f2e1944]:
+                  - link "Forwarding Org ID for Proxy requests" [ref=f2e1945] [cursor=pointer]:
+                    - /url: "#forwarding-org-id-for-proxy-requests"
+            - listitem [ref=f2e1946]:
+              - link "GPT-5 Pro Special Notes" [ref=f2e1947] [cursor=pointer]:
+                - /url: "#gpt-5-pro-special-notes"
+            - listitem [ref=f2e1948]:
+              - link "Video Generation" [ref=f2e1949] [cursor=pointer]:
+                - /url: "#video-generation"
+          - generic [ref=f2e1950]:
+            - generic [ref=f2e1951]: 🚅
+            - generic [ref=f2e1952]: LiteLLM Enterprise
+            - generic [ref=f2e1953]: SSO/SAML, audit logs, spend tracking, multi-team management, and guardrails — built for production.
+            - link "Learn more →" [ref=f2e1954] [cursor=pointer]:
+              - /url: /docs/enterprise
+  - contentinfo [ref=f2e1955]:
+    - generic [ref=f2e1956]:
+      - generic [ref=f2e1957]:
+        - generic [ref=f2e1958]:
+          - generic [ref=f2e1959]: Docs
+          - list [ref=f2e1960]:
+            - listitem [ref=f2e1961]:
+              - link "Getting Started" [ref=f2e1962] [cursor=pointer]:
+                - /url: https://docs.litellm.ai/docs/
+        - generic [ref=f2e1963]:
+          - generic [ref=f2e1964]: Community
+          - list [ref=f2e1965]:
+            - listitem [ref=f2e1966]:
+              - link "Discord" [ref=f2e1967] [cursor=pointer]:
+                - /url: https://discord.com/invite/wuPM9dRgDw
+            - listitem [ref=f2e1970]:
+              - link "Twitter" [ref=f2e1971] [cursor=pointer]:
+                - /url: https://twitter.com/LiteLLM
+        - generic [ref=f2e1974]:
+          - generic [ref=f2e1975]: More
+          - list [ref=f2e1976]:
+            - listitem [ref=f2e1977]:
+              - link "GitHub" [ref=f2e1978] [cursor=pointer]:
+                - /url: https://github.com/BerriAI/litellm/
+      - generic [ref=f2e1981]: Copyright © 2026 liteLLM

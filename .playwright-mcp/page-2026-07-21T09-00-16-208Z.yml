@@ -1,0 +1,675 @@
+- generic [ref=f1e2]:
+  - region "Skip to main content":
+    - link "Skip to main content" [ref=f1e3] [cursor=pointer]:
+      - /url: "#__docusaurus_skipToContent_fallback"
+  - navigation "Main" [ref=f1e4]:
+    - generic [ref=f1e5]:
+      - link "🚅 LiteLLM" [ref=f1e7] [cursor=pointer]:
+        - /url: /
+      - generic [ref=f1e9]:
+        - link "Docs" [ref=f1e10] [cursor=pointer]:
+          - /url: /docs/
+        - link "Learn" [ref=f1e11] [cursor=pointer]:
+          - /url: /docs/learn
+        - link "Integrations" [ref=f1e12] [cursor=pointer]:
+          - /url: /docs/integrations/
+        - link "Enterprise" [ref=f1e13] [cursor=pointer]:
+          - /url: /docs/enterprise
+        - link "Changelog" [ref=f1e14] [cursor=pointer]:
+          - /url: /release_notes
+        - link "Blog" [ref=f1e15] [cursor=pointer]:
+          - /url: /blog
+        - link "Autorouter CLI" [ref=f1e16] [cursor=pointer]:
+          - /url: /docs/learn/autorouter_cli
+      - generic [ref=f1e17]:
+        - link "Trust Center" [ref=f1e18] [cursor=pointer]:
+          - /url: https://trust.litellm.ai/
+        - link "GitHub repository" [ref=f1e21] [cursor=pointer]:
+          - /url: https://github.com/BerriAI/litellm
+        - link "Discord / Slack community" [ref=f1e22] [cursor=pointer]:
+          - /url: https://www.litellm.ai/support
+        - button "Switch between dark and light mode (currently system mode)" [ref=f1e24] [cursor=pointer]
+  - generic [ref=f1e29]:
+    - complementary [ref=f1e30]:
+      - generic [ref=f1e33]:
+        - button "Search for anything... K" [ref=f1e39] [cursor=pointer]:
+          - generic [ref=f1e40]: Search for anything...
+          - generic [ref=f1e44]: K
+        - navigation "Docs sidebar" [ref=f1e50]:
+          - list [ref=f1e51]:
+            - listitem [ref=f1e52]:
+              - generic [ref=f1e53]: Get Started
+              - list [ref=f1e55]:
+                - listitem [ref=f1e56]:
+                  - link "Quickstart" [ref=f1e57] [cursor=pointer]:
+                    - /url: /docs/
+                - listitem [ref=f1e58]:
+                  - link "Models & Pricing" [ref=f1e59] [cursor=pointer]:
+                    - /url: https://models.litellm.ai
+                - listitem [ref=f1e62]:
+                  - link "Changelog" [ref=f1e63] [cursor=pointer]:
+                    - /url: /release_notes
+            - listitem [ref=f1e64]:
+              - button "LiteLLM Python SDK" [ref=f1e66] [cursor=pointer]
+            - listitem [ref=f1e67]:
+              - generic [ref=f1e68]:
+                - link "LiteLLM AI Gateway (Proxy)" [ref=f1e69] [cursor=pointer]:
+                  - /url: /docs/simple_proxy
+                - button "Expand sidebar category 'LiteLLM AI Gateway (Proxy)'" [ref=f1e70] [cursor=pointer]
+            - listitem [ref=f1e71]:
+              - generic [ref=f1e72]:
+                - link "Supported Endpoints" [ref=f1e73] [cursor=pointer]:
+                  - /url: /docs/supported_endpoints
+                - button "Expand sidebar category 'Supported Endpoints'" [ref=f1e74] [cursor=pointer]
+            - listitem [ref=f1e75]:
+              - generic [ref=f1e76]:
+                - link "Supported Models & Providers" [ref=f1e77] [cursor=pointer]:
+                  - /url: /docs/providers
+                - button "Collapse sidebar category 'Supported Models & Providers'" [expanded] [ref=f1e78] [cursor=pointer]
+              - list [ref=f1e79]:
+                - listitem [ref=f1e80]:
+                  - link "Integrate as a Model Provider" [ref=f1e81] [cursor=pointer]:
+                    - /url: /docs/provider_registration/
+                - listitem [ref=f1e82]:
+                  - link "Add OpenAI-Compatible Provider (JSON)" [ref=f1e83] [cursor=pointer]:
+                    - /url: /docs/contributing/adding_openai_compatible_providers
+                - listitem [ref=f1e84]:
+                  - link "Add Model Pricing & Context Window" [ref=f1e85] [cursor=pointer]:
+                    - /url: /docs/provider_registration/add_model_pricing
+                - listitem [ref=f1e86]:
+                  - button "OpenAI" [ref=f1e88] [cursor=pointer]
+                - listitem [ref=f1e89]:
+                  - link "OpenAI (Text Completion)" [ref=f1e90] [cursor=pointer]:
+                    - /url: /docs/providers/text_completion_openai
+                - listitem [ref=f1e91]:
+                  - link "OpenAI-Compatible Endpoints" [ref=f1e92] [cursor=pointer]:
+                    - /url: /docs/providers/openai_compatible
+                - listitem [ref=f1e93]:
+                  - button "Azure OpenAI" [ref=f1e95] [cursor=pointer]
+                - listitem [ref=f1e96]:
+                  - button "Azure AI" [ref=f1e98] [cursor=pointer]
+                - listitem [ref=f1e99]:
+                  - button "Vertex AI" [ref=f1e101] [cursor=pointer]
+                - listitem [ref=f1e102]:
+                  - button "Google AI Studio" [ref=f1e104] [cursor=pointer]
+                - listitem [ref=f1e105]:
+                  - link "Anthropic" [ref=f1e106] [cursor=pointer]:
+                    - /url: /docs/providers/anthropic
+                - listitem [ref=f1e107]:
+                  - link "Tool Search" [ref=f1e108] [cursor=pointer]:
+                    - /url: /docs/providers/anthropic_tool_search
+                - listitem [ref=f1e109]:
+                  - link "AWS Sagemaker" [ref=f1e110] [cursor=pointer]:
+                    - /url: /docs/providers/aws_sagemaker
+                - listitem [ref=f1e111]:
+                  - button "Bedrock" [ref=f1e113] [cursor=pointer]
+                - listitem [ref=f1e114]:
+                  - link "LiteLLM Proxy (LLM Gateway)" [ref=f1e115] [cursor=pointer]:
+                    - /url: /docs/providers/litellm_proxy
+                - listitem [ref=f1e116]:
+                  - link "Abliteration" [ref=f1e117] [cursor=pointer]:
+                    - /url: /docs/providers/abliteration
+                - listitem [ref=f1e118]:
+                  - link "AI21" [ref=f1e119] [cursor=pointer]:
+                    - /url: /docs/providers/ai21
+                - listitem [ref=f1e120]:
+                  - link "AI/ML API" [ref=f1e121] [cursor=pointer]:
+                    - /url: /docs/providers/aiml
+                - listitem [ref=f1e122]:
+                  - link "Aleph Alpha" [ref=f1e123] [cursor=pointer]:
+                    - /url: /docs/providers/aleph_alpha
+                - listitem [ref=f1e124]:
+                  - link "Amazon Nova" [ref=f1e125] [cursor=pointer]:
+                    - /url: /docs/providers/amazon_nova
+                - listitem [ref=f1e126]:
+                  - link "Anyscale" [ref=f1e127] [cursor=pointer]:
+                    - /url: /docs/providers/anyscale
+                - listitem [ref=f1e128]:
+                  - link "Apertis AI (Stima API)" [ref=f1e129] [cursor=pointer]:
+                    - /url: /docs/providers/apertis
+                - listitem [ref=f1e130]:
+                  - link "Baseten" [ref=f1e131] [cursor=pointer]:
+                    - /url: /docs/providers/baseten
+                - listitem [ref=f1e132]:
+                  - link "Black Forest Labs Image Generation" [ref=f1e133] [cursor=pointer]:
+                    - /url: /docs/providers/black_forest_labs
+                - listitem [ref=f1e134]:
+                  - link "Black Forest Labs Image Editing" [ref=f1e135] [cursor=pointer]:
+                    - /url: /docs/providers/black_forest_labs_img_edit
+                - listitem [ref=f1e136]:
+                  - link "Bytez" [ref=f1e137] [cursor=pointer]:
+                    - /url: /docs/providers/bytez
+                - listitem [ref=f1e138]:
+                  - link "Cerebras" [ref=f1e139] [cursor=pointer]:
+                    - /url: /docs/providers/cerebras
+                - listitem [ref=f1e140]:
+                  - link "Chutes" [ref=f1e141] [cursor=pointer]:
+                    - /url: /docs/providers/chutes
+                - listitem [ref=f1e142]:
+                  - link "Clarifai" [ref=f1e143] [cursor=pointer]:
+                    - /url: /docs/providers/clarifai
+                - listitem [ref=f1e144]:
+                  - link "Cloudflare Workers AI" [ref=f1e145] [cursor=pointer]:
+                    - /url: /docs/providers/cloudflare_workers
+                - listitem [ref=f1e146]:
+                  - link "Codestral API [Mistral AI]" [ref=f1e147] [cursor=pointer]:
+                    - /url: /docs/providers/codestral
+                - listitem [ref=f1e148]:
+                  - link "Cohere" [ref=f1e149] [cursor=pointer]:
+                    - /url: /docs/providers/cohere
+                - listitem [ref=f1e150]:
+                  - link "CometAPI" [ref=f1e151] [cursor=pointer]:
+                    - /url: /docs/providers/cometapi
+                - listitem [ref=f1e152]:
+                  - link "CompactifAI" [ref=f1e153] [cursor=pointer]:
+                    - /url: /docs/providers/compactifai
+                - listitem [ref=f1e154]:
+                  - link "Crusoe" [ref=f1e155] [cursor=pointer]:
+                    - /url: /docs/providers/crusoe
+                - listitem [ref=f1e156]:
+                  - link "Custom API Server (Custom Format)" [ref=f1e157] [cursor=pointer]:
+                    - /url: /docs/providers/custom_llm_server
+                - listitem [ref=f1e158]:
+                  - link "Dashscope API (Qwen models)" [ref=f1e159] [cursor=pointer]:
+                    - /url: /docs/providers/dashscope
+                - listitem [ref=f1e160]:
+                  - link "Databricks" [ref=f1e161] [cursor=pointer]:
+                    - /url: /docs/providers/databricks
+                - listitem [ref=f1e162]:
+                  - link "DataRobot" [ref=f1e163] [cursor=pointer]:
+                    - /url: /docs/providers/datarobot
+                - listitem [ref=f1e164]:
+                  - link "Deepgram" [ref=f1e165] [cursor=pointer]:
+                    - /url: /docs/providers/deepgram
+                - listitem [ref=f1e166]:
+                  - link "DeepInfra" [ref=f1e167] [cursor=pointer]:
+                    - /url: /docs/providers/deepinfra
+                - listitem [ref=f1e168]:
+                  - link "Deepseek" [ref=f1e169] [cursor=pointer]:
+                    - /url: /docs/providers/deepseek
+                - listitem [ref=f1e170]:
+                  - link "Docker Model Runner" [ref=f1e171] [cursor=pointer]:
+                    - /url: /docs/providers/docker_model_runner
+                - listitem [ref=f1e172]:
+                  - link "ElevenLabs" [ref=f1e173] [cursor=pointer]:
+                    - /url: /docs/providers/elevenlabs
+                - listitem [ref=f1e174]:
+                  - link "EmpirioLabs AI" [ref=f1e175] [cursor=pointer]:
+                    - /url: /docs/providers/empiriolabs
+                - listitem [ref=f1e176]:
+                  - link "Fal AI" [ref=f1e177] [cursor=pointer]:
+                    - /url: /docs/providers/fal_ai
+                - listitem [ref=f1e178]:
+                  - link "Featherless AI" [ref=f1e179] [cursor=pointer]:
+                    - /url: /docs/providers/featherless_ai
+                - listitem [ref=f1e180]:
+                  - link "Fireworks AI" [ref=f1e181] [cursor=pointer]:
+                    - /url: /docs/providers/fireworks_ai
+                - listitem [ref=f1e182]:
+                  - link "FriendliAI" [ref=f1e183] [cursor=pointer]:
+                    - /url: /docs/providers/friendliai
+                - listitem [ref=f1e184]:
+                  - link "Galadriel" [ref=f1e185] [cursor=pointer]:
+                    - /url: /docs/providers/galadriel
+                - listitem [ref=f1e186]:
+                  - link "Github" [ref=f1e187] [cursor=pointer]:
+                    - /url: /docs/providers/github
+                - listitem [ref=f1e188]:
+                  - link "GitHub Copilot" [ref=f1e189] [cursor=pointer]:
+                    - /url: /docs/providers/github_copilot
+                - listitem [ref=f1e190]:
+                  - link "GMI Cloud" [ref=f1e191] [cursor=pointer]:
+                    - /url: /docs/providers/gmi
+                - listitem [ref=f1e192]:
+                  - link "ChatGPT Subscription" [ref=f1e193] [cursor=pointer]:
+                    - /url: /docs/providers/chatgpt
+                - listitem [ref=f1e194]:
+                  - link "GradientAI" [ref=f1e195] [cursor=pointer]:
+                    - /url: /docs/providers/gradient_ai
+                - listitem [ref=f1e196]:
+                  - link "Groq" [ref=f1e197] [cursor=pointer]:
+                    - /url: /docs/providers/groq
+                - listitem [ref=f1e198]:
+                  - link "Helicone" [ref=f1e199] [cursor=pointer]:
+                    - /url: /docs/providers/helicone
+                - listitem [ref=f1e200]:
+                  - link "Heroku" [ref=f1e201] [cursor=pointer]:
+                    - /url: /docs/providers/heroku
+                - listitem [ref=f1e202]:
+                  - button "HuggingFace" [ref=f1e204] [cursor=pointer]
+                - listitem [ref=f1e205]:
+                  - link "Hyperbolic" [ref=f1e206] [cursor=pointer]:
+                    - /url: /docs/providers/hyperbolic
+                - listitem [ref=f1e207]:
+                  - link "Inception" [ref=f1e208] [cursor=pointer]:
+                    - /url: /docs/providers/inception
+                - listitem [ref=f1e209]:
+                  - link "Infinity" [ref=f1e210] [cursor=pointer]:
+                    - /url: /docs/providers/infinity
+                - listitem [ref=f1e211]:
+                  - link "Jina AI" [ref=f1e212] [cursor=pointer]:
+                    - /url: /docs/providers/jina_ai
+                - listitem [ref=f1e213]:
+                  - link "Lambda AI" [ref=f1e214] [cursor=pointer]:
+                    - /url: /docs/providers/lambda_ai
+                - listitem [ref=f1e215]:
+                  - link "LangGraph" [ref=f1e216] [cursor=pointer]:
+                    - /url: /docs/providers/langgraph
+                - listitem [ref=f1e217]:
+                  - link "Lemonade" [ref=f1e218] [cursor=pointer]:
+                    - /url: /docs/providers/lemonade
+                - listitem [ref=f1e219]:
+                  - link "Llamafile" [ref=f1e220] [cursor=pointer]:
+                    - /url: /docs/providers/llamafile
+                - listitem [ref=f1e221]:
+                  - link "LlamaGate" [ref=f1e222] [cursor=pointer]:
+                    - /url: /docs/providers/llamagate
+                - listitem [ref=f1e223]:
+                  - link "LM Studio" [ref=f1e224] [cursor=pointer]:
+                    - /url: /docs/providers/lm_studio
+                - listitem [ref=f1e225]:
+                  - link "Manus" [ref=f1e226] [cursor=pointer]:
+                    - /url: /docs/providers/manus
+                - listitem [ref=f1e227]:
+                  - link "Meta Model API" [ref=f1e228] [cursor=pointer]:
+                    - /url: /docs/providers/meta
+                - listitem [ref=f1e229]:
+                  - link "Meta Llama" [ref=f1e230] [cursor=pointer]:
+                    - /url: /docs/providers/meta_llama
+                - listitem [ref=f1e231]:
+                  - link "Milvus - Vector Store" [ref=f1e232] [cursor=pointer]:
+                    - /url: /docs/providers/milvus_vector_stores
+                - listitem [ref=f1e233]:
+                  - link "Mistral AI API" [ref=f1e234] [cursor=pointer]:
+                    - /url: /docs/providers/mistral
+                - listitem [ref=f1e235]:
+                  - link "MiniMax" [ref=f1e236] [cursor=pointer]:
+                    - /url: /docs/providers/minimax
+                - listitem [ref=f1e237]:
+                  - link "Moonshot AI" [ref=f1e238] [cursor=pointer]:
+                    - /url: /docs/providers/moonshot
+                - listitem [ref=f1e239]:
+                  - link "Morph" [ref=f1e240] [cursor=pointer]:
+                    - /url: /docs/providers/morph
+                - listitem [ref=f1e241]:
+                  - link "Nebius AI Studio" [ref=f1e242] [cursor=pointer]:
+                    - /url: /docs/providers/nebius
+                - listitem [ref=f1e243]:
+                  - link "NLP Cloud" [ref=f1e244] [cursor=pointer]:
+                    - /url: /docs/providers/nlp_cloud
+                - listitem [ref=f1e245]:
+                  - link "NanoGPT" [ref=f1e246] [cursor=pointer]:
+                    - /url: /docs/providers/nano-gpt
+                - listitem [ref=f1e247]:
+                  - link "Novita AI" [ref=f1e248] [cursor=pointer]:
+                    - /url: /docs/providers/novita
+                - listitem [ref=f1e249]:
+                  - link "Nscale (EU Sovereign)" [ref=f1e250] [cursor=pointer]:
+                    - /url: /docs/providers/nscale
+                - listitem [ref=f1e251]:
+                  - button "Nvidia NIM" [ref=f1e253] [cursor=pointer]
+                - listitem [ref=f1e254]:
+                  - link "Nvidia Riva (Speech-to-Text)" [ref=f1e255] [cursor=pointer]:
+                    - /url: /docs/providers/nvidia_riva
+                - listitem [ref=f1e256]:
+                  - link "Oracle Cloud Infrastructure (OCI)" [ref=f1e257] [cursor=pointer]:
+                    - /url: /docs/providers/oci
+                - listitem [ref=f1e258]:
+                  - link "Ollama" [ref=f1e259] [cursor=pointer]:
+                    - /url: /docs/providers/ollama
+                - listitem [ref=f1e260]:
+                  - link "OpenRouter" [ref=f1e261] [cursor=pointer]:
+                    - /url: /docs/providers/openrouter
+                - listitem [ref=f1e262]:
+                  - link "Sarvam.ai" [ref=f1e263] [cursor=pointer]:
+                    - /url: /docs/providers/sarvam
+                - listitem [ref=f1e264]:
+                  - link "🆕 OVHCloud AI Endpoints" [ref=f1e265] [cursor=pointer]:
+                    - /url: /docs/providers/ovhcloud
+                - listitem [ref=f1e266]:
+                  - button "Perplexity AI" [ref=f1e268] [cursor=pointer]
+                - listitem [ref=f1e269]:
+                  - link "Petals" [ref=f1e270] [cursor=pointer]:
+                    - /url: /docs/providers/petals
+                - listitem [ref=f1e271]:
+                  - link "Poe" [ref=f1e272] [cursor=pointer]:
+                    - /url: /docs/providers/poe
+                - listitem [ref=f1e273]:
+                  - link "PublicAI" [ref=f1e274] [cursor=pointer]:
+                    - /url: /docs/providers/publicai
+                - listitem [ref=f1e275]:
+                  - link "Predibase" [ref=f1e276] [cursor=pointer]:
+                    - /url: /docs/providers/predibase
+                - listitem [ref=f1e277]:
+                  - link "Pydantic AI Agents" [ref=f1e278] [cursor=pointer]:
+                    - /url: /docs/providers/pydantic_ai_agent
+                - listitem [ref=f1e279]:
+                  - link "RAGFlow" [ref=f1e280] [cursor=pointer]:
+                    - /url: /docs/providers/ragflow
+                - listitem [ref=f1e281]:
+                  - link "Recraft" [ref=f1e282] [cursor=pointer]:
+                    - /url: /docs/providers/recraft
+                - listitem [ref=f1e283]:
+                  - link "Replicate" [ref=f1e284] [cursor=pointer]:
+                    - /url: /docs/providers/replicate
+                - listitem [ref=f1e285]:
+                  - button "RunwayML" [ref=f1e287] [cursor=pointer]
+                - listitem [ref=f1e288]:
+                  - link "SambaNova" [ref=f1e289] [cursor=pointer]:
+                    - /url: /docs/providers/sambanova
+                - listitem [ref=f1e290]:
+                  - link "SAP Generative AI Hub" [ref=f1e291] [cursor=pointer]:
+                    - /url: /docs/providers/sap
+                - listitem [ref=f1e292]:
+                  - link "Scaleway" [ref=f1e293] [cursor=pointer]:
+                    - /url: /docs/providers/scaleway
+                - listitem [ref=f1e294]:
+                  - link "Stability AI" [ref=f1e295] [cursor=pointer]:
+                    - /url: /docs/providers/stability
+                - listitem [ref=f1e296]:
+                  - link "Synthetic" [ref=f1e297] [cursor=pointer]:
+                    - /url: /docs/providers/synthetic
+                - listitem [ref=f1e298]:
+                  - link "Snowflake Cortex" [ref=f1e299] [cursor=pointer]:
+                    - /url: /docs/providers/snowflake
+                - listitem [ref=f1e300]:
+                  - link "Tencent TokenHub" [ref=f1e301] [cursor=pointer]:
+                    - /url: /docs/providers/tencent
+                - listitem [ref=f1e302]:
+                  - link "Tensormesh" [ref=f1e303] [cursor=pointer]:
+                    - /url: /docs/providers/tensormesh
+                - listitem [ref=f1e304]:
+                  - link "Together AI" [ref=f1e305] [cursor=pointer]:
+                    - /url: /docs/providers/togetherai
+                - listitem [ref=f1e306]:
+                  - link "Topaz" [ref=f1e307] [cursor=pointer]:
+                    - /url: /docs/providers/topaz
+                - listitem [ref=f1e308]:
+                  - link "Triton Inference Server" [ref=f1e309] [cursor=pointer]:
+                    - /url: /docs/providers/triton-inference-server
+                - listitem [ref=f1e310]:
+                  - link "v0" [ref=f1e311] [cursor=pointer]:
+                    - /url: /docs/providers/v0
+                - listitem [ref=f1e312]:
+                  - link "Vercel AI Gateway" [ref=f1e313] [cursor=pointer]:
+                    - /url: /docs/providers/vercel_ai_gateway
+                - listitem [ref=f1e314]:
+                  - button "vLLM" [ref=f1e316] [cursor=pointer]
+                - listitem [ref=f1e317]:
+                  - link "Volcano Engine (Volcengine)" [ref=f1e318] [cursor=pointer]:
+                    - /url: /docs/providers/volcano
+                - listitem [ref=f1e319]:
+                  - link "Voyage AI" [ref=f1e320] [cursor=pointer]:
+                    - /url: /docs/providers/voyage
+                - listitem [ref=f1e321]:
+                  - link "Weights & Biases Inference" [ref=f1e322] [cursor=pointer]:
+                    - /url: /docs/providers/wandb_inference
+                - listitem [ref=f1e323]:
+                  - button "WatsonX" [ref=f1e325] [cursor=pointer]
+                - listitem [ref=f1e326]:
+                  - button "xAI" [ref=f1e328] [cursor=pointer]
+                - listitem [ref=f1e329]:
+                  - link "Xiaomi MiMo" [ref=f1e330] [cursor=pointer]:
+                    - /url: /docs/providers/xiaomi_mimo
+                - listitem [ref=f1e331]:
+                  - link "Xinference [Xorbits Inference]" [ref=f1e332] [cursor=pointer]:
+                    - /url: /docs/providers/xinference
+                - listitem [ref=f1e333]:
+                  - link "Z.AI (Zhipu AI)" [ref=f1e334] [cursor=pointer]:
+                    - /url: /docs/providers/zai
+            - listitem [ref=f1e335]:
+              - generic [ref=f1e336]:
+                - link "Routing & Load Balancing" [ref=f1e337] [cursor=pointer]:
+                  - /url: /docs/routing-load-balancing
+                - button "Expand sidebar category 'Routing & Load Balancing'" [ref=f1e338] [cursor=pointer]
+            - listitem [ref=f1e339]:
+              - link "Benchmarks" [ref=f1e340] [cursor=pointer]:
+                - /url: /docs/benchmarks
+            - listitem [ref=f1e341]:
+              - button "Contributing" [ref=f1e343] [cursor=pointer]
+            - listitem [ref=f1e344]:
+              - button "Extras" [ref=f1e346] [cursor=pointer]
+            - listitem [ref=f1e347]:
+              - button "Troubleshooting" [ref=f1e349] [cursor=pointer]
+    - main [ref=f1e350]:
+      - generic [ref=f1e352]:
+        - generic [ref=f1e354]:
+          - article [ref=f1e355]:
+            - navigation "Breadcrumbs" [ref=f1e356]:
+              - list [ref=f1e357]:
+                - listitem [ref=f1e358]:
+                  - link "Home page" [ref=f1e359] [cursor=pointer]:
+                    - /url: /
+                - listitem [ref=f1e362]:
+                  - link "Supported Models & Providers" [ref=f1e363] [cursor=pointer]:
+                    - /url: /docs/providers
+                - listitem [ref=f1e364]:
+                  - generic [ref=f1e365]: Deepseek
+            - generic [ref=f1e366]:
+              - button "Copy as Markdown" [ref=f1e368] [cursor=pointer]
+              - heading "Deepseek" [level=1] [ref=f1e375]
+              - paragraph [ref=f1e376]:
+                - link "https://deepseek.com/" [ref=f1e377] [cursor=pointer]:
+                  - /url: https://deepseek.com/
+              - paragraph [ref=f1e378]:
+                - strong [ref=f1e379]:
+                  - text: We support ALL Deepseek models, just set
+                  - code [ref=f1e380]: deepseek/
+                  - text: as a prefix when sending completion requests
+              - heading [level=2] [ref=f1e381]:
+                - text: API Key
+                - link "Direct link to API Key" [ref=f1e382] [cursor=pointer]:
+                  - /url: "#api-key"
+                  - text: "#"
+              - generic [ref=f1e384]:
+                - code [ref=f1e386]:
+                  - generic [ref=f1e387]: "# env variable"
+                  - generic [ref=f1e388]: os.environ['DEEPSEEK_API_KEY']
+                - button "Copy code to clipboard" [ref=f1e390] [cursor=pointer]
+              - heading [level=2] [ref=f1e396]:
+                - text: Sample Usage
+                - link "Direct link to Sample Usage" [ref=f1e397] [cursor=pointer]:
+                  - /url: "#sample-usage"
+                  - text: "#"
+              - generic [ref=f1e399]:
+                - code [ref=f1e401]:
+                  - generic [ref=f1e402]: from litellm import completion
+                  - generic [ref=f1e403]: import os
+                  - generic [ref=f1e404]: os.environ['DEEPSEEK_API_KEY'] = ""
+                  - generic [ref=f1e405]: response = completion(
+                  - generic [ref=f1e406]: model="deepseek/deepseek-chat",
+                  - generic [ref=f1e407]: messages=[
+                  - generic [ref=f1e408]: "{\"role\": \"user\", \"content\": \"hello from litellm\"}"
+                  - generic [ref=f1e409]: "],"
+                  - generic [ref=f1e410]: )
+                  - generic [ref=f1e411]: print(response)
+                - button "Copy code to clipboard" [ref=f1e413] [cursor=pointer]
+              - heading [level=2] [ref=f1e419]:
+                - text: Sample Usage - Streaming
+                - link "Direct link to Sample Usage - Streaming" [ref=f1e420] [cursor=pointer]:
+                  - /url: "#sample-usage---streaming"
+                  - text: "#"
+              - generic [ref=f1e422]:
+                - code [ref=f1e424]:
+                  - generic [ref=f1e425]: from litellm import completion
+                  - generic [ref=f1e426]: import os
+                  - generic [ref=f1e427]: os.environ['DEEPSEEK_API_KEY'] = ""
+                  - generic [ref=f1e428]: response = completion(
+                  - generic [ref=f1e429]: model="deepseek/deepseek-chat",
+                  - generic [ref=f1e430]: messages=[
+                  - generic [ref=f1e431]: "{\"role\": \"user\", \"content\": \"hello from litellm\"}"
+                  - generic [ref=f1e432]: "],"
+                  - generic [ref=f1e433]: stream=True
+                  - generic [ref=f1e434]: )
+                  - generic [ref=f1e435]: "for chunk in response:"
+                  - generic [ref=f1e436]: print(chunk)
+                - button "Copy code to clipboard" [ref=f1e438] [cursor=pointer]
+              - heading [level=2] [ref=f1e444]:
+                - text: Supported Models - ALL Deepseek Models Supported!
+                - link "Direct link to Supported Models - ALL Deepseek Models Supported!" [ref=f1e445] [cursor=pointer]:
+                  - /url: "#supported-models---all-deepseek-models-supported"
+                  - text: "#"
+              - paragraph [ref=f1e446]:
+                - text: We support ALL Deepseek models, just set
+                - code [ref=f1e447]: deepseek/
+                - text: as a prefix when sending completion requests
+              - table [ref=f1e448]:
+                - rowgroup [ref=f1e449]:
+                  - row [ref=f1e450]:
+                    - columnheader "Model Name" [ref=f1e451]
+                    - columnheader "Function Call" [ref=f1e452]
+                - rowgroup [ref=f1e453]:
+                  - row [ref=f1e454]:
+                    - cell "deepseek-chat" [ref=f1e455]
+                    - cell [ref=f1e456]:
+                      - code [ref=f1e457]: completion(model="deepseek/deepseek-chat", messages)
+                  - row [ref=f1e458]:
+                    - cell "deepseek-coder" [ref=f1e459]
+                    - cell [ref=f1e460]:
+                      - code [ref=f1e461]: completion(model="deepseek/deepseek-coder", messages)
+              - heading [level=2] [ref=f1e462]:
+                - text: Reasoning Models
+                - link "Direct link to Reasoning Models" [ref=f1e463] [cursor=pointer]:
+                  - /url: "#reasoning-models"
+                  - text: "#"
+              - table [ref=f1e464]:
+                - rowgroup [ref=f1e465]:
+                  - row [ref=f1e466]:
+                    - columnheader "Model Name" [ref=f1e467]
+                    - columnheader "Function Call" [ref=f1e468]
+                - rowgroup [ref=f1e469]:
+                  - row [ref=f1e470]:
+                    - cell "deepseek-reasoner" [ref=f1e471]
+                    - cell [ref=f1e472]:
+                      - code [ref=f1e473]: completion(model="deepseek/deepseek-reasoner", messages)
+              - heading [level=3] [ref=f1e474]:
+                - text: Thinking / Reasoning Mode
+                - link "Direct link to Thinking / Reasoning Mode" [ref=f1e475] [cursor=pointer]:
+                  - /url: "#thinking--reasoning-mode"
+                  - text: "#"
+              - paragraph [ref=f1e476]:
+                - text: Enable thinking mode for DeepSeek reasoner models using
+                - code [ref=f1e477]: thinking
+                - text: or
+                - code [ref=f1e478]: reasoning_effort
+                - text: "parameters:"
+              - generic [ref=f1e479]:
+                - tablist [ref=f1e480]:
+                  - tab "thinking param" [selected] [ref=f1e481] [cursor=pointer]
+                  - tab "reasoning_effort param" [ref=f1e482] [cursor=pointer]
+                - tabpanel [ref=f1e484]:
+                  - generic [ref=f1e486]:
+                    - code [ref=f1e488]:
+                      - generic [ref=f1e489]: from litellm import completion
+                      - generic [ref=f1e490]: import os
+                      - generic [ref=f1e491]: os.environ['DEEPSEEK_API_KEY'] = ""
+                      - generic [ref=f1e492]: resp = completion(
+                      - generic [ref=f1e493]: model="deepseek/deepseek-reasoner",
+                      - generic [ref=f1e494]: "messages=[{\"role\": \"user\", \"content\": \"What is 2+2?\"}],"
+                      - generic [ref=f1e495]: "thinking={\"type\": \"enabled\"},"
+                      - generic [ref=f1e496]: )
+                      - generic [ref=f1e497]: "print(resp.choices[0].message.reasoning_content) # Model's reasoning"
+                      - generic [ref=f1e498]: "print(resp.choices[0].message.content) # Final answer"
+                    - button "Copy code to clipboard" [ref=f1e500] [cursor=pointer]
+              - generic [ref=f1e506]:
+                - generic [ref=f1e507]: note
+                - paragraph [ref=f1e512]:
+                  - text: DeepSeek only supports
+                  - code [ref=f1e513]: "{\"type\": \"enabled\"}"
+                  - text: "- unlike Anthropic, it doesn't support"
+                  - code [ref=f1e514]: budget_tokens
+                  - text: . Any
+                  - code [ref=f1e515]: reasoning_effort
+                  - text: value other than
+                  - code [ref=f1e516]: "\"none\""
+                  - text: enables thinking mode.
+              - heading [level=3] [ref=f1e517]:
+                - text: Basic Usage
+                - link "Direct link to Basic Usage" [ref=f1e518] [cursor=pointer]:
+                  - /url: "#basic-usage"
+                  - text: "#"
+              - generic [ref=f1e519]:
+                - tablist [ref=f1e520]:
+                  - tab "SDK" [selected] [ref=f1e521] [cursor=pointer]
+                  - tab "PROXY" [ref=f1e522] [cursor=pointer]
+                - tabpanel [ref=f1e524]:
+                  - generic [ref=f1e526]:
+                    - code [ref=f1e528]:
+                      - generic [ref=f1e529]: from litellm import completion
+                      - generic [ref=f1e530]: import os
+                      - generic [ref=f1e531]: os.environ['DEEPSEEK_API_KEY'] = ""
+                      - generic [ref=f1e532]: resp = completion(
+                      - generic [ref=f1e533]: model="deepseek/deepseek-reasoner",
+                      - generic [ref=f1e534]: "messages=[{\"role\": \"user\", \"content\": \"Tell me a joke.\"}],"
+                      - generic [ref=f1e535]: )
+                      - generic [ref=f1e536]: print(
+                      - generic [ref=f1e537]: resp.choices[0].message.reasoning_content
+                      - generic [ref=f1e538]: )
+                    - button "Copy code to clipboard" [ref=f1e540] [cursor=pointer]
+          - navigation "Docs pages" [ref=f1e546]:
+            - link "Previous « DeepInfra" [ref=f1e547] [cursor=pointer]:
+              - /url: /docs/providers/deepinfra
+              - generic [ref=f1e548]: Previous
+              - generic [ref=f1e549]: « DeepInfra
+            - link "Next Docker Model Runner »" [ref=f1e550] [cursor=pointer]:
+              - /url: /docs/providers/docker_model_runner
+              - generic [ref=f1e551]: Next
+              - generic [ref=f1e552]: Docker Model Runner »
+        - generic [ref=f1e554]:
+          - list [ref=f1e556]:
+            - listitem [ref=f1e557]:
+              - link "API Key" [ref=f1e558] [cursor=pointer]:
+                - /url: "#api-key"
+            - listitem [ref=f1e559]:
+              - link "Sample Usage" [ref=f1e560] [cursor=pointer]:
+                - /url: "#sample-usage"
+            - listitem [ref=f1e561]:
+              - link "Sample Usage - Streaming" [ref=f1e562] [cursor=pointer]:
+                - /url: "#sample-usage---streaming"
+            - listitem [ref=f1e563]:
+              - link "Supported Models - ALL Deepseek Models Supported!" [ref=f1e564] [cursor=pointer]:
+                - /url: "#supported-models---all-deepseek-models-supported"
+            - listitem [ref=f1e565]:
+              - link "Reasoning Models" [ref=f1e566] [cursor=pointer]:
+                - /url: "#reasoning-models"
+              - list [ref=f1e567]:
+                - listitem [ref=f1e568]:
+                  - link "Thinking / Reasoning Mode" [ref=f1e569] [cursor=pointer]:
+                    - /url: "#thinking--reasoning-mode"
+                - listitem [ref=f1e570]:
+                  - link "Basic Usage" [ref=f1e571] [cursor=pointer]:
+                    - /url: "#basic-usage"
+          - generic [ref=f1e572]:
+            - generic [ref=f1e573]: 🚅
+            - generic [ref=f1e574]: LiteLLM Enterprise
+            - generic [ref=f1e575]: SSO/SAML, audit logs, spend tracking, multi-team management, and guardrails — built for production.
+            - link "Learn more →" [ref=f1e576] [cursor=pointer]:
+              - /url: /docs/enterprise
+  - contentinfo [ref=f1e577]:
+    - generic [ref=f1e578]:
+      - generic [ref=f1e579]:
+        - generic [ref=f1e580]:
+          - generic [ref=f1e581]: Docs
+          - list [ref=f1e582]:
+            - listitem [ref=f1e583]:
+              - link "Getting Started" [ref=f1e584] [cursor=pointer]:
+                - /url: https://docs.litellm.ai/docs/
+        - generic [ref=f1e585]:
+          - generic [ref=f1e586]: Community
+          - list [ref=f1e587]:
+            - listitem [ref=f1e588]:
+              - link "Discord" [ref=f1e589] [cursor=pointer]:
+                - /url: https://discord.com/invite/wuPM9dRgDw
+            - listitem [ref=f1e592]:
+              - link "Twitter" [ref=f1e593] [cursor=pointer]:
+                - /url: https://twitter.com/LiteLLM
+        - generic [ref=f1e596]:
+          - generic [ref=f1e597]: More
+          - list [ref=f1e598]:
+            - listitem [ref=f1e599]:
+              - link "GitHub" [ref=f1e600] [cursor=pointer]:
+                - /url: https://github.com/BerriAI/litellm/
+      - generic [ref=f1e603]: Copyright © 2026 liteLLM
+  - button "Ask AI Chat avatar" [ref=f1e608] [cursor=pointer]:
+    - generic [ref=f1e609]: Ask AI
+    - img "Chat avatar" [ref=f1e611]

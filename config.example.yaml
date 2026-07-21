@@ -61,8 +61,8 @@ model_list:
 #   model_name: gemini-2.0-flash     # most reliable on free tier
 #   litellm_params:
 #     model: gemini/gemini-2.0-flash
-#     # or: model: gemini/gemini-2.5-flash
-#     # or: model: gemini/gemini-2.5-pro
+#     # or: model: gemini/gemini-2.5-flash-preview-09-2025
+#     # or: model: gemini/gemini-2.5-flash-lite-preview-09-2025
 #     api_key: ...
 #
 # Ollama (local):

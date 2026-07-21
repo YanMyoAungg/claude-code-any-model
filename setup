@@ -272,8 +272,8 @@ while [ -z "${PROVIDER_NAME:-}" ]; do
             echo ""
             echo "  Which Gemini model?"
             echo "    1) 2.0 Flash (most reliable, free)"
-            echo "    2) 2.5 Flash (faster, check availability)"
-            echo "    3) 2.5 Pro   (most capable)"
+            echo "    2) 2.5 Flash (faster)"
+            echo "    3) 2.5 Flash Lite (cheaper 2.5)"
             echo "    4) Custom model ID"
             GM_MODEL=""
             while [ -z "${GM_MODEL:-}" ]; do
@@ -281,10 +281,10 @@ while [ -z "${PROVIDER_NAME:-}" ]; do
                 case "$CHOICE" in
                     1) GM_MODEL="gemini/gemini-2.0-flash"
                        PROMPT_MODEL_NAME="gemini-2.0-flash" ;;
-                    2) GM_MODEL="gemini/gemini-2.5-flash"
+                    2) GM_MODEL="gemini/gemini-2.5-flash-preview-09-2025"
                        PROMPT_MODEL_NAME="gemini-2.5-flash" ;;
-                    3) GM_MODEL="gemini/gemini-2.5-pro"
-                       PROMPT_MODEL_NAME="gemini-2.5-pro" ;;
+                    3) GM_MODEL="gemini/gemini-2.5-flash-lite-preview-09-2025"
+                       PROMPT_MODEL_NAME="gemini-2.5-flash-lite" ;;
                     4) read -p "  Model ID (e.g. 'gemini-2.5-pro'): " GM_MODEL < /dev/tty
                        read -p "  Short name for Claude Code: " PROMPT_MODEL_NAME < /dev/tty
                        GM_MODEL="gemini/$GM_MODEL" ;;

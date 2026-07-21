@@ -65,7 +65,7 @@ if command -v claude &>/dev/null; then
     echo -e "  ${GREEN}✓${NC} Claude Code"
 else
     echo -e "  ${YELLOW}!${NC} Claude Code not found in PATH."
-    echo "  (The proxy is useless without it, but we'll set up the proxy first.)"
+    echo "  (We'll set up the proxy first. Install Claude Code whenever you're ready.)"
     echo ""
 
     # Try brew first (macOS), then npm (Linux/any)
@@ -89,7 +89,7 @@ else
             $INSTALL_VIA
             echo -e "  ${GREEN}✓${NC} Claude Code installed"
         else
-            echo -e "  ${YELLOW}!${NC} Skipped. You'll need Claude Code to use the proxy."
+            echo -e "  ${YELLOW}!${NC} Skipped. The proxy will be ready when you install Claude Code later."
             echo "    Install later: $INSTALL_VIA"
         fi
     else

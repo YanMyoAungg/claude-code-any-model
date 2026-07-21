@@ -62,28 +62,47 @@ elif command -v pip &>/dev/null; then
 else
     echo -e "  ${YELLOW}!${NC} No pip or uv found."
     echo ""
-    echo "  pip is required to install LiteLLM. We can try to install it:"
+    echo "  pip is required to install LiteLLM. Trying to install it..."
     echo ""
 
-    # Try ensurepip first (bundled with Python)
     PIP_INSTALLED=false
-    if $PYTHON -m ensurepip --default-pip 2>/dev/null; then
-        PIP_INSTALLED=true
-    elif curl -fsSL https://bootstrap.pypa.io/get-pip.py | $PYTHON 2>/dev/null; then
-        PIP_INSTALLED=true
-    elif command -v apt-get &>/dev/null; then
-        echo "  Attempting: sudo apt-get install python3-pip"
-        sudo apt-get install -y python3-pip && PIP_INSTALLED=true
+
+    # 1. System package manager (most reliable, needs sudo)
+    if command -v apt-get &>/dev/null; then
+        echo "  Attempting: sudo apt-get install -y python3-pip"
+        sudo apt-get update -qq && sudo apt-get install -y python3-pip && PIP_INSTALLED=true
+    elif command -v brew &>/dev/null; then
+        echo "  python3 comes with ensurepip on macOS..."
+        $PYTHON -m ensurepip --default-pip 2>/dev/null && PIP_INSTALLED=true
+    elif command -v yum &>/dev/null; then
+        echo "  Attempting: sudo yum install -y python3-pip"
+        sudo yum install -y python3-pip && PIP_INSTALLED=true
+    elif command -v dnf &>/dev/null; then
+        echo "  Attempting: sudo dnf install -y python3-pip"
+        sudo dnf install -y python3-pip && PIP_INSTALLED=true
+    elif command -v pacman &>/dev/null; then
+        echo "  Attempting: sudo pacman -S --noconfirm python-pip"
+        sudo pacman -S --noconfirm python-pip && PIP_INSTALLED=true
+    else
+        # 2. Fallback: ensurepip (bundled with Python, no sudo needed)
+        $PYTHON -m ensurepip --default-pip 2>/dev/null && PIP_INSTALLED=true
+        # 3. Last resort: download get-pip.py
+        if ! $PIP_INSTALLED; then
+            curl -fsSL https://bootstrap.pypa.io/get-pip.py | $PYTHON 2>/dev/null && PIP_INSTALLED=true
+        fi
     fi
 
     if $PIP_INSTALLED; then
-        # Prefer python -m pip (most reliable after ensurepip)
-        if $PYTHON -m pip --version &>/dev/null; then
+        # Always use python -m pip after auto-install — most reliable
+        if $PYTHON -m pip --version &>/dev/null 2>&1; then
             INSTALL_CMD="$PYTHON -m pip install --progress-bar on"
         elif command -v pip3 &>/dev/null; then
             INSTALL_CMD="pip3 install --progress-bar on"
         elif command -v pip &>/dev/null; then
             INSTALL_CMD="pip install --progress-bar on"
+        else
+            echo -e "  ${RED}✗${NC} Pip installed but not found. Try: $PYTHON -m pip --version"
+            exit 1
         fi
         INSTALL_TOOL="pip"
         echo -e "  ${GREEN}✓${NC} pip installed"

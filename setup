@@ -66,25 +66,36 @@ if command -v claude &>/dev/null; then
 else
     echo -e "  ${YELLOW}!${NC} Claude Code not found in PATH."
     echo ""
-    echo "  Claude Code is required for this setup to be useful."
-    echo "  Install it first:"
-    echo "    brew install claude-code              # macOS"
-    echo "    npm install -g @anthropic-ai/claude-code  # Any platform"
-    echo ""
+    echo "  Claude Code is required — it's the whole point of this setup."
+
+    # Try brew first (macOS), then npm (Linux/any)
     if command -v brew &>/dev/null; then
-        read -p "  Install Claude Code via Homebrew now? [Y/n]: " INSTALL_CC < /dev/tty
-        INSTALL_CC=${INSTALL_CC:-y}
-        if [[ "$INSTALL_CC" =~ ^[Yy]$ ]]; then
-            echo ""
-            echo -e "  ${BLUE}▶${NC} Installing Claude Code..."
-            brew install claude-code
-            echo -e "  ${GREEN}✓${NC} Claude Code installed"
-        else
-            echo -e "  ${YELLOW}!${NC} Install it manually, then re-run this script."
-            exit 1
-        fi
+        INSTALL_VIA="brew install claude-code"
+    elif command -v npm &>/dev/null; then
+        INSTALL_VIA="npm install -g @anthropic-ai/claude-code"
+    elif command -v node &>/dev/null; then
+        # node but no npm? unlikely but handle it
+        INSTALL_VIA="npm install -g @anthropic-ai/claude-code"
     else
-        echo -e "${RED}✗ Install Claude Code, then re-run this script.${NC}"
+        echo ""
+        echo -e "  ${RED}✗${NC} Cannot auto-install Claude Code."
+        echo "  Install it manually, then re-run this script:"
+        echo "    brew install claude-code              # macOS"
+        echo "    npm install -g @anthropic-ai/claude-code  # Linux"
+        echo ""
+        exit 1
+    fi
+
+    echo "  Will run: $INSTALL_VIA"
+    read -p "  Install now? [Y/n]: " INSTALL_CC < /dev/tty
+    INSTALL_CC=${INSTALL_CC:-y}
+    if [[ "$INSTALL_CC" =~ ^[Yy]$ ]]; then
+        echo ""
+        echo -e "  ${BLUE}▶${NC} Installing Claude Code..."
+        $INSTALL_VIA
+        echo -e "  ${GREEN}✓${NC} Claude Code installed"
+    else
+        echo -e "  ${YELLOW}!${NC} Install it manually, then re-run this script."
         exit 1
     fi
 fi
@@ -185,15 +196,16 @@ fi
 # ── Install LiteLLM ────────────────────────────────────────────────
 echo ""
 echo -e "${BLUE}[4/5]${NC} Installing LiteLLM..."
-$INSTALL_CMD "litellm[proxy]" 2>&1 | tail -3
+$INSTALL_CMD "litellm[proxy]"
 
 # Verify proxy dependencies are actually installed (pip sometimes skips
 # extras if bare litellm was already installed from a previous run)
 if ! $PYTHON -c "import websockets" 2>/dev/null; then
     echo -e "  ${YELLOW}!${NC} Missing proxy dependencies, installing..."
-    $INSTALL_CMD websockets 2>&1 | tail -1
+    $INSTALL_CMD websockets
 fi
 
+echo ""
 echo -e "  ${GREEN}✓${NC} LiteLLM installed"
 
 # ── Generate Config ────────────────────────────────────────────────

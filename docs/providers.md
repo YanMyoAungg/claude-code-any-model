@@ -100,14 +100,14 @@ litellm_settings:
 ```
 
 **Available models:**
-- `gemini/gemini-2.5-flash` — Fast, good value
+- `gemini/gemini-2.0-flash` — Free tier, most reliable
+- `gemini/gemini-2.5-flash` — Faster (check API key has access)
 - `gemini/gemini-2.5-pro` — Most capable
-- `gemini/gemini-2.0-flash` — Budget
 
 **Notes:**
 - Google AI Studio is free for development use
-- Gemini models handle tool use well
-- Use bare model IDs (e.g. `gemini-2.5-flash`) — don't use dated preview IDs as they expire
+- Not all accounts have access to 2.5 models — start with 2.0 Flash if unsure
+- Use bare stable IDs (not preview/experimental versions which expire)
 
 ---
 

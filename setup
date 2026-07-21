@@ -526,6 +526,13 @@ if [[ "$START_PROXY" =~ ^[Yy]$ ]]; then
     echo -e "  ${YELLOW}  Keep this terminal open. Ctrl+C to stop.${NC}"
     echo ""
     $LITELLM_CMD --config "$CONFIG_FILE" --port 4000
+    echo ""
+    echo -e "${BOLD}Proxy stopped.${NC}"
+    echo ""
+    echo "  To restart it later:"
+    echo "    $LITELLM_CMD --config $CONFIG_FILE --port 4000"
+    echo "    claude"
+    echo ""
 else
     echo ""
     echo "  To start the proxy later:"

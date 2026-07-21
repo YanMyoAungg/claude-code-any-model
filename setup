@@ -43,7 +43,11 @@ echo -e "  ${GREEN}✓${NC} Python $PY_VERSION"
 
 # Check pip or uv
 if command -v uv &>/dev/null; then
-    INSTALL_CMD="uv pip install"
+    if [ -n "${VIRTUAL_ENV:-}" ]; then
+        INSTALL_CMD="uv pip install"
+    else
+        INSTALL_CMD="uv pip install --system"
+    fi
     echo -e "  ${GREEN}✓${NC} uv (fast Python package manager)"
 elif command -v pip3 &>/dev/null; then
     INSTALL_CMD="pip3 install"
@@ -79,7 +83,7 @@ echo "  6) OpenRouter    (200+ models via one API)"
 echo "  7) Other         (any LiteLLM-supported provider)"
 echo ""
 
-read -p "  Enter choice [1-7]: " PROVIDER_CHOICE
+read -p "  Enter choice [1-7]: " PROVIDER_CHOICE < /dev/tty
 
 case "$PROVIDER_CHOICE" in
     1)
@@ -112,7 +116,7 @@ case "$PROVIDER_CHOICE" in
         ;;
     5)
         PROVIDER_NAME="Ollama"
-        read -p "  Ollama model name [llama3]: " OLLAMA_MODEL
+        read -p "  Ollama model name [llama3]: " OLLAMA_MODEL < /dev/tty
         OLLAMA_MODEL=${OLLAMA_MODEL:-llama3}
         PROMPT_MODEL="ollama/$OLLAMA_MODEL"
         PROMPT_MODEL_NAME="ollama-$OLLAMA_MODEL"
@@ -128,8 +132,8 @@ case "$PROVIDER_CHOICE" in
         ;;
     7)
         PROVIDER_NAME="Other"
-        read -p "  Provider/model string (e.g. 'deepseek/deepseek-chat'): " PROMPT_MODEL
-        read -p "  Model name for Claude Code (e.g. 'my-model'): " PROMPT_MODEL_NAME
+        read -p "  Provider/model string (e.g. 'deepseek/deepseek-chat'): " PROMPT_MODEL < /dev/tty
+        read -p "  Model name for Claude Code (e.g. 'my-model'): " PROMPT_MODEL_NAME < /dev/tty
         PROMPT_API_KEY_LABEL="API key"
         PROMPT_API_KEY_URL=""
         ;;
@@ -149,7 +153,7 @@ if [ "$PROVIDER_CHOICE" != "5" ]; then
     [ -n "$PROMPT_API_KEY_URL" ] && echo "  Get one at: $PROMPT_API_KEY_URL"
     echo ""
 
-    read -sp "  $PROMPT_API_KEY_LABEL: " API_KEY
+    read -sp "  $PROMPT_API_KEY_LABEL: " API_KEY < /dev/tty
     echo ""
 
     if [ -z "$API_KEY" ]; then
@@ -203,8 +207,13 @@ SETTINGS_FILE="$HOME/.claude/settings.json"
 if [ -f "$SETTINGS_FILE" ]; then
     echo ""
     echo -e "  ${YELLOW}!${NC} $SETTINGS_FILE already exists."
-    read -p "  Overwrite with proxy settings? [y/N]: " OVERWRITE
+    echo "  Existing content:"
+    cat "$SETTINGS_FILE" | sed 's/^/    /'
+    echo ""
+    read -p "  Overwrite with proxy settings? [y/N]: " OVERWRITE < /dev/tty
     if [[ "$OVERWRITE" =~ ^[Yy]$ ]]; then
+        cp "$SETTINGS_FILE" "$SETTINGS_FILE.bak"
+        echo -e "  ${GREEN}✓${NC} Backed up to $SETTINGS_FILE.bak"
         cat > "$SETTINGS_FILE" << EOF
 {
   "env": {
@@ -251,7 +260,7 @@ echo -e "  Model:        ${GREEN}$PROMPT_MODEL_NAME${NC}"
 echo -e "  Config:       ${GREEN}$CONFIG_FILE${NC}"
 echo ""
 
-read -p "  Start LiteLLM proxy now? [Y/n]: " START_PROXY
+read -p "  Start LiteLLM proxy now? [Y/n]: " START_PROXY < /dev/tty
 START_PROXY=${START_PROXY:-y}
 
 if [[ "$START_PROXY" =~ ^[Yy]$ ]]; then

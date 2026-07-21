@@ -282,7 +282,13 @@ echo -e "  ${GREEN}✓${NC} LiteLLM installed"
 echo ""
 echo -e "${BLUE}[5/5]${NC} Generating configuration..."
 
-CONFIG_FILE="litellm_config.yaml"
+# Write to home directory — always writable, avoids permission errors
+# from curl-pipe-bash running in a non-writable CWD or a stale root-owned file
+CONFIG_FILE="$HOME/litellm_config.yaml"
+if [ -f "$CONFIG_FILE" ] && [ ! -w "$CONFIG_FILE" ]; then
+    echo -e "  ${YELLOW}!${NC} Removing unwritable config from old run..."
+    rm -f "$CONFIG_FILE" 2>/dev/null || true
+fi
 
 if [ "$PROVIDER_CHOICE" = "5" ]; then
     # Ollama — no API key needed
@@ -383,7 +389,7 @@ else
     echo ""
     echo "  To start the proxy later:"
     echo ""
-    echo "    litellm --config litellm_config.yaml --port 4000"
+    echo "    litellm --config $CONFIG_FILE --port 4000"
     echo ""
     echo "  Then launch Claude Code:"
     echo ""

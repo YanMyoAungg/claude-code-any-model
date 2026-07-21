@@ -52,11 +52,11 @@ if command -v uv &>/dev/null; then
     INSTALL_TOOL="uv"
     echo -e "  ${GREEN}✓${NC} uv (fast Python package manager)"
 elif command -v pip3 &>/dev/null; then
-    INSTALL_CMD="pip3 install -q --progress-bar on"
+    INSTALL_CMD="pip3 install --progress-bar on"
     INSTALL_TOOL="pip"
     echo -e "  ${GREEN}✓${NC} pip3"
 elif command -v pip &>/dev/null; then
-    INSTALL_CMD="pip install -q --progress-bar on"
+    INSTALL_CMD="pip install --progress-bar on"
     INSTALL_TOOL="pip"
     echo -e "  ${GREEN}✓${NC} pip"
 else
@@ -79,11 +79,11 @@ else
     if $PIP_INSTALLED; then
         # Prefer python -m pip (most reliable after ensurepip)
         if $PYTHON -m pip --version &>/dev/null; then
-            INSTALL_CMD="$PYTHON -m pip install -q --progress-bar on"
+            INSTALL_CMD="$PYTHON -m pip install --progress-bar on"
         elif command -v pip3 &>/dev/null; then
-            INSTALL_CMD="pip3 install -q --progress-bar on"
+            INSTALL_CMD="pip3 install --progress-bar on"
         elif command -v pip &>/dev/null; then
-            INSTALL_CMD="pip install -q --progress-bar on"
+            INSTALL_CMD="pip install --progress-bar on"
         fi
         INSTALL_TOOL="pip"
         echo -e "  ${GREEN}✓${NC} pip installed"
@@ -99,6 +99,29 @@ fi
 if [ "$INSTALL_TOOL" = "pip" ]; then
     export PIP_BREAK_SYSTEM_PACKAGES=1
 fi
+
+# Helper: install with clean output (progress bar visible, noise hidden)
+install_pkg() {
+    if [ "$INSTALL_TOOL" = "pip" ]; then
+        # Pip sends progress bar to stderr, package spam to stdout.
+        # Merge them, filter out the per-package noise, keep the progress bar.
+        $INSTALL_CMD "$@" 2>&1 | grep --line-buffered -v \
+            -e "^Requirement already satisfied" \
+            -e "  Downloading" \
+            -e "  Installing build dependencies" \
+            -e "  Getting requirements to build" \
+            -e "  Preparing metadata" \
+            -e "  Running setup.py" \
+            -e "  Building wheel" \
+            -e "^Created wheel" \
+            -e "^Stored in" \
+            -e "^  Stored in" \
+            -e "pip is looking at multiple"
+        echo ""
+    else
+        $INSTALL_CMD "$@"
+    fi
+}
 
 # Check Claude Code
 if command -v claude &>/dev/null; then
@@ -243,13 +266,13 @@ fi
 echo ""
 echo -e "${BLUE}[4/5]${NC} Installing LiteLLM..."
 echo ""
-$INSTALL_CMD "litellm[proxy]"
+install_pkg "litellm[proxy]"
 
 # Verify proxy dependencies are actually installed (pip sometimes skips
 # extras if bare litellm was already installed from a previous run)
 if ! $PYTHON -c "import websockets" 2>/dev/null; then
     echo -e "  ${YELLOW}!${NC} Missing proxy dependencies, installing..."
-    $INSTALL_CMD websockets
+    install_pkg websockets
 fi
 
 echo ""

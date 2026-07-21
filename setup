@@ -89,13 +89,15 @@ else
             $INSTALL_VIA
             echo -e "  ${GREEN}✓${NC} Claude Code installed"
         else
-            echo -e "  ${YELLOW}!${NC} Skipped. The proxy will be ready when you install Claude Code later."
+            echo -e "  ${YELLOW}!${NC} Skipped. We'll configure the proxy now — just install Claude Code later and run 'claude'."
             echo "    Install later: $INSTALL_VIA"
         fi
     else
         echo -e "  ${YELLOW}!${NC} Cannot auto-install Claude Code (no brew or npm found)."
-        echo "    Install later: brew install claude-code       # macOS"
-        echo "                  npm install -g @anthropic-ai/claude-code  # Linux"
+        echo "    We'll configure the proxy now. Install Claude Code later, then run 'claude':"
+        echo "      brew install claude-code                      # macOS"
+        echo "      npm install -g @anthropic-ai/claude-code      # Linux"
+        echo ""
     fi
 fi
 

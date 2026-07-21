@@ -169,12 +169,12 @@ echo ""
 # ── Choose Provider ────────────────────────────────────────────────
 echo -e "${BLUE}[2/5]${NC} Which provider do you want to use?"
 echo ""
-echo "  1) DeepSeek      (deepseek-v4-pro, deepseek-chat)"
-echo "  2) OpenAI        (gpt-4o, gpt-4.1, o4-mini)"
-echo "  3) Groq          (llama-4-maverick, mixtral)"
-echo "  4) Google Gemini (gemini-2.5-pro, gemini-2.5-flash)"
-echo "  5) Ollama        (local models — llama3, mistral, etc.)"
-echo "  6) OpenRouter    (200+ models via one API)"
+echo "  1) DeepSeek"
+echo "  2) OpenAI"
+echo "  3) Groq"
+echo "  4) Google Gemini"
+echo "  5) Ollama        (local models)"
+echo "  6) OpenRouter    (200+ models, some free)"
 echo "  7) Other         (any LiteLLM-supported provider)"
 echo ""
 
@@ -186,54 +186,167 @@ while [ -z "${PROVIDER_NAME:-}" ]; do
     case "$PROVIDER_CHOICE" in
         1)
             PROVIDER_NAME="DeepSeek"
-            PROMPT_MODEL="deepseek/deepseek-v4-pro"
-            PROMPT_MODEL_NAME="deepseek-v4-pro"
             PROMPT_API_KEY_LABEL="DeepSeek API key (sk-...)"
             PROMPT_API_KEY_URL="https://platform.deepseek.com/api_keys"
+            echo ""
+            echo "  Which DeepSeek model?"
+            echo "    1) V4 Pro    (latest flagship)"
+            echo "    2) V3        (faster, cheaper)"
+            echo "    3) R1        (reasoning)"
+            echo "    4) Custom model ID"
+            DS_MODEL=""
+            while [ -z "${DS_MODEL:-}" ]; do
+                read -p "  Choose [1-4]: " CHOICE < /dev/tty
+                case "$CHOICE" in
+                    1) DS_MODEL="deepseek/deepseek-v4-pro"
+                       PROMPT_MODEL_NAME="deepseek-v4-pro" ;;
+                    2) DS_MODEL="deepseek/deepseek-chat"
+                       PROMPT_MODEL_NAME="deepseek-chat" ;;
+                    3) DS_MODEL="deepseek/deepseek-reasoner"
+                       PROMPT_MODEL_NAME="deepseek-reasoner" ;;
+                    4) read -p "  Model ID (e.g. 'deepseek-chat'): " DS_MODEL < /dev/tty
+                       read -p "  Short name for Claude Code: " PROMPT_MODEL_NAME < /dev/tty
+                       DS_MODEL="deepseek/$DS_MODEL" ;;
+                    *) echo -e "  ${RED}Invalid. Enter 1-4.${NC}" ;;
+                esac
+            done
+            PROMPT_MODEL="$DS_MODEL"
             ;;
         2)
             PROVIDER_NAME="OpenAI"
-            PROMPT_MODEL="openai/gpt-4o"
-            PROMPT_MODEL_NAME="gpt-4o"
             PROMPT_API_KEY_LABEL="OpenAI API key (sk-...)"
             PROMPT_API_KEY_URL="https://platform.openai.com/api-keys"
+            echo ""
+            echo "  Which OpenAI model?"
+            echo "    1) GPT-4o     (best all-around)"
+            echo "    2) GPT-4.1    (latest)"
+            echo "    3) o4-mini     (fast reasoning)"
+            echo "    4) o3-mini     (budget reasoning)"
+            echo "    5) Custom model ID"
+            OA_MODEL=""
+            while [ -z "${OA_MODEL:-}" ]; do
+                read -p "  Choose [1-5]: " CHOICE < /dev/tty
+                case "$CHOICE" in
+                    1) OA_MODEL="openai/gpt-4o"
+                       PROMPT_MODEL_NAME="gpt-4o" ;;
+                    2) OA_MODEL="openai/gpt-4.1"
+                       PROMPT_MODEL_NAME="gpt-4.1" ;;
+                    3) OA_MODEL="openai/o4-mini"
+                       PROMPT_MODEL_NAME="o4-mini" ;;
+                    4) OA_MODEL="openai/o3-mini"
+                       PROMPT_MODEL_NAME="o3-mini" ;;
+                    5) read -p "  Model ID (e.g. 'gpt-4o'): " OA_MODEL < /dev/tty
+                       read -p "  Short name for Claude Code: " PROMPT_MODEL_NAME < /dev/tty
+                       OA_MODEL="openai/$OA_MODEL" ;;
+                    *) echo -e "  ${RED}Invalid. Enter 1-5.${NC}" ;;
+                esac
+            done
+            PROMPT_MODEL="$OA_MODEL"
             ;;
         3)
             PROVIDER_NAME="Groq"
-            PROMPT_MODEL="groq/meta-llama/llama-4-maverick-17b-128e-instruct"
-            PROMPT_MODEL_NAME="llama-4-maverick"
             PROMPT_API_KEY_LABEL="Groq API key (gsk_...)"
             PROMPT_API_KEY_URL="https://console.groq.com/keys"
+            echo ""
+            echo "  Which Groq model?"
+            echo "    1) Llama 4 Maverick  (latest, fast)"
+            echo "    2) Llama 4 Scout     (faster)"
+            echo "    3) Mixtral 8x7B      (proven)"
+            echo "    4) Custom model ID"
+            GQ_MODEL=""
+            while [ -z "${GQ_MODEL:-}" ]; do
+                read -p "  Choose [1-4]: " CHOICE < /dev/tty
+                case "$CHOICE" in
+                    1) GQ_MODEL="groq/meta-llama/llama-4-maverick-17b-128e-instruct"
+                       PROMPT_MODEL_NAME="llama-4-maverick" ;;
+                    2) GQ_MODEL="groq/meta-llama/llama-4-scout-17b-16e-instruct"
+                       PROMPT_MODEL_NAME="llama-4-scout" ;;
+                    3) GQ_MODEL="groq/mixtral-8x7b-32768"
+                       PROMPT_MODEL_NAME="mixtral-8x7b" ;;
+                    4) read -p "  Model ID (e.g. 'llama-3.3-70b-versatile'): " GQ_MODEL < /dev/tty
+                       read -p "  Short name for Claude Code: " PROMPT_MODEL_NAME < /dev/tty
+                       GQ_MODEL="groq/$GQ_MODEL" ;;
+                    *) echo -e "  ${RED}Invalid. Enter 1-4.${NC}" ;;
+                esac
+            done
+            PROMPT_MODEL="$GQ_MODEL"
             ;;
         4)
             PROVIDER_NAME="Google Gemini"
-            PROMPT_MODEL="gemini/gemini-2.5-pro-exp-03-25"
-            PROMPT_MODEL_NAME="gemini-2.5-pro"
             PROMPT_API_KEY_LABEL="Gemini API key"
             PROMPT_API_KEY_URL="https://aistudio.google.com/apikey"
+            echo ""
+            echo "  Which Gemini model?"
+            echo "    1) 2.5 Pro   (most capable)"
+            echo "    2) 2.5 Flash (fast, good value)"
+            echo "    3) 2.0 Flash (budget)"
+            echo "    4) Custom model ID"
+            GM_MODEL=""
+            while [ -z "${GM_MODEL:-}" ]; do
+                read -p "  Choose [1-4]: " CHOICE < /dev/tty
+                case "$CHOICE" in
+                    1) GM_MODEL="gemini/gemini-2.5-pro-exp-03-25"
+                       PROMPT_MODEL_NAME="gemini-2.5-pro" ;;
+                    2) GM_MODEL="gemini/gemini-2.5-flash"
+                       PROMPT_MODEL_NAME="gemini-2.5-flash" ;;
+                    3) GM_MODEL="gemini/gemini-2.0-flash"
+                       PROMPT_MODEL_NAME="gemini-2.0-flash" ;;
+                    4) read -p "  Model ID (e.g. 'gemini-2.5-pro-exp-03-25'): " GM_MODEL < /dev/tty
+                       read -p "  Short name for Claude Code: " PROMPT_MODEL_NAME < /dev/tty
+                       GM_MODEL="gemini/$GM_MODEL" ;;
+                    *) echo -e "  ${RED}Invalid. Enter 1-4.${NC}" ;;
+                esac
+            done
+            PROMPT_MODEL="$GM_MODEL"
             ;;
         5)
             PROVIDER_NAME="Ollama"
+            PROMPT_API_KEY_LABEL=""
+            PROMPT_API_KEY_URL=""
             read -p "  Ollama model name [llama3]: " OLLAMA_MODEL < /dev/tty
             OLLAMA_MODEL=${OLLAMA_MODEL:-llama3}
             PROMPT_MODEL="ollama/$OLLAMA_MODEL"
             PROMPT_MODEL_NAME="ollama-$OLLAMA_MODEL"
-            PROMPT_API_KEY_LABEL=""
-            PROMPT_API_KEY_URL=""
             ;;
         6)
             PROVIDER_NAME="OpenRouter"
-            PROMPT_MODEL="openrouter/anthropic/claude-sonnet-4-6"
-            PROMPT_MODEL_NAME="claude-sonnet-4-6"
             PROMPT_API_KEY_LABEL="OpenRouter API key (sk-or-...)"
             PROMPT_API_KEY_URL="https://openrouter.ai/keys"
+            echo ""
+            echo "  Which OpenRouter model?"
+            echo "    1) Claude Sonnet 4.5     (paid, best tool use)"
+            echo "    2) Gemini 2.5 Flash Lite (free, fast)"
+            echo "    3) Gemini 2.5 Flash      (paid, strong)"
+            echo "    4) Mistral Nemo          (free)"
+            echo "    5) DeepSeek V3           (paid, cheap)"
+            echo "    6) Custom model ID"
+            OR_MODEL=""
+            while [ -z "${OR_MODEL:-}" ]; do
+                read -p "  Choose [1-6]: " CHOICE < /dev/tty
+                case "$CHOICE" in
+                    1) OR_MODEL="anthropic/claude-sonnet-4-5"
+                       PROMPT_MODEL_NAME="claude-sonnet-4-5" ;;
+                    2) OR_MODEL="google/gemini-2.5-flash-lite"
+                       PROMPT_MODEL_NAME="gemini-2.5-flash-lite" ;;
+                    3) OR_MODEL="google/gemini-2.5-flash"
+                       PROMPT_MODEL_NAME="gemini-2.5-flash" ;;
+                    4) OR_MODEL="mistralai/mistral-nemo"
+                       PROMPT_MODEL_NAME="mistral-nemo" ;;
+                    5) OR_MODEL="deepseek/deepseek-chat"
+                       PROMPT_MODEL_NAME="deepseek-v3" ;;
+                    6) read -p "  Model ID (e.g. 'anthropic/claude-sonnet-4-6'): " OR_MODEL < /dev/tty
+                       read -p "  Short name for Claude Code: " PROMPT_MODEL_NAME < /dev/tty ;;
+                    *) echo -e "  ${RED}Invalid. Enter 1-6.${NC}" ;;
+                esac
+            done
+            PROMPT_MODEL="openrouter/$OR_MODEL"
             ;;
         7)
             PROVIDER_NAME="Other"
-            read -p "  Provider/model string (e.g. 'deepseek/deepseek-chat'): " PROMPT_MODEL < /dev/tty
-            read -p "  Model name for Claude Code (e.g. 'my-model'): " PROMPT_MODEL_NAME < /dev/tty
             PROMPT_API_KEY_LABEL="API key"
             PROMPT_API_KEY_URL=""
+            read -p "  Provider/model string (e.g. 'deepseek/deepseek-chat'): " PROMPT_MODEL < /dev/tty
+            read -p "  Short name for Claude Code (e.g. 'my-model'): " PROMPT_MODEL_NAME < /dev/tty
             ;;
         *)
             echo -e "  ${RED}\"$PROVIDER_CHOICE\" is not a valid choice. Enter a number 1-7.${NC}"
@@ -275,23 +388,41 @@ if ! $PYTHON -c "import websockets" 2>/dev/null; then
     install_pkg websockets
 fi
 
-# Resolve litellm command — pip may install it to ~/.local/bin which isn't always in PATH
-if command -v litellm &>/dev/null; then
-    LITELLM_CMD="litellm"
-elif [ -x "$HOME/.local/bin/litellm" ]; then
-    LITELLM_CMD="$HOME/.local/bin/litellm"
-elif $PYTHON -m litellm --help &>/dev/null 2>&1; then
+# Resolve litellm command — pip user installs go to ~/.local/bin which
+# many distros (and WSL) don't add to PATH by default.
+echo ""
+echo -n "  Locating litellm... "
+LITELLM_CMD=""
+
+# 1. python -m litellm (most reliable — works regardless of PATH)
+if $PYTHON -m litellm --help &>/dev/null 2>&1; then
     LITELLM_CMD="$PYTHON -m litellm"
+# 2. In PATH
+elif command -v litellm &>/dev/null; then
+    LITELLM_CMD="litellm"
+# 3. ~/.local/bin (standard pip --user location on Linux)
+elif [ -f "$HOME/.local/bin/litellm" ]; then
+    LITELLM_CMD="$HOME/.local/bin/litellm"
+# 4. pipx style
+elif [ -f "$HOME/.local/pipx/venvs/litellm/bin/litellm" ]; then
+    LITELLM_CMD="$HOME/.local/pipx/venvs/litellm/bin/litellm"
+# 5. Search ~/.local
 else
-    # Last resort: find it
-    LITELLM_BIN=$(find "$HOME/.local" -name litellm -type f -executable 2>/dev/null | head -1)
+    LITELLM_BIN=$(find "$HOME/.local" -name litellm -type f 2>/dev/null | head -1)
     if [ -n "$LITELLM_BIN" ]; then
         LITELLM_CMD="$LITELLM_BIN"
-    else
-        echo -e "  ${RED}✗${NC} Cannot find litellm after install. Check: pip3 show litellm"
-        exit 1
     fi
 fi
+
+if [ -z "$LITELLM_CMD" ]; then
+    echo ""
+    echo -e "  ${RED}✗${NC} Cannot find litellm after install."
+    echo "    Check: pip3 show litellm"
+    echo "    Try:  $PYTHON -m litellm --help"
+    exit 1
+fi
+
+echo -e "${GREEN}found${NC} ($LITELLM_CMD)"
 echo -e "  ${GREEN}✓${NC} LiteLLM installed"
 
 # ── Generate Config ────────────────────────────────────────────────

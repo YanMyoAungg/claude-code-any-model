@@ -42,18 +42,22 @@ PY_VERSION=$($PYTHON --version 2>&1 | grep -oE '[0-9]+\.[0-9]+' | head -1)
 echo -e "  ${GREEN}✓${NC} Python $PY_VERSION"
 
 # Check pip or uv
+INSTALL_TOOL=""  # "uv" or "pip" — controls output filtering
 if command -v uv &>/dev/null; then
     if [ -n "${VIRTUAL_ENV:-}" ]; then
         INSTALL_CMD="uv pip install"
     else
         INSTALL_CMD="uv pip install --system"
     fi
+    INSTALL_TOOL="uv"
     echo -e "  ${GREEN}✓${NC} uv (fast Python package manager)"
 elif command -v pip3 &>/dev/null; then
-    INSTALL_CMD="pip3 install"
+    INSTALL_CMD="pip3 install -q --progress-bar on"
+    INSTALL_TOOL="pip"
     echo -e "  ${GREEN}✓${NC} pip3"
 elif command -v pip &>/dev/null; then
-    INSTALL_CMD="pip install"
+    INSTALL_CMD="pip install -q --progress-bar on"
+    INSTALL_TOOL="pip"
     echo -e "  ${GREEN}✓${NC} pip"
 else
     echo -e "  ${YELLOW}!${NC} No pip or uv found."
@@ -75,12 +79,13 @@ else
     if $PIP_INSTALLED; then
         # Prefer python -m pip (most reliable after ensurepip)
         if $PYTHON -m pip --version &>/dev/null; then
-            INSTALL_CMD="$PYTHON -m pip install"
+            INSTALL_CMD="$PYTHON -m pip install -q --progress-bar on"
         elif command -v pip3 &>/dev/null; then
-            INSTALL_CMD="pip3 install"
+            INSTALL_CMD="pip3 install -q --progress-bar on"
         elif command -v pip &>/dev/null; then
-            INSTALL_CMD="pip install"
+            INSTALL_CMD="pip install -q --progress-bar on"
         fi
+        INSTALL_TOOL="pip"
         echo -e "  ${GREEN}✓${NC} pip installed"
     else
         echo -e "  ${RED}✗${NC} Could not install pip automatically."
@@ -101,9 +106,9 @@ else
     if command -v brew &>/dev/null; then
         INSTALL_VIA="brew install claude-code"
     elif command -v npm &>/dev/null; then
-        INSTALL_VIA="npm install -g @anthropic-ai/claude-code"
+        INSTALL_VIA="npm install -g --no-audit --no-fund @anthropic-ai/claude-code"
     elif command -v node &>/dev/null; then
-        INSTALL_VIA="npm install -g @anthropic-ai/claude-code"
+        INSTALL_VIA="npm install -g --no-audit --no-fund @anthropic-ai/claude-code"
     else
         INSTALL_VIA=""
     fi
@@ -226,6 +231,7 @@ fi
 # ── Install LiteLLM ────────────────────────────────────────────────
 echo ""
 echo -e "${BLUE}[4/5]${NC} Installing LiteLLM..."
+echo ""
 $INSTALL_CMD "litellm[proxy]"
 
 # Verify proxy dependencies are actually installed (pip sometimes skips

@@ -57,14 +57,6 @@ model_list:
 #     model: groq/meta-llama/llama-4-maverick-17b-128e-instruct
 #     api_key: gsk_...
 #
-# Gemini (⚠ Gemini 3+ NOT compatible — 200/hang):
-#   model_name: gemini-2.0-flash    # confirmed working, free
-#   litellm_params:
-#     model: gemini/gemini-2.0-flash
-#     # or: model: gemini/gemini-2.5-flash-preview-09-2025
-#     # or: model: gemini/gemini-flash-latest  (auto-updating alias)
-#     api_key: ...
-#
 # Ollama (local):
 #   model_name: llama3
 #   litellm_params:

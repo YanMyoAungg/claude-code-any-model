@@ -84,34 +84,6 @@ litellm_settings:
 
 ---
 
-## Google Gemini
-
-[Google AI Studio](https://aistudio.google.com) | [API Key](https://aistudio.google.com/apikey)
-
-```yaml
-model_list:
-  - model_name: gemini-2.5-pro
-    litellm_params:
-      model: gemini/gemini-2.5-pro
-      api_key: your-gemini-api-key
-
-litellm_settings:
-  drop_params: true
-```
-
-**Available models:**
-- `gemini/gemini-2.0-flash` — Free tier, confirmed working with Claude Code
-- `gemini/gemini-2.5-flash-preview-09-2025` — Faster (preview, may need paid tier)
-- `gemini/gemini-2.0-flash-lite-preview-02-05` — Even cheaper
-- `gemini/gemini-flash-latest` — Auto-updating alias
-
-**Notes:**
-- Google AI Studio is free for development use
-- Gemini 3+ models (including `gemini-3.1-flash-lite-preview`) are NOT compatible — they return 200 but hang due to mandatory thinking format that LiteLLM's Anthropic passthrough can't translate
-- All 2.x models use versioned preview IDs — check [LiteLLM Gemini docs](https://docs.litellm.ai/docs/providers/gemini) for the latest
-- Use `*-latest` aliases to auto-track the newest model version
-
----
 
 ## Ollama (Local)
 
@@ -247,11 +219,6 @@ model_list:
     litellm_params:
       model: groq/meta-llama/llama-4-maverick-17b-128e-instruct
       api_key: gsk_groq-key
-
-  - model_name: gemini-2.5-pro
-    litellm_params:
-      model: gemini/gemini-2.5-pro-exp-03-25
-      api_key: your-gemini-key
 
 litellm_settings:
   drop_params: true

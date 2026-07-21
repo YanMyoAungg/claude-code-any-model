@@ -172,16 +172,15 @@ echo ""
 echo "  1) DeepSeek"
 echo "  2) OpenAI"
 echo "  3) Groq"
-echo "  4) Google Gemini"
-echo "  5) Ollama        (local models)"
-echo "  6) OpenRouter    (200+ models, some free)"
-echo "  7) Other         (any LiteLLM-supported provider)"
+echo "  4) Ollama        (local models)"
+echo "  5) OpenRouter    (200+ models, some free)"
+echo "  6) Other         (any LiteLLM-supported provider)"
 echo ""
 
 # Loop until user gives valid input
 PROVIDER_CHOICE=""
 while [ -z "${PROVIDER_NAME:-}" ]; do
-    read -p "  Enter choice [1-7]: " PROVIDER_CHOICE < /dev/tty
+    read -p "  Enter choice [1-6]: " PROVIDER_CHOICE < /dev/tty
 
     case "$PROVIDER_CHOICE" in
         1)
@@ -266,37 +265,6 @@ while [ -z "${PROVIDER_NAME:-}" ]; do
             PROMPT_MODEL="$GQ_MODEL"
             ;;
         4)
-            PROVIDER_NAME="Google Gemini"
-            PROMPT_API_KEY_LABEL="Gemini API key"
-            PROMPT_API_KEY_URL="https://aistudio.google.com/apikey"
-            echo ""
-            echo "  Which Gemini model?"
-            echo "    1) 2.0 Flash      (confirmed working, free)"
-            echo "    2) 2.5 Flash      (faster, may require paid tier)"
-            echo "    3) 2.0 Flash Lite (even cheaper)"
-            echo "    4) Flash Latest   (auto-updating alias)"
-            echo "    5) Custom model ID"
-            GM_MODEL=""
-            while [ -z "${GM_MODEL:-}" ]; do
-                read -p "  Choose [1-5]: " CHOICE < /dev/tty
-                case "$CHOICE" in
-                    1) GM_MODEL="gemini/gemini-2.0-flash"
-                       PROMPT_MODEL_NAME="gemini-2.0-flash" ;;
-                    2) GM_MODEL="gemini/gemini-2.5-flash-preview-09-2025"
-                       PROMPT_MODEL_NAME="gemini-2.5-flash" ;;
-                    3) GM_MODEL="gemini/gemini-2.0-flash-lite-preview-02-05"
-                       PROMPT_MODEL_NAME="gemini-2.0-flash-lite" ;;
-                    4) GM_MODEL="gemini/gemini-flash-latest"
-                       PROMPT_MODEL_NAME="gemini-flash-latest" ;;
-                    4) read -p "  Model ID (e.g. 'gemini-2.5-pro'): " GM_MODEL < /dev/tty
-                       read -p "  Short name for Claude Code: " PROMPT_MODEL_NAME < /dev/tty
-                       GM_MODEL="gemini/$GM_MODEL" ;;
-                    *) echo -e "  ${RED}Invalid. Enter 1-4.${NC}" ;;
-                esac
-            done
-            PROMPT_MODEL="$GM_MODEL"
-            ;;
-        5)
             PROVIDER_NAME="Ollama"
             PROMPT_API_KEY_LABEL=""
             PROMPT_API_KEY_URL=""
@@ -305,7 +273,7 @@ while [ -z "${PROVIDER_NAME:-}" ]; do
             PROMPT_MODEL="ollama/$OLLAMA_MODEL"
             PROMPT_MODEL_NAME="ollama-$OLLAMA_MODEL"
             ;;
-        6)
+        5)
             PROVIDER_NAME="OpenRouter"
             PROMPT_API_KEY_LABEL="OpenRouter API key (sk-or-...)"
             PROMPT_API_KEY_URL="https://openrouter.ai/keys"
@@ -338,7 +306,7 @@ while [ -z "${PROVIDER_NAME:-}" ]; do
             done
             PROMPT_MODEL="openrouter/$OR_MODEL"
             ;;
-        7)
+        6)
             PROVIDER_NAME="Other"
             PROMPT_API_KEY_LABEL="API key"
             PROMPT_API_KEY_URL=""
@@ -346,7 +314,7 @@ while [ -z "${PROVIDER_NAME:-}" ]; do
             read -p "  Short name for Claude Code (e.g. 'my-model'): " PROMPT_MODEL_NAME < /dev/tty
             ;;
         *)
-            echo -e "  ${RED}\"$PROVIDER_CHOICE\" is not a valid choice. Enter a number 1-7.${NC}"
+            echo -e "  ${RED}\"$PROVIDER_CHOICE\" is not a valid choice. Enter a number 1-6.${NC}"
             echo ""
             ;;
     esac
@@ -357,7 +325,7 @@ echo -e "  Provider: ${GREEN}$PROVIDER_NAME${NC}"
 echo ""
 
 # ── Get API Key (skip for Ollama) ──────────────────────────────────
-if [ "$PROVIDER_CHOICE" != "5" ]; then
+if [ "$PROVIDER_CHOICE" != "4" ]; then
     echo -e "${BLUE}[3/5]${NC} API Key"
     [ -n "$PROMPT_API_KEY_URL" ] && echo "  Get one at: $PROMPT_API_KEY_URL"
     echo ""
@@ -385,13 +353,6 @@ if ! $PYTHON -c "import websockets" 2>/dev/null; then
     install_pkg websockets
 fi
 
-# Provider-specific extra deps (not included in litellm[proxy])
-# Gemini: needs google-auth and google-generativeai for Google AI Studio
-if [ "$PROVIDER_CHOICE" = "4" ]; then
-    echo ""
-    echo -e "  ${BLUE}▶${NC} Installing Gemini extra dependencies..."
-    install_pkg google-auth google-generativeai
-fi
 
 # Resolve litellm command — pip user installs go to ~/.local/bin which
 # many distros (and WSL) don't add to PATH by default.
@@ -442,7 +403,7 @@ if [ -f "$CONFIG_FILE" ] && [ ! -w "$CONFIG_FILE" ]; then
     rm -f "$CONFIG_FILE" 2>/dev/null || true
 fi
 
-if [ "$PROVIDER_CHOICE" = "5" ]; then
+if [ "$PROVIDER_CHOICE" = "4" ]; then
     # Ollama — no API key needed
     cat > "$CONFIG_FILE" << EOF
 model_list:

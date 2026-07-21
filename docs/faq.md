@@ -30,10 +30,9 @@ From community reports:
 
 | Model | Rating | Notes |
 |-------|--------|-------|
-| DeepSeek V4 Pro | ⭐⭐⭐⭐ | Strong tool use, good value |
+| DeepSeek V3 | ⭐⭐⭐⭐ | Strong tool use, good value |
 | GPT-4o | ⭐⭐⭐⭐⭐ | Most reliable tool use |
-| Claude Sonnet 4 (via OpenRouter) | ⭐⭐⭐⭐⭐ | Native Anthropic, best compat |
-| Gemini 2.5 Pro | ⭐⭐⭐⭐ | Good, occasional tool errors |
+| Claude Sonnet 4.5 (via OpenRouter) | ⭐⭐⭐⭐⭐ | Native Anthropic, best compat |
 | Llama 4 Maverick (Groq) | ⭐⭐⭐ | Fast but less reliable tool use |
 | Local models (Ollama) | ⭐⭐ | Depends heavily on model size |
 

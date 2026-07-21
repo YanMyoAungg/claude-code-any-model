@@ -37,7 +37,6 @@
 | [DeepSeek](https://platform.deepseek.com) | V3, V4, R1 | [→ deepseek](./docs/providers.md#deepseek) |
 | [OpenAI](https://platform.openai.com) | GPT-4o, o3/o4-mini | [→ openai](./docs/providers.md#openai) |
 | [Groq](https://console.groq.com) | Llama 4, Mixtral | [→ groq](./docs/providers.md#groq) |
-| [Google](https://aistudio.google.com) | Gemini 2.5 Pro/Flash | [→ gemini](./docs/providers.md#gemini) |
 | [Ollama](https://ollama.com) | Any local model | [→ ollama](./docs/providers.md#ollama) |
 | [OpenRouter](https://openrouter.ai) | 200+ models | [→ openrouter](./docs/providers.md#openrouter) |
 | Any [LiteLLM-supported](https://docs.litellm.ai/docs/providers) provider | ∞ | [→ custom](./docs/providers.md#custom) |
@@ -200,7 +199,6 @@ MIT — see [LICENSE](LICENSE).
 | [DeepSeek](https://platform.deepseek.com) | V3, V4, R1 | [→ deepseek](./docs/providers.md#deepseek) |
 | [OpenAI](https://platform.openai.com) | GPT-4o, o3/o4-mini | [→ openai](./docs/providers.md#openai) |
 | [Groq](https://console.groq.com) | Llama 4, Mixtral | [→ groq](./docs/providers.md#groq) |
-| [Google](https://aistudio.google.com) | Gemini 2.5 Pro/Flash | [→ gemini](./docs/providers.md#gemini) |
 | [Ollama](https://ollama.com) | ဘယ် local model မဆို | [→ ollama](./docs/providers.md#ollama) |
 | [OpenRouter](https://openrouter.ai) | model ၂၀၀+ | [→ openrouter](./docs/providers.md#openrouter) |
 | [LiteLLM ထောက်ပံ့သော](https://docs.litellm.ai/docs/providers) provider များ | ∞ | [→ custom](./docs/providers.md#custom) |

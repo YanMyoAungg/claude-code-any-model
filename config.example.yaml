@@ -58,11 +58,12 @@ model_list:
 #     api_key: gsk_...
 #
 # Gemini:
-#   model_name: gemini-2.0-flash     # most reliable on free tier
+#   model_name: gemini-3.1-flash-lite   # latest, fastest (Gemini 3+)
 #   litellm_params:
-#     model: gemini/gemini-2.0-flash
+#     model: gemini/gemini-3.1-flash-lite-preview
 #     # or: model: gemini/gemini-2.5-flash-preview-09-2025
-#     # or: model: gemini/gemini-2.5-flash-lite-preview-09-2025
+#     # or: model: gemini/gemini-2.0-flash
+#     # or: model: gemini/gemini-flash-latest  (auto-updating)
 #     api_key: ...
 #
 # Ollama (local):

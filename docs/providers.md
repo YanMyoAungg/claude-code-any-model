@@ -100,15 +100,16 @@ litellm_settings:
 ```
 
 **Available models:**
+- `gemini/gemini-3.1-flash-lite-preview` — Latest, fastest (Gemini 3+)
+- `gemini/gemini-2.5-flash-preview-09-2025` — Balanced (preview)
 - `gemini/gemini-2.0-flash` — Free tier, most reliable
-- `gemini/gemini-2.5-flash-preview-09-2025` — Faster (preview)
-- `gemini/gemini-2.5-flash-lite-preview-09-2025` — Cheaper 2.5 variant (preview)
+- `gemini/gemini-flash-latest` — Auto-updating alias (always points to latest Flash)
+- `gemini/gemini-flash-lite-latest` — Auto-updating alias (always points to latest Lite)
 
 **Notes:**
 - Google AI Studio is free for development use
-- 2.5 models are preview — IDs include versioned date suffixes which may change
-- Bare IDs like `gemini-2.5-flash` do NOT exist as Google AI Studio models — use the full versioned string
-- Check [LiteLLM Gemini docs](https://docs.litellm.ai/docs/providers/gemini) for the latest model IDs
+- All 2.5+ models use versioned preview IDs — check [LiteLLM Gemini docs](https://docs.litellm.ai/docs/providers/gemini) for the latest IDs
+- Use `*-latest` aliases to automatically track the newest model version
 
 ---
 

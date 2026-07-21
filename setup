@@ -271,20 +271,23 @@ while [ -z "${PROVIDER_NAME:-}" ]; do
             PROMPT_API_KEY_URL="https://aistudio.google.com/apikey"
             echo ""
             echo "  Which Gemini model?"
-            echo "    1) 2.0 Flash (most reliable, free)"
-            echo "    2) 2.5 Flash (faster)"
-            echo "    3) 2.5 Flash Lite (cheaper 2.5)"
-            echo "    4) Custom model ID"
+            echo "    1) 3.1 Flash Lite (latest, fastest)"
+            echo "    2) 2.5 Flash      (balanced)"
+            echo "    3) 2.0 Flash      (most reliable, free)"
+            echo "    4) Flash Latest   (auto-updating alias)"
+            echo "    5) Custom model ID"
             GM_MODEL=""
             while [ -z "${GM_MODEL:-}" ]; do
-                read -p "  Choose [1-4]: " CHOICE < /dev/tty
+                read -p "  Choose [1-5]: " CHOICE < /dev/tty
                 case "$CHOICE" in
-                    1) GM_MODEL="gemini/gemini-2.0-flash"
-                       PROMPT_MODEL_NAME="gemini-2.0-flash" ;;
+                    1) GM_MODEL="gemini/gemini-3.1-flash-lite-preview"
+                       PROMPT_MODEL_NAME="gemini-3.1-flash-lite" ;;
                     2) GM_MODEL="gemini/gemini-2.5-flash-preview-09-2025"
                        PROMPT_MODEL_NAME="gemini-2.5-flash" ;;
-                    3) GM_MODEL="gemini/gemini-2.5-flash-lite-preview-09-2025"
-                       PROMPT_MODEL_NAME="gemini-2.5-flash-lite" ;;
+                    3) GM_MODEL="gemini/gemini-2.0-flash"
+                       PROMPT_MODEL_NAME="gemini-2.0-flash" ;;
+                    4) GM_MODEL="gemini/gemini-flash-latest"
+                       PROMPT_MODEL_NAME="gemini-flash-latest" ;;
                     4) read -p "  Model ID (e.g. 'gemini-2.5-pro'): " GM_MODEL < /dev/tty
                        read -p "  Short name for Claude Code: " PROMPT_MODEL_NAME < /dev/tty
                        GM_MODEL="gemini/$GM_MODEL" ;;

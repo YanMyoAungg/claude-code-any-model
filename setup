@@ -64,9 +64,29 @@ fi
 if command -v claude &>/dev/null; then
     echo -e "  ${GREEN}✓${NC} Claude Code"
 else
-    echo -e "  ${YELLOW}!${NC} Claude Code not found in PATH. You'll need it:"
-    echo "    brew install claude-code"
-    echo "    # or: npm install -g @anthropic-ai/claude-code"
+    echo -e "  ${YELLOW}!${NC} Claude Code not found in PATH."
+    echo ""
+    echo "  Claude Code is required for this setup to be useful."
+    echo "  Install it first:"
+    echo "    brew install claude-code              # macOS"
+    echo "    npm install -g @anthropic-ai/claude-code  # Any platform"
+    echo ""
+    if command -v brew &>/dev/null; then
+        read -p "  Install Claude Code via Homebrew now? [Y/n]: " INSTALL_CC < /dev/tty
+        INSTALL_CC=${INSTALL_CC:-y}
+        if [[ "$INSTALL_CC" =~ ^[Yy]$ ]]; then
+            echo ""
+            echo -e "  ${BLUE}▶${NC} Installing Claude Code..."
+            brew install claude-code
+            echo -e "  ${GREEN}✓${NC} Claude Code installed"
+        else
+            echo -e "  ${YELLOW}!${NC} Install it manually, then re-run this script."
+            exit 1
+        fi
+    else
+        echo -e "${RED}✗ Install Claude Code, then re-run this script.${NC}"
+        exit 1
+    fi
 fi
 
 echo ""
@@ -165,7 +185,7 @@ fi
 # ── Install LiteLLM ────────────────────────────────────────────────
 echo ""
 echo -e "${BLUE}[4/5]${NC} Installing LiteLLM..."
-$INSTALL_CMD litellm 2>&1 | tail -3
+$INSTALL_CMD "litellm[proxy]" 2>&1 | tail -3
 echo -e "  ${GREEN}✓${NC} LiteLLM installed"
 
 # ── Generate Config ────────────────────────────────────────────────

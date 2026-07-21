@@ -10,13 +10,13 @@ echo "Installing LiteLLM..."
 
 if command -v uv &>/dev/null; then
     echo "  Using: uv"
-    uv pip install litellm
+    uv pip install "litellm[proxy]"
 elif command -v pip3 &>/dev/null; then
     echo "  Using: pip3"
-    pip3 install litellm
+    pip3 install "litellm[proxy]"
 elif command -v pip &>/dev/null; then
     echo "  Using: pip"
-    pip install litellm
+    pip install "litellm[proxy]"
 else
     echo "Error: Neither uv nor pip found."
     echo "Install Python: https://python.org"

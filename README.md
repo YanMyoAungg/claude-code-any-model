@@ -57,8 +57,8 @@ The script asks which provider you want, takes your API key, installs LiteLLM, c
 #### 1. Install LiteLLM
 
 ```bash
-pip install litellm
-# or: uv pip install litellm
+pip install "litellm[proxy]"
+# or: uv pip install "litellm[proxy]"
 ```
 
 #### 2. Create config
@@ -220,8 +220,8 @@ curl -fsSL https://raw.githubusercontent.com/YanMyoAungg/claude-code-any-model/m
 #### ၁။ LiteLLM ထည့်သွင်းပါ
 
 ```bash
-pip install litellm
-# သို့မဟုတ်: uv pip install litellm
+pip install "litellm[proxy]"
+# သို့မဟုတ်: uv pip install "litellm[proxy]"
 ```
 
 #### ၂။ Config ဖိုင် ဖန်တီးပါ

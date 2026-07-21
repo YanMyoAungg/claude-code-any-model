@@ -14,7 +14,7 @@ PRs welcome! Here's how to help:
 ```bash
 git clone https://github.com/YanMyoAungg/claude-code-any-model
 cd claude-code-custom-model
-pip install litellm
+pip install "litellm[proxy]"
 cp config.example.yaml litellm_config.yaml
 # Edit litellm_config.yaml with your API key
 ```

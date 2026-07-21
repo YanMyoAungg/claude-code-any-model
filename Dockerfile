@@ -12,7 +12,7 @@ FROM python:3.12-slim
 WORKDIR /app
 
 # Install LiteLLM
-RUN pip install --no-cache-dir litellm
+RUN pip install --no-cache-dir "litellm[proxy]"
 
 # Copy entrypoint script
 COPY scripts/docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh

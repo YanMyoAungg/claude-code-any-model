@@ -75,7 +75,7 @@ fi
 if $LITELLM_OK; then
     echo -e "  ${GREEN}✓${NC} LiteLLM installed"
 else
-    echo -e "  ${RED}✗${NC} LiteLLM not installed. Run: pip install litellm"
+    echo -e "  ${RED}✗${NC} LiteLLM not installed. Run: pip install \"litellm[proxy]\""
     echo "    Or the one-command setup: bash setup"
     ((ERRORS++))
 fi

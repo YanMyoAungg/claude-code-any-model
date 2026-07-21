@@ -100,14 +100,14 @@ litellm_settings:
 ```
 
 **Available models:**
-- `gemini/gemini-2.5-pro` — Most capable (stable)
-- `gemini/gemini-2.5-flash-preview-04-17` — Fast, latest
+- `gemini/gemini-2.5-flash` — Fast, good value
+- `gemini/gemini-2.5-pro` — Most capable
 - `gemini/gemini-2.0-flash` — Budget
 
 **Notes:**
 - Google AI Studio is free for development use
 - Gemini models handle tool use well
-- Model strings use specific versioned IDs — check [LiteLLM Gemini docs](https://docs.litellm.ai/docs/providers/gemini) for the latest
+- Use bare model IDs (e.g. `gemini-2.5-flash`) — don't use dated preview IDs as they expire
 
 ---
 

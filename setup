@@ -271,18 +271,18 @@ while [ -z "${PROVIDER_NAME:-}" ]; do
             PROMPT_API_KEY_URL="https://aistudio.google.com/apikey"
             echo ""
             echo "  Which Gemini model?"
-            echo "    1) 2.5 Pro   (most capable)"
-            echo "    2) 2.5 Flash (fast, good value)"
+            echo "    1) 2.5 Flash (fast, good value)"
+            echo "    2) 2.5 Pro   (most capable)"
             echo "    3) 2.0 Flash (budget)"
             echo "    4) Custom model ID"
             GM_MODEL=""
             while [ -z "${GM_MODEL:-}" ]; do
                 read -p "  Choose [1-4]: " CHOICE < /dev/tty
                 case "$CHOICE" in
-                    1) GM_MODEL="gemini/gemini-2.5-pro"
-                       PROMPT_MODEL_NAME="gemini-2.5-pro" ;;
-                    2) GM_MODEL="gemini/gemini-2.5-flash-preview-04-17"
+                    1) GM_MODEL="gemini/gemini-2.5-flash"
                        PROMPT_MODEL_NAME="gemini-2.5-flash" ;;
+                    2) GM_MODEL="gemini/gemini-2.5-pro"
+                       PROMPT_MODEL_NAME="gemini-2.5-pro" ;;
                     3) GM_MODEL="gemini/gemini-2.0-flash"
                        PROMPT_MODEL_NAME="gemini-2.0-flash" ;;
                     4) read -p "  Model ID (e.g. 'gemini-2.5-pro'): " GM_MODEL < /dev/tty

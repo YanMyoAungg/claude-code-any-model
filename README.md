@@ -5,6 +5,15 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
+### Supported Platforms
+
+[![macOS](https://img.shields.io/badge/macOS-Supported-008080?style=flat&logo=apple&logoColor=white)](https://www.apple.com/macos/)
+[![Linux](https://img.shields.io/badge/Linux-Supported-008080?style=flat&logo=linux&logoColor=black)](https://www.linux.org/)
+[![Windows via WSL](https://img.shields.io/badge/Windows-via%20WSL-4E9A06?style=flat&logo=linux&logoColor=white)](https://learn.microsoft.com/en-us/windows/wsl/)
+
+
+> **Windows users:** This project does not run natively on Windows. You can use it through **Windows Subsystem for Linux (WSL)**. Install a Linux distribution such as Ubuntu using WSL, then follow the Linux setup instructions.
+
 <img width="2940" height="1910" alt="image" src="https://github.com/user-attachments/assets/a2ce4836-d839-4770-b6c7-4e04eba00983" />
 
 > 📖 **မြန်မာဘာသာပြန်** — ဤ README ၏ မြန်မာဘာသာပြန်ကို [အောက်တွင်](#မြန်မာဘာသာပြန်) ကြည့်ရှုနိုင်ပါသည်။  
